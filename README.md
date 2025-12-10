@@ -1,5 +1,5 @@
 
-# 1. Overview
+## Overview
 
 Tomo IDV 서비스는 User의 신분증 인증을 수행하기 위한 절차(IDV Service)를 제공합니다. IDV Service는 IDV Server, IDV App으로 구성돼있으며, Client는 IDV Server를 통해 인증을 수행 한 후, User를 IDV App으로 연결시켜 신분증 인증을 수행할 수 있습니다.
 
