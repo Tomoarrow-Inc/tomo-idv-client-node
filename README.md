@@ -28,11 +28,7 @@ const clientAssertion = createClientAssertion({
 });
 
 // Build token request
-const { headers, body } = buildTokenRequest(clientAssertion, {
-  grant_type: 'client_credentials',
-  scope: 'idv.read',
-  resource: 'base-url/v1/idv'
-});
+const { headers, body } = buildTokenRequest(clientAssertion);
 
 // Use the token request
 const response = await fetch('https://api.tomopayment.com/v1/oauth2/token', {
