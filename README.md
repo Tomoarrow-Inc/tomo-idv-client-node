@@ -42,9 +42,9 @@ const response = await fetch('https://api.tomopayment.com/v1/oauth2/token', {
 });
 ```
 
-> base-url
-> Test 환경: https://test.tomopayment.com
-> Production 환경: https://api.tomopayment.com
+> base-url <br>
+> Test 환경: https://test.tomopayment.com <br>
+> Production 환경: https://api.tomopayment.com <br>
 
 
 ## API
