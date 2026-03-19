@@ -101,5 +101,12 @@ import {
       .replace(/\//g, '_')
       .replace(/=+$/u, '');
   }
-  
+
+// ────────────────────────────────────────────
+// OpenAPI Generated Client (from client-server.openapi.json)
+// ────────────────────────────────────────────
+export { DefaultApi } from './generated/apis/DefaultApi.js';
+export { Configuration, ResponseError, FetchError } from './generated/runtime.js';
+export * from './generated/models/index.js';
+
   
