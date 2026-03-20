@@ -16,30 +16,30 @@ import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
- * @interface GoogleStartResp
+ * @interface WeChatStartResp
  */
-export interface GoogleStartResp {
+export interface WeChatStartResp {
     /**
      * 
      * @type {string}
-     * @memberof GoogleStartResp
+     * @memberof WeChatStartResp
      */
     authorization_url: string;
 }
 
 /**
- * Check if a given object implements the GoogleStartResp interface.
+ * Check if a given object implements the WeChatStartResp interface.
  */
-export function instanceOfGoogleStartResp(value: object): value is GoogleStartResp {
+export function instanceOfWeChatStartResp(value: object): value is WeChatStartResp {
     if (!('authorization_url' in value) || value['authorization_url'] === undefined) return false;
     return true;
 }
 
-export function GoogleStartRespFromJSON(json: any): GoogleStartResp {
-    return GoogleStartRespFromJSONTyped(json, false);
+export function WeChatStartRespFromJSON(json: any): WeChatStartResp {
+    return WeChatStartRespFromJSONTyped(json, false);
 }
 
-export function GoogleStartRespFromJSONTyped(json: any, ignoreDiscriminator: boolean): GoogleStartResp {
+export function WeChatStartRespFromJSONTyped(json: any, ignoreDiscriminator: boolean): WeChatStartResp {
     if (json == null) {
         return json;
     }
@@ -49,11 +49,11 @@ export function GoogleStartRespFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
-export function GoogleStartRespToJSON(json: any): GoogleStartResp {
-    return GoogleStartRespToJSONTyped(json, false);
+export function WeChatStartRespToJSON(json: any): WeChatStartResp {
+    return WeChatStartRespToJSONTyped(json, false);
 }
 
-export function GoogleStartRespToJSONTyped(value?: GoogleStartResp | null, ignoreDiscriminator: boolean = false): any {
+export function WeChatStartRespToJSONTyped(value?: WeChatStartResp | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

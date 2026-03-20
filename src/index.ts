@@ -103,7 +103,7 @@ import {
   }
 
 // ────────────────────────────────────────────
-// OpenAPI Generated Client (from client-server.openapi.json)
+// OpenAPI Generated Client (from sdk.openapi.json)
 // ────────────────────────────────────────────
 export { DefaultApi } from './generated/apis/DefaultApi.js';
 export { Configuration, ResponseError, FetchError } from './generated/runtime.js';

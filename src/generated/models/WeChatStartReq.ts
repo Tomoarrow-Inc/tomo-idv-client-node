@@ -16,42 +16,42 @@ import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
- * @interface GoogleStartReq
+ * @interface WeChatStartReq
  */
-export interface GoogleStartReq {
+export interface WeChatStartReq {
     /**
      * 
      * @type {string}
-     * @memberof GoogleStartReq
+     * @memberof WeChatStartReq
      */
     callback_url: string;
     /**
      * 
      * @type {string}
-     * @memberof GoogleStartReq
+     * @memberof WeChatStartReq
      */
     country?: string;
     /**
      * 
      * @type {string}
-     * @memberof GoogleStartReq
+     * @memberof WeChatStartReq
      */
     login_hint?: string;
 }
 
 /**
- * Check if a given object implements the GoogleStartReq interface.
+ * Check if a given object implements the WeChatStartReq interface.
  */
-export function instanceOfGoogleStartReq(value: object): value is GoogleStartReq {
+export function instanceOfWeChatStartReq(value: object): value is WeChatStartReq {
     if (!('callback_url' in value) || value['callback_url'] === undefined) return false;
     return true;
 }
 
-export function GoogleStartReqFromJSON(json: any): GoogleStartReq {
-    return GoogleStartReqFromJSONTyped(json, false);
+export function WeChatStartReqFromJSON(json: any): WeChatStartReq {
+    return WeChatStartReqFromJSONTyped(json, false);
 }
 
-export function GoogleStartReqFromJSONTyped(json: any, ignoreDiscriminator: boolean): GoogleStartReq {
+export function WeChatStartReqFromJSONTyped(json: any, ignoreDiscriminator: boolean): WeChatStartReq {
     if (json == null) {
         return json;
     }
@@ -63,11 +63,11 @@ export function GoogleStartReqFromJSONTyped(json: any, ignoreDiscriminator: bool
     };
 }
 
-export function GoogleStartReqToJSON(json: any): GoogleStartReq {
-    return GoogleStartReqToJSONTyped(json, false);
+export function WeChatStartReqToJSON(json: any): WeChatStartReq {
+    return WeChatStartReqToJSONTyped(json, false);
 }
 
-export function GoogleStartReqToJSONTyped(value?: GoogleStartReq | null, ignoreDiscriminator: boolean = false): any {
+export function WeChatStartReqToJSONTyped(value?: WeChatStartReq | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
