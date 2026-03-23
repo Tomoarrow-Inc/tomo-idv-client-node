@@ -6,6 +6,8 @@ export * from './GetKycResp.js';
 export * from './GoogleStartReq.js';
 export * from './GoogleStartResp.js';
 export * from './LiquidGetKycReq.js';
+export * from './LiquidGetResultResp.js';
+export * from './LiquidGetUnionResultResp.js';
 export * from './LiquidIdvField.js';
 export * from './LiquidIntegratedAppResponse.js';
 export * from './LiquidStartIdvRequest.js';

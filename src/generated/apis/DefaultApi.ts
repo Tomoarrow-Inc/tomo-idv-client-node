@@ -20,6 +20,7 @@ import type {
   GoogleStartReq,
   GoogleStartResp,
   LiquidGetKycReq,
+  LiquidGetUnionResultResp,
   LiquidIntegratedAppResponse,
   LiquidStartIdvRequest,
   PlaidGetKycReq,
@@ -47,6 +48,8 @@ import {
     GoogleStartRespToJSON,
     LiquidGetKycReqFromJSON,
     LiquidGetKycReqToJSON,
+    LiquidGetUnionResultRespFromJSON,
+    LiquidGetUnionResultRespToJSON,
     LiquidIntegratedAppResponseFromJSON,
     LiquidIntegratedAppResponseToJSON,
     LiquidStartIdvRequestFromJSON,
@@ -377,7 +380,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      */
-    async v1IdvJpKycGetPostRaw(requestParameters: V1IdvJpKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<{ [key: string]: string; }>> {
+    async v1IdvJpKycGetPostRaw(requestParameters: V1IdvJpKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LiquidGetUnionResultResp>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -396,12 +399,12 @@ export class DefaultApi extends runtime.BaseAPI {
             body: LiquidGetKycReqToJSON(requestParameters['LiquidGetKycReq']),
         }, initOverrides);
 
-        return new runtime.JSONApiResponse<any>(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => LiquidGetUnionResultRespFromJSON(jsonValue));
     }
 
     /**
      */
-    async v1IdvJpKycGetPost(requestParameters: V1IdvJpKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<{ [key: string]: string; }> {
+    async v1IdvJpKycGetPost(requestParameters: V1IdvJpKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LiquidGetUnionResultResp> {
         const response = await this.v1IdvJpKycGetPostRaw(requestParameters, initOverrides);
         return await response.value();
     }

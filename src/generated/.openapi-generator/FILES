@@ -8,6 +8,8 @@ models/GetKycResp.ts
 models/GoogleStartReq.ts
 models/GoogleStartResp.ts
 models/LiquidGetKycReq.ts
+models/LiquidGetResultResp.ts
+models/LiquidGetUnionResultResp.ts
 models/LiquidIdvField.ts
 models/LiquidIntegratedAppResponse.ts
 models/LiquidStartIdvRequest.ts
