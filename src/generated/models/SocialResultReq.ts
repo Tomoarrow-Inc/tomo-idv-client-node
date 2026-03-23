@@ -24,14 +24,14 @@ export interface SocialResultReq {
      * @type {string}
      * @memberof SocialResultReq
      */
-    social_id: string;
+    user_id: string;
 }
 
 /**
  * Check if a given object implements the SocialResultReq interface.
  */
 export function instanceOfSocialResultReq(value: object): value is SocialResultReq {
-    if (!('social_id' in value) || value['social_id'] === undefined) return false;
+    if (!('user_id' in value) || value['user_id'] === undefined) return false;
     return true;
 }
 
@@ -45,7 +45,7 @@ export function SocialResultReqFromJSONTyped(json: any, ignoreDiscriminator: boo
     }
     return {
         
-        'social_id': json['social_id'],
+        'user_id': json['user_id'],
     };
 }
 
@@ -60,7 +60,7 @@ export function SocialResultReqToJSONTyped(value?: SocialResultReq | null, ignor
 
     return {
         
-        'social_id': value['social_id'],
+        'user_id': value['user_id'],
     };
 }
 
