@@ -41,7 +41,6 @@ export function LiquidGetUnionResultRespFromJSONTyped(json: any, ignoreDiscrimin
     if (instanceOfLiquidGetResultResp(json)) {
         return LiquidGetResultRespFromJSONTyped(json, true);
     }
-
     return {} as any;
 }
 
@@ -59,7 +58,6 @@ export function LiquidGetUnionResultRespToJSONTyped(value?: LiquidGetUnionResult
     if (instanceOfLiquidGetResultResp(value)) {
         return LiquidGetResultRespToJSON(value as LiquidGetResultResp);
     }
-
     return {};
 }
 

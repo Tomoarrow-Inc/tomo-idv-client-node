@@ -171,18 +171,29 @@ export interface V1Oauth2TokenPostRequest {
 export class DefaultApi extends runtime.BaseAPI {
 
     /**
+     * Creates request options for v1IdvCaHealthGet without sending the request
      */
-    async v1IdvCaHealthGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+    async v1IdvCaHealthGetRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const response = await this.request({
-            path: `/v1/idv/ca/health`,
+
+        let urlPath = `/v1/idv/ca/health`;
+
+        return {
+            path: urlPath,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvCaHealthGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+        const requestOptions = await this.v1IdvCaHealthGetRequestOpts();
+        const response = await this.request(requestOptions, initOverrides);
 
         if (this.isJsonMime(response.headers.get('content-type'))) {
             return new runtime.JSONApiResponse<string>(response);
@@ -199,8 +210,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvCaKycGetPost without sending the request
      */
-    async v1IdvCaKycGetPostRaw(requestParameters: V1IdvCaKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<{ [key: string]: string; }>> {
+    async v1IdvCaKycGetPostRequestOpts(requestParameters: V1IdvCaKycGetPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -211,13 +223,23 @@ export class DefaultApi extends runtime.BaseAPI {
             headerParameters['Authorization'] = String(requestParameters['Authorization']);
         }
 
-        const response = await this.request({
-            path: `/v1/idv/ca/kyc/get`,
+
+        let urlPath = `/v1/idv/ca/kyc/get`;
+
+        return {
+            path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: PlaidGetKycReqToJSON(requestParameters['PlaidGetKycReq']),
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvCaKycGetPostRaw(requestParameters: V1IdvCaKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<{ [key: string]: string; }>> {
+        const requestOptions = await this.v1IdvCaKycGetPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse<any>(response);
     }
@@ -230,8 +252,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvCaStartPost without sending the request
      */
-    async v1IdvCaStartPostRaw(requestParameters: V1IdvCaStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlaidStartIdvResp>> {
+    async v1IdvCaStartPostRequestOpts(requestParameters: V1IdvCaStartPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -242,13 +265,23 @@ export class DefaultApi extends runtime.BaseAPI {
             headerParameters['Authorization'] = String(requestParameters['Authorization']);
         }
 
-        const response = await this.request({
-            path: `/v1/idv/ca/start`,
+
+        let urlPath = `/v1/idv/ca/start`;
+
+        return {
+            path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: PlaidStartIdvRequestToJSON(requestParameters['PlaidStartIdvRequest']),
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvCaStartPostRaw(requestParameters: V1IdvCaStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlaidStartIdvResp>> {
+        const requestOptions = await this.v1IdvCaStartPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => PlaidStartIdvRespFromJSON(jsonValue));
     }
@@ -261,18 +294,29 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvCnHealthGet without sending the request
      */
-    async v1IdvCnHealthGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+    async v1IdvCnHealthGetRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const response = await this.request({
-            path: `/v1/idv/cn/health`,
+
+        let urlPath = `/v1/idv/cn/health`;
+
+        return {
+            path: urlPath,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvCnHealthGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+        const requestOptions = await this.v1IdvCnHealthGetRequestOpts();
+        const response = await this.request(requestOptions, initOverrides);
 
         if (this.isJsonMime(response.headers.get('content-type'))) {
             return new runtime.JSONApiResponse<string>(response);
@@ -289,8 +333,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvCnKycGetPost without sending the request
      */
-    async v1IdvCnKycGetPostRaw(requestParameters: V1IdvCnKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TencentGetUnionResultResp>> {
+    async v1IdvCnKycGetPostRequestOpts(requestParameters: V1IdvCnKycGetPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -301,13 +346,23 @@ export class DefaultApi extends runtime.BaseAPI {
             headerParameters['Authorization'] = String(requestParameters['Authorization']);
         }
 
-        const response = await this.request({
-            path: `/v1/idv/cn/kyc/get`,
+
+        let urlPath = `/v1/idv/cn/kyc/get`;
+
+        return {
+            path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: TencentGetKycReqToJSON(requestParameters['TencentGetKycReq']),
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvCnKycGetPostRaw(requestParameters: V1IdvCnKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TencentGetUnionResultResp>> {
+        const requestOptions = await this.v1IdvCnKycGetPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => TencentGetUnionResultRespFromJSON(jsonValue));
     }
@@ -320,8 +375,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvCnStartPost without sending the request
      */
-    async v1IdvCnStartPostRaw(requestParameters: V1IdvCnStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TomoIdvStartRes>> {
+    async v1IdvCnStartPostRequestOpts(requestParameters: V1IdvCnStartPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -332,13 +388,23 @@ export class DefaultApi extends runtime.BaseAPI {
             headerParameters['Authorization'] = String(requestParameters['Authorization']);
         }
 
-        const response = await this.request({
-            path: `/v1/idv/cn/start`,
+
+        let urlPath = `/v1/idv/cn/start`;
+
+        return {
+            path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: TomoIdvStartReqToJSON(requestParameters['TomoIdvStartReq']),
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvCnStartPostRaw(requestParameters: V1IdvCnStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TomoIdvStartRes>> {
+        const requestOptions = await this.v1IdvCnStartPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => TomoIdvStartResFromJSON(jsonValue));
     }
@@ -351,18 +417,29 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvJpHealthGet without sending the request
      */
-    async v1IdvJpHealthGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+    async v1IdvJpHealthGetRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const response = await this.request({
-            path: `/v1/idv/jp/health`,
+
+        let urlPath = `/v1/idv/jp/health`;
+
+        return {
+            path: urlPath,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvJpHealthGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+        const requestOptions = await this.v1IdvJpHealthGetRequestOpts();
+        const response = await this.request(requestOptions, initOverrides);
 
         if (this.isJsonMime(response.headers.get('content-type'))) {
             return new runtime.JSONApiResponse<string>(response);
@@ -379,8 +456,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvJpKycGetPost without sending the request
      */
-    async v1IdvJpKycGetPostRaw(requestParameters: V1IdvJpKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LiquidGetUnionResultResp>> {
+    async v1IdvJpKycGetPostRequestOpts(requestParameters: V1IdvJpKycGetPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -391,13 +469,23 @@ export class DefaultApi extends runtime.BaseAPI {
             headerParameters['Authorization'] = String(requestParameters['Authorization']);
         }
 
-        const response = await this.request({
-            path: `/v1/idv/jp/kyc/get`,
+
+        let urlPath = `/v1/idv/jp/kyc/get`;
+
+        return {
+            path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: LiquidGetKycReqToJSON(requestParameters['LiquidGetKycReq']),
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvJpKycGetPostRaw(requestParameters: V1IdvJpKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LiquidGetUnionResultResp>> {
+        const requestOptions = await this.v1IdvJpKycGetPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => LiquidGetUnionResultRespFromJSON(jsonValue));
     }
@@ -410,8 +498,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvJpStartPost without sending the request
      */
-    async v1IdvJpStartPostRaw(requestParameters: V1IdvJpStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LiquidIntegratedAppResponse>> {
+    async v1IdvJpStartPostRequestOpts(requestParameters: V1IdvJpStartPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -422,13 +511,23 @@ export class DefaultApi extends runtime.BaseAPI {
             headerParameters['Authorization'] = String(requestParameters['Authorization']);
         }
 
-        const response = await this.request({
-            path: `/v1/idv/jp/start`,
+
+        let urlPath = `/v1/idv/jp/start`;
+
+        return {
+            path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: LiquidStartIdvRequestToJSON(requestParameters['LiquidStartIdvRequest']),
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvJpStartPostRaw(requestParameters: V1IdvJpStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LiquidIntegratedAppResponse>> {
+        const requestOptions = await this.v1IdvJpStartPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => LiquidIntegratedAppResponseFromJSON(jsonValue));
     }
@@ -441,8 +540,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvKycGetPost without sending the request
      */
-    async v1IdvKycGetPostRaw(requestParameters: V1IdvKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetKycResp>> {
+    async v1IdvKycGetPostRequestOpts(requestParameters: V1IdvKycGetPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -453,13 +553,23 @@ export class DefaultApi extends runtime.BaseAPI {
             headerParameters['Authorization'] = String(requestParameters['Authorization']);
         }
 
-        const response = await this.request({
-            path: `/v1/idv/kyc/get`,
+
+        let urlPath = `/v1/idv/kyc/get`;
+
+        return {
+            path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: GetKycReqToJSON(requestParameters['GetKycReq']),
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvKycGetPostRaw(requestParameters: V1IdvKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetKycResp>> {
+        const requestOptions = await this.v1IdvKycGetPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => GetKycRespFromJSON(jsonValue));
     }
@@ -472,8 +582,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvSocialGoogleStartPost without sending the request
      */
-    async v1IdvSocialGoogleStartPostRaw(requestParameters: V1IdvSocialGoogleStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GoogleStartResp>> {
+    async v1IdvSocialGoogleStartPostRequestOpts(requestParameters: V1IdvSocialGoogleStartPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -484,13 +595,23 @@ export class DefaultApi extends runtime.BaseAPI {
             headerParameters['Authorization'] = String(requestParameters['Authorization']);
         }
 
-        const response = await this.request({
-            path: `/v1/idv/social/google/start`,
+
+        let urlPath = `/v1/idv/social/google/start`;
+
+        return {
+            path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: GoogleStartReqToJSON(requestParameters['GoogleStartReq']),
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvSocialGoogleStartPostRaw(requestParameters: V1IdvSocialGoogleStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GoogleStartResp>> {
+        const requestOptions = await this.v1IdvSocialGoogleStartPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => GoogleStartRespFromJSON(jsonValue));
     }
@@ -503,8 +624,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvSocialResultPost without sending the request
      */
-    async v1IdvSocialResultPostRaw(requestParameters: V1IdvSocialResultPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetKycResp>> {
+    async v1IdvSocialResultPostRequestOpts(requestParameters: V1IdvSocialResultPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -515,13 +637,23 @@ export class DefaultApi extends runtime.BaseAPI {
             headerParameters['Authorization'] = String(requestParameters['Authorization']);
         }
 
-        const response = await this.request({
-            path: `/v1/idv/social/result`,
+
+        let urlPath = `/v1/idv/social/result`;
+
+        return {
+            path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: SocialResultReqToJSON(requestParameters['SocialResultReq']),
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvSocialResultPostRaw(requestParameters: V1IdvSocialResultPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetKycResp>> {
+        const requestOptions = await this.v1IdvSocialResultPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => GetKycRespFromJSON(jsonValue));
     }
@@ -534,8 +666,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvSocialWechatStartPost without sending the request
      */
-    async v1IdvSocialWechatStartPostRaw(requestParameters: V1IdvSocialWechatStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WeChatStartResp>> {
+    async v1IdvSocialWechatStartPostRequestOpts(requestParameters: V1IdvSocialWechatStartPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -546,13 +679,23 @@ export class DefaultApi extends runtime.BaseAPI {
             headerParameters['Authorization'] = String(requestParameters['Authorization']);
         }
 
-        const response = await this.request({
-            path: `/v1/idv/social/wechat/start`,
+
+        let urlPath = `/v1/idv/social/wechat/start`;
+
+        return {
+            path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: WeChatStartReqToJSON(requestParameters['WeChatStartReq']),
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvSocialWechatStartPostRaw(requestParameters: V1IdvSocialWechatStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WeChatStartResp>> {
+        const requestOptions = await this.v1IdvSocialWechatStartPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => WeChatStartRespFromJSON(jsonValue));
     }
@@ -565,8 +708,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvStartPost without sending the request
      */
-    async v1IdvStartPostRaw(requestParameters: V1IdvStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StartIdvResp>> {
+    async v1IdvStartPostRequestOpts(requestParameters: V1IdvStartPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -577,13 +721,23 @@ export class DefaultApi extends runtime.BaseAPI {
             headerParameters['Authorization'] = String(requestParameters['Authorization']);
         }
 
-        const response = await this.request({
-            path: `/v1/idv/start`,
+
+        let urlPath = `/v1/idv/start`;
+
+        return {
+            path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: StartIdvReqToJSON(requestParameters['StartIdvReq']),
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvStartPostRaw(requestParameters: V1IdvStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StartIdvResp>> {
+        const requestOptions = await this.v1IdvStartPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => StartIdvRespFromJSON(jsonValue));
     }
@@ -596,18 +750,29 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvUkHealthGet without sending the request
      */
-    async v1IdvUkHealthGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+    async v1IdvUkHealthGetRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const response = await this.request({
-            path: `/v1/idv/uk/health`,
+
+        let urlPath = `/v1/idv/uk/health`;
+
+        return {
+            path: urlPath,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvUkHealthGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+        const requestOptions = await this.v1IdvUkHealthGetRequestOpts();
+        const response = await this.request(requestOptions, initOverrides);
 
         if (this.isJsonMime(response.headers.get('content-type'))) {
             return new runtime.JSONApiResponse<string>(response);
@@ -624,8 +789,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvUkKycGetPost without sending the request
      */
-    async v1IdvUkKycGetPostRaw(requestParameters: V1IdvUkKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<{ [key: string]: string; }>> {
+    async v1IdvUkKycGetPostRequestOpts(requestParameters: V1IdvUkKycGetPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -636,13 +802,23 @@ export class DefaultApi extends runtime.BaseAPI {
             headerParameters['Authorization'] = String(requestParameters['Authorization']);
         }
 
-        const response = await this.request({
-            path: `/v1/idv/uk/kyc/get`,
+
+        let urlPath = `/v1/idv/uk/kyc/get`;
+
+        return {
+            path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: PlaidGetKycReqToJSON(requestParameters['PlaidGetKycReq']),
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvUkKycGetPostRaw(requestParameters: V1IdvUkKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<{ [key: string]: string; }>> {
+        const requestOptions = await this.v1IdvUkKycGetPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse<any>(response);
     }
@@ -655,8 +831,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvUkStartPost without sending the request
      */
-    async v1IdvUkStartPostRaw(requestParameters: V1IdvUkStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlaidStartIdvResp>> {
+    async v1IdvUkStartPostRequestOpts(requestParameters: V1IdvUkStartPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -667,13 +844,23 @@ export class DefaultApi extends runtime.BaseAPI {
             headerParameters['Authorization'] = String(requestParameters['Authorization']);
         }
 
-        const response = await this.request({
-            path: `/v1/idv/uk/start`,
+
+        let urlPath = `/v1/idv/uk/start`;
+
+        return {
+            path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: PlaidStartIdvRequestToJSON(requestParameters['PlaidStartIdvRequest']),
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvUkStartPostRaw(requestParameters: V1IdvUkStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlaidStartIdvResp>> {
+        const requestOptions = await this.v1IdvUkStartPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => PlaidStartIdvRespFromJSON(jsonValue));
     }
@@ -686,18 +873,29 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvUsHealthGet without sending the request
      */
-    async v1IdvUsHealthGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+    async v1IdvUsHealthGetRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const response = await this.request({
-            path: `/v1/idv/us/health`,
+
+        let urlPath = `/v1/idv/us/health`;
+
+        return {
+            path: urlPath,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvUsHealthGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+        const requestOptions = await this.v1IdvUsHealthGetRequestOpts();
+        const response = await this.request(requestOptions, initOverrides);
 
         if (this.isJsonMime(response.headers.get('content-type'))) {
             return new runtime.JSONApiResponse<string>(response);
@@ -714,8 +912,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvUsKycGetPost without sending the request
      */
-    async v1IdvUsKycGetPostRaw(requestParameters: V1IdvUsKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<{ [key: string]: string; }>> {
+    async v1IdvUsKycGetPostRequestOpts(requestParameters: V1IdvUsKycGetPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -726,13 +925,23 @@ export class DefaultApi extends runtime.BaseAPI {
             headerParameters['Authorization'] = String(requestParameters['Authorization']);
         }
 
-        const response = await this.request({
-            path: `/v1/idv/us/kyc/get`,
+
+        let urlPath = `/v1/idv/us/kyc/get`;
+
+        return {
+            path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: PlaidGetKycReqToJSON(requestParameters['PlaidGetKycReq']),
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvUsKycGetPostRaw(requestParameters: V1IdvUsKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<{ [key: string]: string; }>> {
+        const requestOptions = await this.v1IdvUsKycGetPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse<any>(response);
     }
@@ -745,8 +954,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvUsStartPost without sending the request
      */
-    async v1IdvUsStartPostRaw(requestParameters: V1IdvUsStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlaidStartIdvResp>> {
+    async v1IdvUsStartPostRequestOpts(requestParameters: V1IdvUsStartPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -757,13 +967,23 @@ export class DefaultApi extends runtime.BaseAPI {
             headerParameters['Authorization'] = String(requestParameters['Authorization']);
         }
 
-        const response = await this.request({
-            path: `/v1/idv/us/start`,
+
+        let urlPath = `/v1/idv/us/start`;
+
+        return {
+            path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: PlaidStartIdvRequestToJSON(requestParameters['PlaidStartIdvRequest']),
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1IdvUsStartPostRaw(requestParameters: V1IdvUsStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlaidStartIdvResp>> {
+        const requestOptions = await this.v1IdvUsStartPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => PlaidStartIdvRespFromJSON(jsonValue));
     }
@@ -776,8 +996,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1Oauth2TokenPost without sending the request
      */
-    async v1Oauth2TokenPostRaw(requestParameters: V1Oauth2TokenPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TokenResponse>> {
+    async v1Oauth2TokenPostRequestOpts(requestParameters: V1Oauth2TokenPostRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['client_assertion'] == null) {
             throw new runtime.RequiredError(
                 'client_assertion',
@@ -837,13 +1058,23 @@ export class DefaultApi extends runtime.BaseAPI {
             formParams.append('scope', requestParameters['scope'] as any);
         }
 
-        const response = await this.request({
-            path: `/v1/oauth2/token`,
+
+        let urlPath = `/v1/oauth2/token`;
+
+        return {
+            path: urlPath,
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
             body: formParams,
-        }, initOverrides);
+        };
+    }
+
+    /**
+     */
+    async v1Oauth2TokenPostRaw(requestParameters: V1Oauth2TokenPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TokenResponse>> {
+        const requestOptions = await this.v1Oauth2TokenPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => TokenResponseFromJSON(jsonValue));
     }

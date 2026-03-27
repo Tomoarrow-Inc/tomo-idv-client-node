@@ -41,7 +41,6 @@ export function TencentGetUnionResultRespFromJSONTyped(json: any, ignoreDiscrimi
     if (instanceOfTencentGetKycResp(json)) {
         return TencentGetKycRespFromJSONTyped(json, true);
     }
-
     return {} as any;
 }
 
@@ -59,7 +58,6 @@ export function TencentGetUnionResultRespToJSONTyped(value?: TencentGetUnionResu
     if (instanceOfTencentGetKycResp(value)) {
         return TencentGetKycRespToJSON(value as TencentGetKycResp);
     }
-
     return {};
 }
 
