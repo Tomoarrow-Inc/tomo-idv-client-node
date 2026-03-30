@@ -1,0 +1,17 @@
+services:
+  publish:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.publish
+    working_dir: /workspace
+    volumes:
+      - ..:/workspace
+      - npm-cache:/root/.npm
+      - npm-config:/root/.config
+    tty: true
+    stdin_open: true
+    entrypoint: ["bash"]
+
+volumes:
+  npm-cache:
+  npm-config:
