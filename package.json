@@ -1,6 +1,6 @@
 {
   "name": "tomo-idv-client-node",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tomo IDV Node.js SDK for OAuth2 client assertion",
   "main": "dist/cjs/index.js",
   "types": "dist/esm/index.d.ts",
