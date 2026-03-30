@@ -7,11 +7,13 @@ services:
     volumes:
       - ..:/workspace
       - npm-cache:/root/.npm
-      - npm-config:/root/.config
+      - npm-data:/root/.npm-data
+    environment:
+      - NPM_CONFIG_USERCONFIG=/root/.npm-data/.npmrc
     tty: true
     stdin_open: true
     entrypoint: ["bash"]
 
 volumes:
   npm-cache:
-  npm-config:
+  npm-data:
