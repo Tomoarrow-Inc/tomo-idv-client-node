@@ -21,9 +21,9 @@ docs/TencentGetKycReq.md
 docs/TencentGetKycRes.md
 docs/TencentGetUnionResultRes.md
 docs/TencentIdvField.md
+docs/TencentStartIdvRes.md
 docs/TencentStartReq.md
 docs/TokenRes.md
-docs/TomoIdvStartRes.md
 index.ts
 models/Country.ts
 models/GetKycReq.ts
@@ -44,8 +44,8 @@ models/TencentGetKycReq.ts
 models/TencentGetKycRes.ts
 models/TencentGetUnionResultRes.ts
 models/TencentIdvField.ts
+models/TencentStartIdvRes.ts
 models/TencentStartReq.ts
 models/TokenRes.ts
-models/TomoIdvStartRes.ts
 models/index.ts
 runtime.ts

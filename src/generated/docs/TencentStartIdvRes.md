@@ -1,22 +1,22 @@
 
-# TomoIdvStartRes
+# TencentStartIdvRes
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`start_idv_uri` | string
+`tencent_start_idv_uri` | string
 
 ## Example
 
 ```typescript
-import type { TomoIdvStartRes } from ''
+import type { TencentStartIdvRes } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "start_idv_uri": null,
-} satisfies TomoIdvStartRes
+  "tencent_start_idv_uri": null,
+} satisfies TencentStartIdvRes
 
 console.log(example)
 
@@ -25,7 +25,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as TomoIdvStartRes
+const exampleParsed = JSON.parse(exampleJSON) as TencentStartIdvRes
 console.log(exampleParsed)
 ```
 

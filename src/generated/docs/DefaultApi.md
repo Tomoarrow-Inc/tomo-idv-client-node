@@ -348,7 +348,7 @@ No authorization required
 
 ## v1IdvCnStartPost
 
-> TomoIdvStartRes v1IdvCnStartPost(Authorization, TencentStartReq)
+> TencentStartIdvRes v1IdvCnStartPost(Authorization, TencentStartReq)
 
 
 
@@ -394,7 +394,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**TomoIdvStartRes**](TomoIdvStartRes.md)
+[**TencentStartIdvRes**](TencentStartIdvRes.md)
 
 ### Authorization
 

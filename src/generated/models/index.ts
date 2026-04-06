@@ -19,6 +19,6 @@ export * from './TencentGetKycReq.js';
 export * from './TencentGetKycRes.js';
 export * from './TencentGetUnionResultRes.js';
 export * from './TencentIdvField.js';
+export * from './TencentStartIdvRes.js';
 export * from './TencentStartReq.js';
 export * from './TokenRes.js';
-export * from './TomoIdvStartRes.js';

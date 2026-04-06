@@ -28,9 +28,9 @@ import type {
   StartIdvRes,
   TencentGetKycReq,
   TencentGetUnionResultRes,
+  TencentStartIdvRes,
   TencentStartReq,
   TokenRes,
-  TomoIdvStartRes,
 } from '../models/index.js';
 import {
     GetKycReqFromJSON,
@@ -59,12 +59,12 @@ import {
     TencentGetKycReqToJSON,
     TencentGetUnionResultResFromJSON,
     TencentGetUnionResultResToJSON,
+    TencentStartIdvResFromJSON,
+    TencentStartIdvResToJSON,
     TencentStartReqFromJSON,
     TencentStartReqToJSON,
     TokenResFromJSON,
     TokenResToJSON,
-    TomoIdvStartResFromJSON,
-    TomoIdvStartResToJSON,
 } from '../models/index.js';
 
 export interface V1IdvCaKycGetPostRequest {
@@ -372,16 +372,16 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      */
-    async v1IdvCnStartPostRaw(requestParameters: V1IdvCnStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TomoIdvStartRes>> {
+    async v1IdvCnStartPostRaw(requestParameters: V1IdvCnStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TencentStartIdvRes>> {
         const requestOptions = await this.v1IdvCnStartPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => TomoIdvStartResFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => TencentStartIdvResFromJSON(jsonValue));
     }
 
     /**
      */
-    async v1IdvCnStartPost(requestParameters: V1IdvCnStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TomoIdvStartRes> {
+    async v1IdvCnStartPost(requestParameters: V1IdvCnStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TencentStartIdvRes> {
         const response = await this.v1IdvCnStartPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
