@@ -16,45 +16,45 @@ import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
- * @interface LiquidGetResultResp
+ * @interface LiquidGetResultRes
  */
-export interface LiquidGetResultResp {
+export interface LiquidGetResultRes {
     /**
      * 
      * @type {string}
-     * @memberof LiquidGetResultResp
+     * @memberof LiquidGetResultRes
      */
     address: string;
     /**
      * 
      * @type {string}
-     * @memberof LiquidGetResultResp
+     * @memberof LiquidGetResultRes
      */
     date_of_birth: string;
     /**
      * 
      * @type {string}
-     * @memberof LiquidGetResultResp
+     * @memberof LiquidGetResultRes
      */
     name: string;
     /**
      * 
      * @type {string}
-     * @memberof LiquidGetResultResp
+     * @memberof LiquidGetResultRes
      */
     postal_code?: string;
     /**
      * 
      * @type {string}
-     * @memberof LiquidGetResultResp
+     * @memberof LiquidGetResultRes
      */
     sex: string;
 }
 
 /**
- * Check if a given object implements the LiquidGetResultResp interface.
+ * Check if a given object implements the LiquidGetResultRes interface.
  */
-export function instanceOfLiquidGetResultResp(value: object): value is LiquidGetResultResp {
+export function instanceOfLiquidGetResultRes(value: object): value is LiquidGetResultRes {
     if (!('address' in value) || value['address'] === undefined) return false;
     if (!('date_of_birth' in value) || value['date_of_birth'] === undefined) return false;
     if (!('name' in value) || value['name'] === undefined) return false;
@@ -62,11 +62,11 @@ export function instanceOfLiquidGetResultResp(value: object): value is LiquidGet
     return true;
 }
 
-export function LiquidGetResultRespFromJSON(json: any): LiquidGetResultResp {
-    return LiquidGetResultRespFromJSONTyped(json, false);
+export function LiquidGetResultResFromJSON(json: any): LiquidGetResultRes {
+    return LiquidGetResultResFromJSONTyped(json, false);
 }
 
-export function LiquidGetResultRespFromJSONTyped(json: any, ignoreDiscriminator: boolean): LiquidGetResultResp {
+export function LiquidGetResultResFromJSONTyped(json: any, ignoreDiscriminator: boolean): LiquidGetResultRes {
     if (json == null) {
         return json;
     }
@@ -80,11 +80,11 @@ export function LiquidGetResultRespFromJSONTyped(json: any, ignoreDiscriminator:
     };
 }
 
-export function LiquidGetResultRespToJSON(json: any): LiquidGetResultResp {
-    return LiquidGetResultRespToJSONTyped(json, false);
+export function LiquidGetResultResToJSON(json: any): LiquidGetResultRes {
+    return LiquidGetResultResToJSONTyped(json, false);
 }
 
-export function LiquidGetResultRespToJSONTyped(value?: LiquidGetResultResp | null, ignoreDiscriminator: boolean = false): any {
+export function LiquidGetResultResToJSONTyped(value?: LiquidGetResultRes | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

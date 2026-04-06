@@ -1,22 +1,26 @@
 
-# PlaidStartIdvResp
+# PlaidStartIdvReq
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`start_idv_uri` | string
+`callback_url` | string
+`email` | string
+`user_id` | string
 
 ## Example
 
 ```typescript
-import type { PlaidStartIdvResp } from ''
+import type { PlaidStartIdvReq } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "start_idv_uri": null,
-} satisfies PlaidStartIdvResp
+  "callback_url": null,
+  "email": null,
+  "user_id": null,
+} satisfies PlaidStartIdvReq
 
 console.log(example)
 
@@ -25,7 +29,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as PlaidStartIdvResp
+const exampleParsed = JSON.parse(exampleJSON) as PlaidStartIdvReq
 console.log(exampleParsed)
 ```
 

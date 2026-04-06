@@ -153,7 +153,7 @@ No authorization required
 
 ## v1IdvCaStartPost
 
-> PlaidStartIdvResp v1IdvCaStartPost(Authorization, PlaidStartIdvRequest)
+> PlaidStartIdvRes v1IdvCaStartPost(Authorization, PlaidStartIdvReq)
 
 
 
@@ -173,8 +173,8 @@ async function example() {
   const body = {
     // string (optional)
     Authorization: Authorization_example,
-    // PlaidStartIdvRequest (optional)
-    PlaidStartIdvRequest: ...,
+    // PlaidStartIdvReq (optional)
+    PlaidStartIdvReq: ...,
   } satisfies V1IdvCaStartPostRequest;
 
   try {
@@ -195,11 +195,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **PlaidStartIdvRequest** | [PlaidStartIdvRequest](PlaidStartIdvRequest.md) |  | [Optional] |
+| **PlaidStartIdvReq** | [PlaidStartIdvReq](PlaidStartIdvReq.md) |  | [Optional] |
 
 ### Return type
 
-[**PlaidStartIdvResp**](PlaidStartIdvResp.md)
+[**PlaidStartIdvRes**](PlaidStartIdvRes.md)
 
 ### Authorization
 
@@ -279,7 +279,7 @@ No authorization required
 
 ## v1IdvCnKycGetPost
 
-> TencentGetUnionResultResp v1IdvCnKycGetPost(Authorization, TencentGetKycReq)
+> TencentGetUnionResultRes v1IdvCnKycGetPost(Authorization, TencentGetKycReq)
 
 
 
@@ -325,7 +325,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**TencentGetUnionResultResp**](TencentGetUnionResultResp.md)
+[**TencentGetUnionResultRes**](TencentGetUnionResultRes.md)
 
 ### Authorization
 
@@ -474,7 +474,7 @@ No authorization required
 
 ## v1IdvJpKycGetPost
 
-> LiquidGetUnionResultResp v1IdvJpKycGetPost(Authorization, LiquidGetKycReq)
+> LiquidGetUnionResultRes v1IdvJpKycGetPost(Authorization, LiquidGetKycReq)
 
 
 
@@ -520,7 +520,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**LiquidGetUnionResultResp**](LiquidGetUnionResultResp.md)
+[**LiquidGetUnionResultRes**](LiquidGetUnionResultRes.md)
 
 ### Authorization
 
@@ -543,7 +543,7 @@ No authorization required
 
 ## v1IdvJpStartPost
 
-> LiquidIntegratedAppResponse v1IdvJpStartPost(Authorization, LiquidStartIdvRequest)
+> LiquidIntegratedAppRes v1IdvJpStartPost(Authorization, LiquidStartIdvReq)
 
 
 
@@ -563,8 +563,8 @@ async function example() {
   const body = {
     // string (optional)
     Authorization: Authorization_example,
-    // LiquidStartIdvRequest (optional)
-    LiquidStartIdvRequest: ...,
+    // LiquidStartIdvReq (optional)
+    LiquidStartIdvReq: ...,
   } satisfies V1IdvJpStartPostRequest;
 
   try {
@@ -585,11 +585,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **LiquidStartIdvRequest** | [LiquidStartIdvRequest](LiquidStartIdvRequest.md) |  | [Optional] |
+| **LiquidStartIdvReq** | [LiquidStartIdvReq](LiquidStartIdvReq.md) |  | [Optional] |
 
 ### Return type
 
-[**LiquidIntegratedAppResponse**](LiquidIntegratedAppResponse.md)
+[**LiquidIntegratedAppRes**](LiquidIntegratedAppRes.md)
 
 ### Authorization
 
@@ -612,7 +612,7 @@ No authorization required
 
 ## v1IdvKycGetPost
 
-> GetKycResp v1IdvKycGetPost(Authorization, GetKycReq)
+> GetKycRes v1IdvKycGetPost(Authorization, GetKycReq)
 
 
 
@@ -658,7 +658,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**GetKycResp**](GetKycResp.md)
+[**GetKycRes**](GetKycRes.md)
 
 ### Authorization
 
@@ -681,7 +681,7 @@ No authorization required
 
 ## v1IdvStartPost
 
-> StartIdvResp v1IdvStartPost(Authorization, StartIdvReq)
+> StartIdvRes v1IdvStartPost(Authorization, StartIdvReq)
 
 
 
@@ -727,7 +727,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**StartIdvResp**](StartIdvResp.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 ### Authorization
 
@@ -876,7 +876,7 @@ No authorization required
 
 ## v1IdvUkStartPost
 
-> PlaidStartIdvResp v1IdvUkStartPost(Authorization, PlaidStartIdvRequest)
+> PlaidStartIdvRes v1IdvUkStartPost(Authorization, PlaidStartIdvReq)
 
 
 
@@ -896,8 +896,8 @@ async function example() {
   const body = {
     // string (optional)
     Authorization: Authorization_example,
-    // PlaidStartIdvRequest (optional)
-    PlaidStartIdvRequest: ...,
+    // PlaidStartIdvReq (optional)
+    PlaidStartIdvReq: ...,
   } satisfies V1IdvUkStartPostRequest;
 
   try {
@@ -918,11 +918,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **PlaidStartIdvRequest** | [PlaidStartIdvRequest](PlaidStartIdvRequest.md) |  | [Optional] |
+| **PlaidStartIdvReq** | [PlaidStartIdvReq](PlaidStartIdvReq.md) |  | [Optional] |
 
 ### Return type
 
-[**PlaidStartIdvResp**](PlaidStartIdvResp.md)
+[**PlaidStartIdvRes**](PlaidStartIdvRes.md)
 
 ### Authorization
 
@@ -1071,7 +1071,7 @@ No authorization required
 
 ## v1IdvUsStartPost
 
-> PlaidStartIdvResp v1IdvUsStartPost(Authorization, PlaidStartIdvRequest)
+> PlaidStartIdvRes v1IdvUsStartPost(Authorization, PlaidStartIdvReq)
 
 
 
@@ -1091,8 +1091,8 @@ async function example() {
   const body = {
     // string (optional)
     Authorization: Authorization_example,
-    // PlaidStartIdvRequest (optional)
-    PlaidStartIdvRequest: ...,
+    // PlaidStartIdvReq (optional)
+    PlaidStartIdvReq: ...,
   } satisfies V1IdvUsStartPostRequest;
 
   try {
@@ -1113,11 +1113,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **PlaidStartIdvRequest** | [PlaidStartIdvRequest](PlaidStartIdvRequest.md) |  | [Optional] |
+| **PlaidStartIdvReq** | [PlaidStartIdvReq](PlaidStartIdvReq.md) |  | [Optional] |
 
 ### Return type
 
-[**PlaidStartIdvResp**](PlaidStartIdvResp.md)
+[**PlaidStartIdvRes**](PlaidStartIdvRes.md)
 
 ### Authorization
 
@@ -1140,7 +1140,7 @@ No authorization required
 
 ## v1Oauth2TokenPost
 
-> TokenResponse v1Oauth2TokenPost(client_assertion, client_assertion_type, grant_type, resource, scope)
+> TokenRes v1Oauth2TokenPost(client_assertion, client_assertion_type, grant_type, resource, scope)
 
 
 
@@ -1195,7 +1195,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**TokenResponse**](TokenResponse.md)
+[**TokenRes**](TokenRes.md)
 
 ### Authorization
 

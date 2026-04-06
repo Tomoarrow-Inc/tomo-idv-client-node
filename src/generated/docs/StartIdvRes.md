@@ -1,30 +1,22 @@
 
-# LiquidGetResultResp
+# StartIdvRes
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`address` | string
-`date_of_birth` | string
-`name` | string
-`postal_code` | string
-`sex` | string
+`start_idv_uri` | string
 
 ## Example
 
 ```typescript
-import type { LiquidGetResultResp } from ''
+import type { StartIdvRes } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "address": null,
-  "date_of_birth": null,
-  "name": null,
-  "postal_code": null,
-  "sex": null,
-} satisfies LiquidGetResultResp
+  "start_idv_uri": null,
+} satisfies StartIdvRes
 
 console.log(example)
 
@@ -33,7 +25,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as LiquidGetResultResp
+const exampleParsed = JSON.parse(exampleJSON) as StartIdvRes
 console.log(exampleParsed)
 ```
 

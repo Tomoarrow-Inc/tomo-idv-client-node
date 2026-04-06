@@ -1,26 +1,30 @@
 
-# PlaidStartIdvRequest
+# LiquidGetResultRes
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`callback_url` | string
-`email` | string
-`user_id` | string
+`address` | string
+`date_of_birth` | string
+`name` | string
+`postal_code` | string
+`sex` | string
 
 ## Example
 
 ```typescript
-import type { PlaidStartIdvRequest } from ''
+import type { LiquidGetResultRes } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "callback_url": null,
-  "email": null,
-  "user_id": null,
-} satisfies PlaidStartIdvRequest
+  "address": null,
+  "date_of_birth": null,
+  "name": null,
+  "postal_code": null,
+  "sex": null,
+} satisfies LiquidGetResultRes
 
 console.log(example)
 
@@ -29,7 +33,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as PlaidStartIdvRequest
+const exampleParsed = JSON.parse(exampleJSON) as LiquidGetResultRes
 console.log(exampleParsed)
 ```
 

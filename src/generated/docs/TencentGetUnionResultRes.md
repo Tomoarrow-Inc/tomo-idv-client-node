@@ -1,5 +1,5 @@
 
-# TencentGetKycResp
+# TencentGetUnionResultRes
 
 
 ## Properties
@@ -25,7 +25,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { TencentGetKycResp } from ''
+import type { TencentGetUnionResultRes } from ''
 
 // TODO: Update the object below with actual values
 const example = {
@@ -44,7 +44,7 @@ const example = {
   "sex": null,
   "similarity": null,
   "status": null,
-} satisfies TencentGetKycResp
+} satisfies TencentGetUnionResultRes
 
 console.log(example)
 
@@ -53,7 +53,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as TencentGetKycResp
+const exampleParsed = JSON.parse(exampleJSON) as TencentGetUnionResultRes
 console.log(exampleParsed)
 ```
 

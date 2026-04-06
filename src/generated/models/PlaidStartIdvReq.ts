@@ -16,43 +16,43 @@ import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
- * @interface PlaidStartIdvRequest
+ * @interface PlaidStartIdvReq
  */
-export interface PlaidStartIdvRequest {
+export interface PlaidStartIdvReq {
     /**
      * 
      * @type {string}
-     * @memberof PlaidStartIdvRequest
+     * @memberof PlaidStartIdvReq
      */
     callback_url: string;
     /**
      * 
      * @type {string}
-     * @memberof PlaidStartIdvRequest
+     * @memberof PlaidStartIdvReq
      */
     email?: string;
     /**
      * 
      * @type {string}
-     * @memberof PlaidStartIdvRequest
+     * @memberof PlaidStartIdvReq
      */
     user_id: string;
 }
 
 /**
- * Check if a given object implements the PlaidStartIdvRequest interface.
+ * Check if a given object implements the PlaidStartIdvReq interface.
  */
-export function instanceOfPlaidStartIdvRequest(value: object): value is PlaidStartIdvRequest {
+export function instanceOfPlaidStartIdvReq(value: object): value is PlaidStartIdvReq {
     if (!('callback_url' in value) || value['callback_url'] === undefined) return false;
     if (!('user_id' in value) || value['user_id'] === undefined) return false;
     return true;
 }
 
-export function PlaidStartIdvRequestFromJSON(json: any): PlaidStartIdvRequest {
-    return PlaidStartIdvRequestFromJSONTyped(json, false);
+export function PlaidStartIdvReqFromJSON(json: any): PlaidStartIdvReq {
+    return PlaidStartIdvReqFromJSONTyped(json, false);
 }
 
-export function PlaidStartIdvRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): PlaidStartIdvRequest {
+export function PlaidStartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: boolean): PlaidStartIdvReq {
     if (json == null) {
         return json;
     }
@@ -64,11 +64,11 @@ export function PlaidStartIdvRequestFromJSONTyped(json: any, ignoreDiscriminator
     };
 }
 
-export function PlaidStartIdvRequestToJSON(json: any): PlaidStartIdvRequest {
-    return PlaidStartIdvRequestToJSONTyped(json, false);
+export function PlaidStartIdvReqToJSON(json: any): PlaidStartIdvReq {
+    return PlaidStartIdvReqToJSONTyped(json, false);
 }
 
-export function PlaidStartIdvRequestToJSONTyped(value?: PlaidStartIdvRequest | null, ignoreDiscriminator: boolean = false): any {
+export function PlaidStartIdvReqToJSONTyped(value?: PlaidStartIdvReq | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

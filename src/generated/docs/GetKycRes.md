@@ -1,50 +1,46 @@
 
-# TencentGetUnionResultResp
+# GetKycRes
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`address` | string
+`city` | string
+`country` | string
 `date_of_birth` | string
-`document_type` | string
-`face_compare_passed` | boolean
+`email_address` | string
 `family_name` | string
+`full_address` | string
 `full_name` | string
 `given_name` | string
-`id_number` | string
-`issuing_country` | string
-`liveness_passed` | boolean
-`nationality` | string
-`ocr_passed` | boolean
+`phone_number` | string
+`postal_code` | string
+`region` | string
 `sex` | string
-`similarity` | number
-`status` | string
+`street` | string
 
 ## Example
 
 ```typescript
-import type { TencentGetUnionResultResp } from ''
+import type { GetKycRes } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "address": null,
+  "city": null,
+  "country": null,
   "date_of_birth": null,
-  "document_type": null,
-  "face_compare_passed": null,
+  "email_address": null,
   "family_name": null,
+  "full_address": null,
   "full_name": null,
   "given_name": null,
-  "id_number": null,
-  "issuing_country": null,
-  "liveness_passed": null,
-  "nationality": null,
-  "ocr_passed": null,
+  "phone_number": null,
+  "postal_code": null,
+  "region": null,
   "sex": null,
-  "similarity": null,
-  "status": null,
-} satisfies TencentGetUnionResultResp
+  "street": null,
+} satisfies GetKycRes
 
 console.log(example)
 
@@ -53,7 +49,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as TencentGetUnionResultResp
+const exampleParsed = JSON.parse(exampleJSON) as GetKycRes
 console.log(exampleParsed)
 ```
 

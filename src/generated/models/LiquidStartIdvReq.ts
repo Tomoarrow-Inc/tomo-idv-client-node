@@ -16,37 +16,37 @@ import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
- * @interface LiquidStartIdvRequest
+ * @interface LiquidStartIdvReq
  */
-export interface LiquidStartIdvRequest {
+export interface LiquidStartIdvReq {
     /**
      * 
      * @type {string}
-     * @memberof LiquidStartIdvRequest
+     * @memberof LiquidStartIdvReq
      */
     callback_url: string;
     /**
      * 
      * @type {string}
-     * @memberof LiquidStartIdvRequest
+     * @memberof LiquidStartIdvReq
      */
     user_id: string;
 }
 
 /**
- * Check if a given object implements the LiquidStartIdvRequest interface.
+ * Check if a given object implements the LiquidStartIdvReq interface.
  */
-export function instanceOfLiquidStartIdvRequest(value: object): value is LiquidStartIdvRequest {
+export function instanceOfLiquidStartIdvReq(value: object): value is LiquidStartIdvReq {
     if (!('callback_url' in value) || value['callback_url'] === undefined) return false;
     if (!('user_id' in value) || value['user_id'] === undefined) return false;
     return true;
 }
 
-export function LiquidStartIdvRequestFromJSON(json: any): LiquidStartIdvRequest {
-    return LiquidStartIdvRequestFromJSONTyped(json, false);
+export function LiquidStartIdvReqFromJSON(json: any): LiquidStartIdvReq {
+    return LiquidStartIdvReqFromJSONTyped(json, false);
 }
 
-export function LiquidStartIdvRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): LiquidStartIdvRequest {
+export function LiquidStartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: boolean): LiquidStartIdvReq {
     if (json == null) {
         return json;
     }
@@ -57,11 +57,11 @@ export function LiquidStartIdvRequestFromJSONTyped(json: any, ignoreDiscriminato
     };
 }
 
-export function LiquidStartIdvRequestToJSON(json: any): LiquidStartIdvRequest {
-    return LiquidStartIdvRequestToJSONTyped(json, false);
+export function LiquidStartIdvReqToJSON(json: any): LiquidStartIdvReq {
+    return LiquidStartIdvReqToJSONTyped(json, false);
 }
 
-export function LiquidStartIdvRequestToJSONTyped(value?: LiquidStartIdvRequest | null, ignoreDiscriminator: boolean = false): any {
+export function LiquidStartIdvReqToJSONTyped(value?: LiquidStartIdvReq | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

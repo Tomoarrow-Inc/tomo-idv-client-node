@@ -16,93 +16,93 @@ import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
- * @interface GetKycResp
+ * @interface GetKycRes
  */
-export interface GetKycResp {
+export interface GetKycRes {
     /**
      * 
      * @type {string}
-     * @memberof GetKycResp
+     * @memberof GetKycRes
      */
     city?: string;
     /**
      * 
      * @type {string}
-     * @memberof GetKycResp
+     * @memberof GetKycRes
      */
     country: string;
     /**
      * 
      * @type {string}
-     * @memberof GetKycResp
+     * @memberof GetKycRes
      */
     date_of_birth: string;
     /**
      * 
      * @type {string}
-     * @memberof GetKycResp
+     * @memberof GetKycRes
      */
     email_address?: string;
     /**
      * 
      * @type {string}
-     * @memberof GetKycResp
+     * @memberof GetKycRes
      */
     family_name?: string;
     /**
      * 
      * @type {string}
-     * @memberof GetKycResp
+     * @memberof GetKycRes
      */
     full_address: string;
     /**
      * 
      * @type {string}
-     * @memberof GetKycResp
+     * @memberof GetKycRes
      */
     full_name: string;
     /**
      * 
      * @type {string}
-     * @memberof GetKycResp
+     * @memberof GetKycRes
      */
     given_name?: string;
     /**
      * 
      * @type {string}
-     * @memberof GetKycResp
+     * @memberof GetKycRes
      */
     phone_number?: string;
     /**
      * 
      * @type {string}
-     * @memberof GetKycResp
+     * @memberof GetKycRes
      */
     postal_code?: string;
     /**
      * 
      * @type {string}
-     * @memberof GetKycResp
+     * @memberof GetKycRes
      */
     region?: string;
     /**
      * 
      * @type {string}
-     * @memberof GetKycResp
+     * @memberof GetKycRes
      */
     sex?: string;
     /**
      * 
      * @type {string}
-     * @memberof GetKycResp
+     * @memberof GetKycRes
      */
     street?: string;
 }
 
 /**
- * Check if a given object implements the GetKycResp interface.
+ * Check if a given object implements the GetKycRes interface.
  */
-export function instanceOfGetKycResp(value: object): value is GetKycResp {
+export function instanceOfGetKycRes(value: object): value is GetKycRes {
     if (!('country' in value) || value['country'] === undefined) return false;
     if (!('date_of_birth' in value) || value['date_of_birth'] === undefined) return false;
     if (!('full_address' in value) || value['full_address'] === undefined) return false;
@@ -110,11 +110,11 @@ export function instanceOfGetKycResp(value: object): value is GetKycResp {
     return true;
 }
 
-export function GetKycRespFromJSON(json: any): GetKycResp {
-    return GetKycRespFromJSONTyped(json, false);
+export function GetKycResFromJSON(json: any): GetKycRes {
+    return GetKycResFromJSONTyped(json, false);
 }
 
-export function GetKycRespFromJSONTyped(json: any, ignoreDiscriminator: boolean): GetKycResp {
+export function GetKycResFromJSONTyped(json: any, ignoreDiscriminator: boolean): GetKycRes {
     if (json == null) {
         return json;
     }
@@ -136,11 +136,11 @@ export function GetKycRespFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     };
 }
 
-export function GetKycRespToJSON(json: any): GetKycResp {
-    return GetKycRespToJSONTyped(json, false);
+export function GetKycResToJSON(json: any): GetKycRes {
+    return GetKycResToJSONTyped(json, false);
 }
 
-export function GetKycRespToJSONTyped(value?: GetKycResp | null, ignoreDiscriminator: boolean = false): any {
+export function GetKycResToJSONTyped(value?: GetKycRes | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

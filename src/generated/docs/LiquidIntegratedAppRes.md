@@ -1,28 +1,22 @@
 
-# TokenResponse
+# LiquidIntegratedAppRes
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`access_token` | string
-`expires_in` | number
-`scope` | string
-`token_type` | string
+`start_idv_uri` | string
 
 ## Example
 
 ```typescript
-import type { TokenResponse } from ''
+import type { LiquidIntegratedAppRes } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "access_token": null,
-  "expires_in": null,
-  "scope": null,
-  "token_type": null,
-} satisfies TokenResponse
+  "start_idv_uri": null,
+} satisfies LiquidIntegratedAppRes
 
 console.log(example)
 
@@ -31,7 +25,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as TokenResponse
+const exampleParsed = JSON.parse(exampleJSON) as LiquidIntegratedAppRes
 console.log(exampleParsed)
 ```
 

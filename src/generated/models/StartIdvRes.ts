@@ -16,30 +16,30 @@ import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
- * @interface LiquidIntegratedAppResponse
+ * @interface StartIdvRes
  */
-export interface LiquidIntegratedAppResponse {
+export interface StartIdvRes {
     /**
      * 
      * @type {string}
-     * @memberof LiquidIntegratedAppResponse
+     * @memberof StartIdvRes
      */
     start_idv_uri: string;
 }
 
 /**
- * Check if a given object implements the LiquidIntegratedAppResponse interface.
+ * Check if a given object implements the StartIdvRes interface.
  */
-export function instanceOfLiquidIntegratedAppResponse(value: object): value is LiquidIntegratedAppResponse {
+export function instanceOfStartIdvRes(value: object): value is StartIdvRes {
     if (!('start_idv_uri' in value) || value['start_idv_uri'] === undefined) return false;
     return true;
 }
 
-export function LiquidIntegratedAppResponseFromJSON(json: any): LiquidIntegratedAppResponse {
-    return LiquidIntegratedAppResponseFromJSONTyped(json, false);
+export function StartIdvResFromJSON(json: any): StartIdvRes {
+    return StartIdvResFromJSONTyped(json, false);
 }
 
-export function LiquidIntegratedAppResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): LiquidIntegratedAppResponse {
+export function StartIdvResFromJSONTyped(json: any, ignoreDiscriminator: boolean): StartIdvRes {
     if (json == null) {
         return json;
     }
@@ -49,11 +49,11 @@ export function LiquidIntegratedAppResponseFromJSONTyped(json: any, ignoreDiscri
     };
 }
 
-export function LiquidIntegratedAppResponseToJSON(json: any): LiquidIntegratedAppResponse {
-    return LiquidIntegratedAppResponseToJSONTyped(json, false);
+export function StartIdvResToJSON(json: any): StartIdvRes {
+    return StartIdvResToJSONTyped(json, false);
 }
 
-export function LiquidIntegratedAppResponseToJSONTyped(value?: LiquidIntegratedAppResponse | null, ignoreDiscriminator: boolean = false): any {
+export function StartIdvResToJSONTyped(value?: StartIdvRes | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

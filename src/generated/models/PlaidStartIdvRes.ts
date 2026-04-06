@@ -16,30 +16,30 @@ import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
- * @interface PlaidStartIdvResp
+ * @interface PlaidStartIdvRes
  */
-export interface PlaidStartIdvResp {
+export interface PlaidStartIdvRes {
     /**
      * 
      * @type {string}
-     * @memberof PlaidStartIdvResp
+     * @memberof PlaidStartIdvRes
      */
     start_idv_uri: string;
 }
 
 /**
- * Check if a given object implements the PlaidStartIdvResp interface.
+ * Check if a given object implements the PlaidStartIdvRes interface.
  */
-export function instanceOfPlaidStartIdvResp(value: object): value is PlaidStartIdvResp {
+export function instanceOfPlaidStartIdvRes(value: object): value is PlaidStartIdvRes {
     if (!('start_idv_uri' in value) || value['start_idv_uri'] === undefined) return false;
     return true;
 }
 
-export function PlaidStartIdvRespFromJSON(json: any): PlaidStartIdvResp {
-    return PlaidStartIdvRespFromJSONTyped(json, false);
+export function PlaidStartIdvResFromJSON(json: any): PlaidStartIdvRes {
+    return PlaidStartIdvResFromJSONTyped(json, false);
 }
 
-export function PlaidStartIdvRespFromJSONTyped(json: any, ignoreDiscriminator: boolean): PlaidStartIdvResp {
+export function PlaidStartIdvResFromJSONTyped(json: any, ignoreDiscriminator: boolean): PlaidStartIdvRes {
     if (json == null) {
         return json;
     }
@@ -49,11 +49,11 @@ export function PlaidStartIdvRespFromJSONTyped(json: any, ignoreDiscriminator: b
     };
 }
 
-export function PlaidStartIdvRespToJSON(json: any): PlaidStartIdvResp {
-    return PlaidStartIdvRespToJSONTyped(json, false);
+export function PlaidStartIdvResToJSON(json: any): PlaidStartIdvRes {
+    return PlaidStartIdvResToJSONTyped(json, false);
 }
 
-export function PlaidStartIdvRespToJSONTyped(value?: PlaidStartIdvResp | null, ignoreDiscriminator: boolean = false): any {
+export function PlaidStartIdvResToJSONTyped(value?: PlaidStartIdvRes | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

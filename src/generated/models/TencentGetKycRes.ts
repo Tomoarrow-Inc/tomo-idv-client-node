@@ -16,114 +16,114 @@ import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
- * @interface TencentGetKycResp
+ * @interface TencentGetKycRes
  */
-export interface TencentGetKycResp {
+export interface TencentGetKycRes {
     /**
      * 
      * @type {string}
-     * @memberof TencentGetKycResp
+     * @memberof TencentGetKycRes
      */
     address?: string;
     /**
      * 
      * @type {string}
-     * @memberof TencentGetKycResp
+     * @memberof TencentGetKycRes
      */
     date_of_birth?: string;
     /**
      * 
      * @type {string}
-     * @memberof TencentGetKycResp
+     * @memberof TencentGetKycRes
      */
     document_type?: string;
     /**
      * 
      * @type {boolean}
-     * @memberof TencentGetKycResp
+     * @memberof TencentGetKycRes
      */
     face_compare_passed?: boolean;
     /**
      * 
      * @type {string}
-     * @memberof TencentGetKycResp
+     * @memberof TencentGetKycRes
      */
     family_name?: string;
     /**
      * 
      * @type {string}
-     * @memberof TencentGetKycResp
+     * @memberof TencentGetKycRes
      */
     full_name?: string;
     /**
      * 
      * @type {string}
-     * @memberof TencentGetKycResp
+     * @memberof TencentGetKycRes
      */
     given_name?: string;
     /**
      * 
      * @type {string}
-     * @memberof TencentGetKycResp
+     * @memberof TencentGetKycRes
      */
     id_number?: string;
     /**
      * 
      * @type {string}
-     * @memberof TencentGetKycResp
+     * @memberof TencentGetKycRes
      */
     issuing_country?: string;
     /**
      * 
      * @type {boolean}
-     * @memberof TencentGetKycResp
+     * @memberof TencentGetKycRes
      */
     liveness_passed?: boolean;
     /**
      * 
      * @type {string}
-     * @memberof TencentGetKycResp
+     * @memberof TencentGetKycRes
      */
     nationality?: string;
     /**
      * 
      * @type {boolean}
-     * @memberof TencentGetKycResp
+     * @memberof TencentGetKycRes
      */
     ocr_passed?: boolean;
     /**
      * 
      * @type {string}
-     * @memberof TencentGetKycResp
+     * @memberof TencentGetKycRes
      */
     sex?: string;
     /**
      * 
      * @type {number}
-     * @memberof TencentGetKycResp
+     * @memberof TencentGetKycRes
      */
     similarity?: number;
     /**
      * 
      * @type {string}
-     * @memberof TencentGetKycResp
+     * @memberof TencentGetKycRes
      */
     status: string;
 }
 
 /**
- * Check if a given object implements the TencentGetKycResp interface.
+ * Check if a given object implements the TencentGetKycRes interface.
  */
-export function instanceOfTencentGetKycResp(value: object): value is TencentGetKycResp {
+export function instanceOfTencentGetKycRes(value: object): value is TencentGetKycRes {
     if (!('status' in value) || value['status'] === undefined) return false;
     return true;
 }
 
-export function TencentGetKycRespFromJSON(json: any): TencentGetKycResp {
-    return TencentGetKycRespFromJSONTyped(json, false);
+export function TencentGetKycResFromJSON(json: any): TencentGetKycRes {
+    return TencentGetKycResFromJSONTyped(json, false);
 }
 
-export function TencentGetKycRespFromJSONTyped(json: any, ignoreDiscriminator: boolean): TencentGetKycResp {
+export function TencentGetKycResFromJSONTyped(json: any, ignoreDiscriminator: boolean): TencentGetKycRes {
     if (json == null) {
         return json;
     }
@@ -147,11 +147,11 @@ export function TencentGetKycRespFromJSONTyped(json: any, ignoreDiscriminator: b
     };
 }
 
-export function TencentGetKycRespToJSON(json: any): TencentGetKycResp {
-    return TencentGetKycRespToJSONTyped(json, false);
+export function TencentGetKycResToJSON(json: any): TencentGetKycRes {
+    return TencentGetKycResToJSONTyped(json, false);
 }
 
-export function TencentGetKycRespToJSONTyped(value?: TencentGetKycResp | null, ignoreDiscriminator: boolean = false): any {
+export function TencentGetKycResToJSONTyped(value?: TencentGetKycRes | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

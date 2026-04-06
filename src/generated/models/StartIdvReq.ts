@@ -32,7 +32,7 @@ export interface StartIdvReq {
      * @type {string}
      * @memberof StartIdvReq
      */
-    callback_url: string;
+    callback_url?: string;
     /**
      * 
      * @type {Country}
@@ -44,7 +44,7 @@ export interface StartIdvReq {
      * @type {string}
      * @memberof StartIdvReq
      */
-    email: string;
+    email?: string;
     /**
      * 
      * @type {string}
@@ -59,8 +59,6 @@ export interface StartIdvReq {
  * Check if a given object implements the StartIdvReq interface.
  */
 export function instanceOfStartIdvReq(value: object): value is StartIdvReq {
-    if (!('callback_url' in value) || value['callback_url'] === undefined) return false;
-    if (!('email' in value) || value['email'] === undefined) return false;
     if (!('user_id' in value) || value['user_id'] === undefined) return false;
     return true;
 }
@@ -75,9 +73,9 @@ export function StartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: boolean
     }
     return {
         
-        'callback_url': json['callback_url'],
+        'callback_url': json['callback_url'] == null ? undefined : json['callback_url'],
         'country': json['country'] == null ? undefined : CountryFromJSON(json['country']),
-        'email': json['email'],
+        'email': json['email'] == null ? undefined : json['email'],
         'user_id': json['user_id'],
     };
 }

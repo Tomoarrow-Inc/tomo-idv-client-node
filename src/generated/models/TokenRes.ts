@@ -16,50 +16,50 @@ import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
- * @interface TokenResponse
+ * @interface TokenRes
  */
-export interface TokenResponse {
+export interface TokenRes {
     /**
      * 
      * @type {string}
-     * @memberof TokenResponse
+     * @memberof TokenRes
      */
     access_token: string;
     /**
      * 
      * @type {number}
-     * @memberof TokenResponse
+     * @memberof TokenRes
      */
     expires_in: number;
     /**
      * 
      * @type {string}
-     * @memberof TokenResponse
+     * @memberof TokenRes
      */
     scope?: string;
     /**
      * 
      * @type {string}
-     * @memberof TokenResponse
+     * @memberof TokenRes
      */
     token_type: string;
 }
 
 /**
- * Check if a given object implements the TokenResponse interface.
+ * Check if a given object implements the TokenRes interface.
  */
-export function instanceOfTokenResponse(value: object): value is TokenResponse {
+export function instanceOfTokenRes(value: object): value is TokenRes {
     if (!('access_token' in value) || value['access_token'] === undefined) return false;
     if (!('expires_in' in value) || value['expires_in'] === undefined) return false;
     if (!('token_type' in value) || value['token_type'] === undefined) return false;
     return true;
 }
 
-export function TokenResponseFromJSON(json: any): TokenResponse {
-    return TokenResponseFromJSONTyped(json, false);
+export function TokenResFromJSON(json: any): TokenRes {
+    return TokenResFromJSONTyped(json, false);
 }
 
-export function TokenResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): TokenResponse {
+export function TokenResFromJSONTyped(json: any, ignoreDiscriminator: boolean): TokenRes {
     if (json == null) {
         return json;
     }
@@ -72,11 +72,11 @@ export function TokenResponseFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
-export function TokenResponseToJSON(json: any): TokenResponse {
-    return TokenResponseToJSONTyped(json, false);
+export function TokenResToJSON(json: any): TokenRes {
+    return TokenResToJSONTyped(json, false);
 }
 
-export function TokenResponseToJSONTyped(value?: TokenResponse | null, ignoreDiscriminator: boolean = false): any {
+export function TokenResToJSONTyped(value?: TokenRes | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

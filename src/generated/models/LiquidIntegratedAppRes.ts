@@ -16,30 +16,30 @@ import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
- * @interface StartIdvResp
+ * @interface LiquidIntegratedAppRes
  */
-export interface StartIdvResp {
+export interface LiquidIntegratedAppRes {
     /**
      * 
      * @type {string}
-     * @memberof StartIdvResp
+     * @memberof LiquidIntegratedAppRes
      */
     start_idv_uri: string;
 }
 
 /**
- * Check if a given object implements the StartIdvResp interface.
+ * Check if a given object implements the LiquidIntegratedAppRes interface.
  */
-export function instanceOfStartIdvResp(value: object): value is StartIdvResp {
+export function instanceOfLiquidIntegratedAppRes(value: object): value is LiquidIntegratedAppRes {
     if (!('start_idv_uri' in value) || value['start_idv_uri'] === undefined) return false;
     return true;
 }
 
-export function StartIdvRespFromJSON(json: any): StartIdvResp {
-    return StartIdvRespFromJSONTyped(json, false);
+export function LiquidIntegratedAppResFromJSON(json: any): LiquidIntegratedAppRes {
+    return LiquidIntegratedAppResFromJSONTyped(json, false);
 }
 
-export function StartIdvRespFromJSONTyped(json: any, ignoreDiscriminator: boolean): StartIdvResp {
+export function LiquidIntegratedAppResFromJSONTyped(json: any, ignoreDiscriminator: boolean): LiquidIntegratedAppRes {
     if (json == null) {
         return json;
     }
@@ -49,11 +49,11 @@ export function StartIdvRespFromJSONTyped(json: any, ignoreDiscriminator: boolea
     };
 }
 
-export function StartIdvRespToJSON(json: any): StartIdvResp {
-    return StartIdvRespToJSONTyped(json, false);
+export function LiquidIntegratedAppResToJSON(json: any): LiquidIntegratedAppRes {
+    return LiquidIntegratedAppResToJSONTyped(json, false);
 }
 
-export function StartIdvRespToJSONTyped(value?: StartIdvResp | null, ignoreDiscriminator: boolean = false): any {
+export function LiquidIntegratedAppResToJSONTyped(value?: LiquidIntegratedAppRes | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
