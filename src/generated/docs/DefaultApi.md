@@ -14,9 +14,6 @@ All URIs are relative to *http://localhost*
 | [**v1IdvJpKycGetPost**](DefaultApi.md#v1idvjpkycgetpost) | **POST** /v1/idv/jp/kyc/get |  |
 | [**v1IdvJpStartPost**](DefaultApi.md#v1idvjpstartpost) | **POST** /v1/idv/jp/start |  |
 | [**v1IdvKycGetPost**](DefaultApi.md#v1idvkycgetpost) | **POST** /v1/idv/kyc/get |  |
-| [**v1IdvSocialGoogleStartPost**](DefaultApi.md#v1idvsocialgooglestartpost) | **POST** /v1/idv/social/google/start |  |
-| [**v1IdvSocialResultPost**](DefaultApi.md#v1idvsocialresultpost) | **POST** /v1/idv/social/result |  |
-| [**v1IdvSocialWechatStartPost**](DefaultApi.md#v1idvsocialwechatstartpost) | **POST** /v1/idv/social/wechat/start |  |
 | [**v1IdvStartPost**](DefaultApi.md#v1idvstartpost) | **POST** /v1/idv/start |  |
 | [**v1IdvUkHealthGet**](DefaultApi.md#v1idvukhealthget) | **GET** /v1/idv/uk/health |  |
 | [**v1IdvUkKycGetPost**](DefaultApi.md#v1idvukkycgetpost) | **POST** /v1/idv/uk/kyc/get |  |
@@ -351,7 +348,7 @@ No authorization required
 
 ## v1IdvCnStartPost
 
-> TomoIdvStartRes v1IdvCnStartPost(Authorization, TomoIdvStartReq)
+> TomoIdvStartRes v1IdvCnStartPost(Authorization, TencentStartReq)
 
 
 
@@ -371,8 +368,8 @@ async function example() {
   const body = {
     // string (optional)
     Authorization: Authorization_example,
-    // TomoIdvStartReq (optional)
-    TomoIdvStartReq: ...,
+    // TencentStartReq (optional)
+    TencentStartReq: ...,
   } satisfies V1IdvCnStartPostRequest;
 
   try {
@@ -393,7 +390,7 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **TomoIdvStartReq** | [TomoIdvStartReq](TomoIdvStartReq.md) |  | [Optional] |
+| **TencentStartReq** | [TencentStartReq](TencentStartReq.md) |  | [Optional] |
 
 ### Return type
 
@@ -662,213 +659,6 @@ example().catch(console.error);
 ### Return type
 
 [**GetKycResp**](GetKycResp.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json;charset=utf-8`
-- **Accept**: `application/json;charset=utf-8`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## v1IdvSocialGoogleStartPost
-
-> GoogleStartResp v1IdvSocialGoogleStartPost(Authorization, GoogleStartReq)
-
-
-
-### Example
-
-```ts
-import {
-  Configuration,
-  DefaultApi,
-} from '';
-import type { V1IdvSocialGoogleStartPostRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
-
-  const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // GoogleStartReq (optional)
-    GoogleStartReq: ...,
-  } satisfies V1IdvSocialGoogleStartPostRequest;
-
-  try {
-    const data = await api.v1IdvSocialGoogleStartPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **GoogleStartReq** | [GoogleStartReq](GoogleStartReq.md) |  | [Optional] |
-
-### Return type
-
-[**GoogleStartResp**](GoogleStartResp.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json;charset=utf-8`
-- **Accept**: `application/json;charset=utf-8`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## v1IdvSocialResultPost
-
-> GetKycResp v1IdvSocialResultPost(Authorization, SocialResultReq)
-
-
-
-### Example
-
-```ts
-import {
-  Configuration,
-  DefaultApi,
-} from '';
-import type { V1IdvSocialResultPostRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
-
-  const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // SocialResultReq (optional)
-    SocialResultReq: ...,
-  } satisfies V1IdvSocialResultPostRequest;
-
-  try {
-    const data = await api.v1IdvSocialResultPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **SocialResultReq** | [SocialResultReq](SocialResultReq.md) |  | [Optional] |
-
-### Return type
-
-[**GetKycResp**](GetKycResp.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json;charset=utf-8`
-- **Accept**: `application/json;charset=utf-8`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## v1IdvSocialWechatStartPost
-
-> WeChatStartResp v1IdvSocialWechatStartPost(Authorization, WeChatStartReq)
-
-
-
-### Example
-
-```ts
-import {
-  Configuration,
-  DefaultApi,
-} from '';
-import type { V1IdvSocialWechatStartPostRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
-
-  const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // WeChatStartReq (optional)
-    WeChatStartReq: ...,
-  } satisfies V1IdvSocialWechatStartPostRequest;
-
-  try {
-    const data = await api.v1IdvSocialWechatStartPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **WeChatStartReq** | [WeChatStartReq](WeChatStartReq.md) |  | [Optional] |
-
-### Return type
-
-[**WeChatStartResp**](WeChatStartResp.md)
 
 ### Authorization
 

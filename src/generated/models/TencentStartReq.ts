@@ -16,52 +16,51 @@ import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
- * @interface TomoIdvStartReq
+ * @interface TencentStartReq
  */
-export interface TomoIdvStartReq {
+export interface TencentStartReq {
     /**
      * 
      * @type {string}
-     * @memberof TomoIdvStartReq
+     * @memberof TencentStartReq
      */
-    callback_url: string;
+    callback_url?: string;
     /**
      * 
      * @type {string}
-     * @memberof TomoIdvStartReq
+     * @memberof TencentStartReq
      */
     user_id: string;
 }
 
 /**
- * Check if a given object implements the TomoIdvStartReq interface.
+ * Check if a given object implements the TencentStartReq interface.
  */
-export function instanceOfTomoIdvStartReq(value: object): value is TomoIdvStartReq {
-    if (!('callback_url' in value) || value['callback_url'] === undefined) return false;
+export function instanceOfTencentStartReq(value: object): value is TencentStartReq {
     if (!('user_id' in value) || value['user_id'] === undefined) return false;
     return true;
 }
 
-export function TomoIdvStartReqFromJSON(json: any): TomoIdvStartReq {
-    return TomoIdvStartReqFromJSONTyped(json, false);
+export function TencentStartReqFromJSON(json: any): TencentStartReq {
+    return TencentStartReqFromJSONTyped(json, false);
 }
 
-export function TomoIdvStartReqFromJSONTyped(json: any, ignoreDiscriminator: boolean): TomoIdvStartReq {
+export function TencentStartReqFromJSONTyped(json: any, ignoreDiscriminator: boolean): TencentStartReq {
     if (json == null) {
         return json;
     }
     return {
         
-        'callback_url': json['callback_url'],
+        'callback_url': json['callback_url'] == null ? undefined : json['callback_url'],
         'user_id': json['user_id'],
     };
 }
 
-export function TomoIdvStartReqToJSON(json: any): TomoIdvStartReq {
-    return TomoIdvStartReqToJSONTyped(json, false);
+export function TencentStartReqToJSON(json: any): TencentStartReq {
+    return TencentStartReqToJSONTyped(json, false);
 }
 
-export function TomoIdvStartReqToJSONTyped(value?: TomoIdvStartReq | null, ignoreDiscriminator: boolean = false): any {
+export function TencentStartReqToJSONTyped(value?: TencentStartReq | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

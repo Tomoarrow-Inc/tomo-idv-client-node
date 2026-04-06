@@ -17,8 +17,6 @@ import * as runtime from '../runtime.js';
 import type {
   GetKycReq,
   GetKycResp,
-  GoogleStartReq,
-  GoogleStartResp,
   LiquidGetKycReq,
   LiquidGetUnionResultResp,
   LiquidIntegratedAppResponse,
@@ -26,26 +24,19 @@ import type {
   PlaidGetKycReq,
   PlaidStartIdvRequest,
   PlaidStartIdvResp,
-  SocialResultReq,
   StartIdvReq,
   StartIdvResp,
   TencentGetKycReq,
   TencentGetUnionResultResp,
+  TencentStartReq,
   TokenResponse,
-  TomoIdvStartReq,
   TomoIdvStartRes,
-  WeChatStartReq,
-  WeChatStartResp,
 } from '../models/index.js';
 import {
     GetKycReqFromJSON,
     GetKycReqToJSON,
     GetKycRespFromJSON,
     GetKycRespToJSON,
-    GoogleStartReqFromJSON,
-    GoogleStartReqToJSON,
-    GoogleStartRespFromJSON,
-    GoogleStartRespToJSON,
     LiquidGetKycReqFromJSON,
     LiquidGetKycReqToJSON,
     LiquidGetUnionResultRespFromJSON,
@@ -60,8 +51,6 @@ import {
     PlaidStartIdvRequestToJSON,
     PlaidStartIdvRespFromJSON,
     PlaidStartIdvRespToJSON,
-    SocialResultReqFromJSON,
-    SocialResultReqToJSON,
     StartIdvReqFromJSON,
     StartIdvReqToJSON,
     StartIdvRespFromJSON,
@@ -70,16 +59,12 @@ import {
     TencentGetKycReqToJSON,
     TencentGetUnionResultRespFromJSON,
     TencentGetUnionResultRespToJSON,
+    TencentStartReqFromJSON,
+    TencentStartReqToJSON,
     TokenResponseFromJSON,
     TokenResponseToJSON,
-    TomoIdvStartReqFromJSON,
-    TomoIdvStartReqToJSON,
     TomoIdvStartResFromJSON,
     TomoIdvStartResToJSON,
-    WeChatStartReqFromJSON,
-    WeChatStartReqToJSON,
-    WeChatStartRespFromJSON,
-    WeChatStartRespToJSON,
 } from '../models/index.js';
 
 export interface V1IdvCaKycGetPostRequest {
@@ -99,7 +84,7 @@ export interface V1IdvCnKycGetPostRequest {
 
 export interface V1IdvCnStartPostRequest {
     Authorization?: string;
-    TomoIdvStartReq?: TomoIdvStartReq;
+    TencentStartReq?: TencentStartReq;
 }
 
 export interface V1IdvJpKycGetPostRequest {
@@ -115,21 +100,6 @@ export interface V1IdvJpStartPostRequest {
 export interface V1IdvKycGetPostRequest {
     Authorization?: string;
     GetKycReq?: GetKycReq;
-}
-
-export interface V1IdvSocialGoogleStartPostRequest {
-    Authorization?: string;
-    GoogleStartReq?: GoogleStartReq;
-}
-
-export interface V1IdvSocialResultPostRequest {
-    Authorization?: string;
-    SocialResultReq?: SocialResultReq;
-}
-
-export interface V1IdvSocialWechatStartPostRequest {
-    Authorization?: string;
-    WeChatStartReq?: WeChatStartReq;
 }
 
 export interface V1IdvStartPostRequest {
@@ -396,7 +366,7 @@ export class DefaultApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TomoIdvStartReqToJSON(requestParameters['TomoIdvStartReq']),
+            body: TencentStartReqToJSON(requestParameters['TencentStartReq']),
         };
     }
 
@@ -578,132 +548,6 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async v1IdvKycGetPost(requestParameters: V1IdvKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetKycResp> {
         const response = await this.v1IdvKycGetPostRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for v1IdvSocialGoogleStartPost without sending the request
-     */
-    async v1IdvSocialGoogleStartPostRequestOpts(requestParameters: V1IdvSocialGoogleStartPostRequest): Promise<runtime.RequestOpts> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
-
-        if (requestParameters['Authorization'] != null) {
-            headerParameters['Authorization'] = String(requestParameters['Authorization']);
-        }
-
-
-        let urlPath = `/v1/idv/social/google/start`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: GoogleStartReqToJSON(requestParameters['GoogleStartReq']),
-        };
-    }
-
-    /**
-     */
-    async v1IdvSocialGoogleStartPostRaw(requestParameters: V1IdvSocialGoogleStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GoogleStartResp>> {
-        const requestOptions = await this.v1IdvSocialGoogleStartPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => GoogleStartRespFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async v1IdvSocialGoogleStartPost(requestParameters: V1IdvSocialGoogleStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GoogleStartResp> {
-        const response = await this.v1IdvSocialGoogleStartPostRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for v1IdvSocialResultPost without sending the request
-     */
-    async v1IdvSocialResultPostRequestOpts(requestParameters: V1IdvSocialResultPostRequest): Promise<runtime.RequestOpts> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
-
-        if (requestParameters['Authorization'] != null) {
-            headerParameters['Authorization'] = String(requestParameters['Authorization']);
-        }
-
-
-        let urlPath = `/v1/idv/social/result`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: SocialResultReqToJSON(requestParameters['SocialResultReq']),
-        };
-    }
-
-    /**
-     */
-    async v1IdvSocialResultPostRaw(requestParameters: V1IdvSocialResultPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetKycResp>> {
-        const requestOptions = await this.v1IdvSocialResultPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => GetKycRespFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async v1IdvSocialResultPost(requestParameters: V1IdvSocialResultPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetKycResp> {
-        const response = await this.v1IdvSocialResultPostRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for v1IdvSocialWechatStartPost without sending the request
-     */
-    async v1IdvSocialWechatStartPostRequestOpts(requestParameters: V1IdvSocialWechatStartPostRequest): Promise<runtime.RequestOpts> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
-
-        if (requestParameters['Authorization'] != null) {
-            headerParameters['Authorization'] = String(requestParameters['Authorization']);
-        }
-
-
-        let urlPath = `/v1/idv/social/wechat/start`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: WeChatStartReqToJSON(requestParameters['WeChatStartReq']),
-        };
-    }
-
-    /**
-     */
-    async v1IdvSocialWechatStartPostRaw(requestParameters: V1IdvSocialWechatStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WeChatStartResp>> {
-        const requestOptions = await this.v1IdvSocialWechatStartPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => WeChatStartRespFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async v1IdvSocialWechatStartPost(requestParameters: V1IdvSocialWechatStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WeChatStartResp> {
-        const response = await this.v1IdvSocialWechatStartPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

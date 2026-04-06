@@ -1,22 +1,24 @@
 
-# SocialResultReq
+# TencentStartReq
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
+`callback_url` | string
 `user_id` | string
 
 ## Example
 
 ```typescript
-import type { SocialResultReq } from ''
+import type { TencentStartReq } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "callback_url": null,
   "user_id": null,
-} satisfies SocialResultReq
+} satisfies TencentStartReq
 
 console.log(example)
 
@@ -25,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as SocialResultReq
+const exampleParsed = JSON.parse(exampleJSON) as TencentStartReq
 console.log(exampleParsed)
 ```
 
