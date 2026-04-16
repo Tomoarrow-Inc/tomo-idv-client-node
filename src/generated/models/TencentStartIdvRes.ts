@@ -24,14 +24,20 @@ export interface TencentStartIdvRes {
      * @type {string}
      * @memberof TencentStartIdvRes
      */
-    tencent_start_idv_uri: string;
+    pid?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TencentStartIdvRes
+     */
+    start_idv_uri: string;
 }
 
 /**
  * Check if a given object implements the TencentStartIdvRes interface.
  */
 export function instanceOfTencentStartIdvRes(value: object): value is TencentStartIdvRes {
-    if (!('tencent_start_idv_uri' in value) || value['tencent_start_idv_uri'] === undefined) return false;
+    if (!('start_idv_uri' in value) || value['start_idv_uri'] === undefined) return false;
     return true;
 }
 
@@ -45,7 +51,8 @@ export function TencentStartIdvResFromJSONTyped(json: any, ignoreDiscriminator: 
     }
     return {
         
-        'tencent_start_idv_uri': json['tencent_start_idv_uri'],
+        'pid': json['pid'] == null ? undefined : json['pid'],
+        'start_idv_uri': json['start_idv_uri'],
     };
 }
 
@@ -60,7 +67,8 @@ export function TencentStartIdvResToJSONTyped(value?: TencentStartIdvRes | null,
 
     return {
         
-        'tencent_start_idv_uri': value['tencent_start_idv_uri'],
+        'pid': value['pid'],
+        'start_idv_uri': value['start_idv_uri'],
     };
 }
 

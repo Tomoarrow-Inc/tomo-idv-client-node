@@ -6,7 +6,8 @@
 
 Name | Type
 ------------ | -------------
-`tencent_start_idv_uri` | string
+`pid` | string
+`start_idv_uri` | string
 
 ## Example
 
@@ -15,7 +16,8 @@ import type { TencentStartIdvRes } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "tencent_start_idv_uri": null,
+  "pid": null,
+  "start_idv_uri": null,
 } satisfies TencentStartIdvRes
 
 console.log(example)
