@@ -9,6 +9,7 @@ Name | Type
 `callback_url` | string
 `country` | [Country](Country.md)
 `email` | string
+`kyc_policy_id` | string
 `user_id` | string
 
 ## Example
@@ -21,6 +22,7 @@ const example = {
   "callback_url": null,
   "country": null,
   "email": null,
+  "kyc_policy_id": null,
   "user_id": null,
 } satisfies StartIdvReq
 

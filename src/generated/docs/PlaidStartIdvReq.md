@@ -8,6 +8,7 @@ Name | Type
 ------------ | -------------
 `callback_url` | string
 `email` | string
+`kyc_policy_id` | string
 `user_id` | string
 
 ## Example
@@ -19,6 +20,7 @@ import type { PlaidStartIdvReq } from ''
 const example = {
   "callback_url": null,
   "email": null,
+  "kyc_policy_id": null,
   "user_id": null,
 } satisfies PlaidStartIdvReq
 

@@ -36,6 +36,12 @@ export interface PlaidStartIdvReq {
      * @type {string}
      * @memberof PlaidStartIdvReq
      */
+    kyc_policy_id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PlaidStartIdvReq
+     */
     user_id: string;
 }
 
@@ -60,6 +66,7 @@ export function PlaidStartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: bo
         
         'callback_url': json['callback_url'],
         'email': json['email'] == null ? undefined : json['email'],
+        'kyc_policy_id': json['kyc_policy_id'] == null ? undefined : json['kyc_policy_id'],
         'user_id': json['user_id'],
     };
 }
@@ -77,6 +84,7 @@ export function PlaidStartIdvReqToJSONTyped(value?: PlaidStartIdvReq | null, ign
         
         'callback_url': value['callback_url'],
         'email': value['email'],
+        'kyc_policy_id': value['kyc_policy_id'],
         'user_id': value['user_id'],
     };
 }

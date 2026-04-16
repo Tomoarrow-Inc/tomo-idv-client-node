@@ -50,6 +50,12 @@ export interface StartIdvReq {
      * @type {string}
      * @memberof StartIdvReq
      */
+    kyc_policy_id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof StartIdvReq
+     */
     user_id: string;
 }
 
@@ -76,6 +82,7 @@ export function StartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: boolean
         'callback_url': json['callback_url'] == null ? undefined : json['callback_url'],
         'country': json['country'] == null ? undefined : CountryFromJSON(json['country']),
         'email': json['email'] == null ? undefined : json['email'],
+        'kyc_policy_id': json['kyc_policy_id'] == null ? undefined : json['kyc_policy_id'],
         'user_id': json['user_id'],
     };
 }
@@ -94,6 +101,7 @@ export function StartIdvReqToJSONTyped(value?: StartIdvReq | null, ignoreDiscrim
         'callback_url': value['callback_url'],
         'country': CountryToJSON(value['country']),
         'email': value['email'],
+        'kyc_policy_id': value['kyc_policy_id'],
         'user_id': value['user_id'],
     };
 }
