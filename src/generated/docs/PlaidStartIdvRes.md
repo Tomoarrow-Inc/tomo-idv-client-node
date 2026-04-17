@@ -6,6 +6,7 @@
 
 Name | Type
 ------------ | -------------
+`pid` | string
 `start_idv_uri` | string
 
 ## Example
@@ -15,6 +16,7 @@ import type { PlaidStartIdvRes } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "pid": null,
   "start_idv_uri": null,
 } satisfies PlaidStartIdvRes
 
