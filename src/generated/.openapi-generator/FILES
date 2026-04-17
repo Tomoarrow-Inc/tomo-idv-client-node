@@ -5,6 +5,7 @@ docs/Country.md
 docs/DefaultApi.md
 docs/GetKycReq.md
 docs/GetKycRes.md
+docs/LaunchKind.md
 docs/LiquidGetKycReq.md
 docs/LiquidGetResultRes.md
 docs/LiquidGetUnionResultRes.md
@@ -15,6 +16,8 @@ docs/PlaidGetKycReq.md
 docs/PlaidIdvField.md
 docs/PlaidStartIdvReq.md
 docs/PlaidStartIdvRes.md
+docs/SessionStartReq.md
+docs/SessionStartRes.md
 docs/StartIdvReq.md
 docs/StartIdvRes.md
 docs/TencentGetKycReq.md
@@ -28,6 +31,7 @@ index.ts
 models/Country.ts
 models/GetKycReq.ts
 models/GetKycRes.ts
+models/LaunchKind.ts
 models/LiquidGetKycReq.ts
 models/LiquidGetResultRes.ts
 models/LiquidGetUnionResultRes.ts
@@ -38,6 +42,8 @@ models/PlaidGetKycReq.ts
 models/PlaidIdvField.ts
 models/PlaidStartIdvReq.ts
 models/PlaidStartIdvRes.ts
+models/SessionStartReq.ts
+models/SessionStartRes.ts
 models/StartIdvReq.ts
 models/StartIdvRes.ts
 models/TencentGetKycReq.ts

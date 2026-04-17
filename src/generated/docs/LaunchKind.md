@@ -1,22 +1,32 @@
 
-# TencentStartIdvRes
+# LaunchKind
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`start_idv_uri` | string
+`config` | object
+`data` | string
+`fallback_url` | string
+`session_token` | string
+`type` | string
+`url` | string
 
 ## Example
 
 ```typescript
-import type { TencentStartIdvRes } from ''
+import type { LaunchKind } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "start_idv_uri": null,
-} satisfies TencentStartIdvRes
+  "config": null,
+  "data": null,
+  "fallback_url": null,
+  "session_token": null,
+  "type": null,
+  "url": null,
+} satisfies LaunchKind
 
 console.log(example)
 
@@ -25,7 +35,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as TencentStartIdvRes
+const exampleParsed = JSON.parse(exampleJSON) as LaunchKind
 console.log(exampleParsed)
 ```
 

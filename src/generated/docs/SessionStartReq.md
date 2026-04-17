@@ -1,22 +1,30 @@
 
-# TencentStartIdvRes
+# SessionStartReq
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`start_idv_uri` | string
+`callback_url` | string
+`country` | [Country](Country.md)
+`email` | string
+`policy_id` | string
+`user_id` | string
 
 ## Example
 
 ```typescript
-import type { TencentStartIdvRes } from ''
+import type { SessionStartReq } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "start_idv_uri": null,
-} satisfies TencentStartIdvRes
+  "callback_url": null,
+  "country": null,
+  "email": null,
+  "policy_id": null,
+  "user_id": null,
+} satisfies SessionStartReq
 
 console.log(example)
 
@@ -25,7 +33,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as TencentStartIdvRes
+const exampleParsed = JSON.parse(exampleJSON) as SessionStartReq
 console.log(exampleParsed)
 ```
 

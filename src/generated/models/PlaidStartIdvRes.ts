@@ -24,12 +24,6 @@ export interface PlaidStartIdvRes {
      * @type {string}
      * @memberof PlaidStartIdvRes
      */
-    pid?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof PlaidStartIdvRes
-     */
     start_idv_uri: string;
 }
 
@@ -51,7 +45,6 @@ export function PlaidStartIdvResFromJSONTyped(json: any, ignoreDiscriminator: bo
     }
     return {
         
-        'pid': json['pid'] == null ? undefined : json['pid'],
         'start_idv_uri': json['start_idv_uri'],
     };
 }
@@ -67,7 +60,6 @@ export function PlaidStartIdvResToJSONTyped(value?: PlaidStartIdvRes | null, ign
 
     return {
         
-        'pid': value['pid'],
         'start_idv_uri': value['start_idv_uri'],
     };
 }

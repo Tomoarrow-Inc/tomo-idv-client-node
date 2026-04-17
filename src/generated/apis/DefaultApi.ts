@@ -24,6 +24,8 @@ import type {
   PlaidGetKycReq,
   PlaidStartIdvReq,
   PlaidStartIdvRes,
+  SessionStartReq,
+  SessionStartRes,
   StartIdvReq,
   StartIdvRes,
   TencentGetKycReq,
@@ -51,6 +53,10 @@ import {
     PlaidStartIdvReqToJSON,
     PlaidStartIdvResFromJSON,
     PlaidStartIdvResToJSON,
+    SessionStartReqFromJSON,
+    SessionStartReqToJSON,
+    SessionStartResFromJSON,
+    SessionStartResToJSON,
     StartIdvReqFromJSON,
     StartIdvReqToJSON,
     StartIdvResFromJSON,
@@ -100,6 +106,11 @@ export interface V1IdvJpStartPostRequest {
 export interface V1IdvKycGetPostRequest {
     Authorization?: string;
     GetKycReq?: GetKycReq;
+}
+
+export interface V1IdvSessionsStartPostRequest {
+    Authorization?: string;
+    SessionStartReq?: SessionStartReq;
 }
 
 export interface V1IdvStartPostRequest {
@@ -548,6 +559,48 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async v1IdvKycGetPost(requestParameters: V1IdvKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetKycRes> {
         const response = await this.v1IdvKycGetPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for v1IdvSessionsStartPost without sending the request
+     */
+    async v1IdvSessionsStartPostRequestOpts(requestParameters: V1IdvSessionsStartPostRequest): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
+
+        if (requestParameters['Authorization'] != null) {
+            headerParameters['Authorization'] = String(requestParameters['Authorization']);
+        }
+
+
+        let urlPath = `/v1/idv/sessions/start`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SessionStartReqToJSON(requestParameters['SessionStartReq']),
+        };
+    }
+
+    /**
+     */
+    async v1IdvSessionsStartPostRaw(requestParameters: V1IdvSessionsStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SessionStartRes>> {
+        const requestOptions = await this.v1IdvSessionsStartPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SessionStartResFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async v1IdvSessionsStartPost(requestParameters: V1IdvSessionsStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SessionStartRes> {
+        const response = await this.v1IdvSessionsStartPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

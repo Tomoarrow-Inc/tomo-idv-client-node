@@ -3,6 +3,7 @@
 export * from './Country.js';
 export * from './GetKycReq.js';
 export * from './GetKycRes.js';
+export * from './LaunchKind.js';
 export * from './LiquidGetKycReq.js';
 export * from './LiquidGetResultRes.js';
 export * from './LiquidGetUnionResultRes.js';
@@ -13,6 +14,8 @@ export * from './PlaidGetKycReq.js';
 export * from './PlaidIdvField.js';
 export * from './PlaidStartIdvReq.js';
 export * from './PlaidStartIdvRes.js';
+export * from './SessionStartReq.js';
+export * from './SessionStartRes.js';
 export * from './StartIdvReq.js';
 export * from './StartIdvRes.js';
 export * from './TencentGetKycReq.js';

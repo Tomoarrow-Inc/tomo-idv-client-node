@@ -1,22 +1,24 @@
 
-# TencentStartIdvRes
+# SessionStartRes
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`start_idv_uri` | string
+`launch` | [LaunchKind](LaunchKind.md)
+`session_id` | string
 
 ## Example
 
 ```typescript
-import type { TencentStartIdvRes } from ''
+import type { SessionStartRes } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "start_idv_uri": null,
-} satisfies TencentStartIdvRes
+  "launch": null,
+  "session_id": null,
+} satisfies SessionStartRes
 
 console.log(example)
 
@@ -25,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as TencentStartIdvRes
+const exampleParsed = JSON.parse(exampleJSON) as SessionStartRes
 console.log(exampleParsed)
 ```
 
