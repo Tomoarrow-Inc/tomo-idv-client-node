@@ -1,30 +1,26 @@
 
-# TomoIdvStartReq
+# TomoIdvIssueTokenRes
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`best_frame_base64` | string
-`callback_url` | string
-`card_image_base64` | string
-`kyc_policy_id` | string
-`user_id` | string
+`expires_in` | number
+`key` | string
+`session_token` | string
 
 ## Example
 
 ```typescript
-import type { TomoIdvStartReq } from ''
+import type { TomoIdvIssueTokenRes } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "best_frame_base64": null,
-  "callback_url": null,
-  "card_image_base64": null,
-  "kyc_policy_id": null,
-  "user_id": null,
-} satisfies TomoIdvStartReq
+  "expires_in": null,
+  "key": null,
+  "session_token": null,
+} satisfies TomoIdvIssueTokenRes
 
 console.log(example)
 
@@ -33,7 +29,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as TomoIdvStartReq
+const exampleParsed = JSON.parse(exampleJSON) as TomoIdvIssueTokenRes
 console.log(exampleParsed)
 ```
 

@@ -7,9 +7,12 @@ All URIs are relative to *http://localhost*
 | [**v1IdvCaHealthGet**](DefaultApi.md#v1idvcahealthget) | **GET** /v1/idv/ca/health |  |
 | [**v1IdvCaKycGetPost**](DefaultApi.md#v1idvcakycgetpost) | **POST** /v1/idv/ca/kyc/get |  |
 | [**v1IdvCaStartPost**](DefaultApi.md#v1idvcastartpost) | **POST** /v1/idv/ca/start |  |
+| [**v1IdvCnCookieStartPost**](DefaultApi.md#v1idvcncookiestartpost) | **POST** /v1/idv/cn/cookie/start |  |
 | [**v1IdvCnHealthGet**](DefaultApi.md#v1idvcnhealthget) | **GET** /v1/idv/cn/health |  |
 | [**v1IdvCnKycGetPost**](DefaultApi.md#v1idvcnkycgetpost) | **POST** /v1/idv/cn/kyc/get |  |
+| [**v1IdvCnResultWebPost**](DefaultApi.md#v1idvcnresultwebpost) | **POST** /v1/idv/cn/result/web |  |
 | [**v1IdvCnStartPost**](DefaultApi.md#v1idvcnstartpost) | **POST** /v1/idv/cn/start |  |
+| [**v1IdvCnTokenPost**](DefaultApi.md#v1idvcntokenpost) | **POST** /v1/idv/cn/token |  |
 | [**v1IdvJpHealthGet**](DefaultApi.md#v1idvjphealthget) | **GET** /v1/idv/jp/health |  |
 | [**v1IdvJpKycGetPost**](DefaultApi.md#v1idvjpkycgetpost) | **POST** /v1/idv/jp/kyc/get |  |
 | [**v1IdvJpStartPost**](DefaultApi.md#v1idvjpstartpost) | **POST** /v1/idv/jp/start |  |
@@ -223,6 +226,72 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
+## v1IdvCnCookieStartPost
+
+> TencentStartIdvRes v1IdvCnCookieStartPost(TencentStartReq)
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  DefaultApi,
+} from '';
+import type { V1IdvCnCookieStartPostRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const api = new DefaultApi();
+
+  const body = {
+    // TencentStartReq (optional)
+    TencentStartReq: ...,
+  } satisfies V1IdvCnCookieStartPostRequest;
+
+  try {
+    const data = await api.v1IdvCnCookieStartPost(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **TencentStartReq** | [TencentStartReq](TencentStartReq.md) |  | [Optional] |
+
+### Return type
+
+[**TencentStartIdvRes**](TencentStartIdvRes.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json;charset=utf-8`
+- **Accept**: `application/json;charset=utf-8`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  * Set-Cookie -  <br>  |
+| **400** | Invalid &#x60;body&#x60; |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
 ## v1IdvCnHealthGet
 
 > string v1IdvCnHealthGet()
@@ -349,6 +418,63 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
+## v1IdvCnResultWebPost
+
+> any v1IdvCnResultWebPost()
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  DefaultApi,
+} from '';
+import type { V1IdvCnResultWebPostRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const api = new DefaultApi();
+
+  try {
+    const data = await api.v1IdvCnResultWebPost();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**any**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json;charset=utf-8`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
 ## v1IdvCnStartPost
 
 > TomoIdvStartRes v1IdvCnStartPost(Authorization, TomoIdvStartReq)
@@ -398,6 +524,75 @@ example().catch(console.error);
 ### Return type
 
 [**TomoIdvStartRes**](TomoIdvStartRes.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json;charset=utf-8`
+- **Accept**: `application/json;charset=utf-8`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## v1IdvCnTokenPost
+
+> TomoIdvIssueTokenRes v1IdvCnTokenPost(Authorization, TomoIdvIssueTokenReq)
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  DefaultApi,
+} from '';
+import type { V1IdvCnTokenPostRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const api = new DefaultApi();
+
+  const body = {
+    // string (optional)
+    Authorization: Authorization_example,
+    // TomoIdvIssueTokenReq (optional)
+    TomoIdvIssueTokenReq: ...,
+  } satisfies V1IdvCnTokenPostRequest;
+
+  try {
+    const data = await api.v1IdvCnTokenPost(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
+| **TomoIdvIssueTokenReq** | [TomoIdvIssueTokenReq](TomoIdvIssueTokenReq.md) |  | [Optional] |
+
+### Return type
+
+[**TomoIdvIssueTokenRes**](TomoIdvIssueTokenRes.md)
 
 ### Authorization
 

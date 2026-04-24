@@ -16,59 +16,82 @@ import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
- * @interface TomoIdvStartReq
+ * @interface TencentStartReq
  */
-export interface TomoIdvStartReq {
+export interface TencentStartReq {
     /**
      * 
      * @type {string}
-     * @memberof TomoIdvStartReq
+     * @memberof TencentStartReq
      */
-    callback_url: string;
+    best_frame_base64?: string;
     /**
      * 
      * @type {string}
-     * @memberof TomoIdvStartReq
+     * @memberof TencentStartReq
+     */
+    callback_url?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TencentStartReq
+     */
+    card_image_base64?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TencentStartReq
+     */
+    kyc_policy_id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TencentStartReq
      */
     user_id: string;
 }
 
 /**
- * Check if a given object implements the TomoIdvStartReq interface.
+ * Check if a given object implements the TencentStartReq interface.
  */
-export function instanceOfTomoIdvStartReq(value: object): value is TomoIdvStartReq {
-    if (!('callback_url' in value) || value['callback_url'] === undefined) return false;
+export function instanceOfTencentStartReq(value: object): value is TencentStartReq {
     if (!('user_id' in value) || value['user_id'] === undefined) return false;
     return true;
 }
 
-export function TomoIdvStartReqFromJSON(json: any): TomoIdvStartReq {
-    return TomoIdvStartReqFromJSONTyped(json, false);
+export function TencentStartReqFromJSON(json: any): TencentStartReq {
+    return TencentStartReqFromJSONTyped(json, false);
 }
 
-export function TomoIdvStartReqFromJSONTyped(json: any, ignoreDiscriminator: boolean): TomoIdvStartReq {
+export function TencentStartReqFromJSONTyped(json: any, ignoreDiscriminator: boolean): TencentStartReq {
     if (json == null) {
         return json;
     }
     return {
         
-        'callback_url': json['callback_url'],
+        'best_frame_base64': json['best_frame_base64'] == null ? undefined : json['best_frame_base64'],
+        'callback_url': json['callback_url'] == null ? undefined : json['callback_url'],
+        'card_image_base64': json['card_image_base64'] == null ? undefined : json['card_image_base64'],
+        'kyc_policy_id': json['kyc_policy_id'] == null ? undefined : json['kyc_policy_id'],
         'user_id': json['user_id'],
     };
 }
 
-export function TomoIdvStartReqToJSON(json: any): TomoIdvStartReq {
-    return TomoIdvStartReqToJSONTyped(json, false);
+export function TencentStartReqToJSON(json: any): TencentStartReq {
+    return TencentStartReqToJSONTyped(json, false);
 }
 
-export function TomoIdvStartReqToJSONTyped(value?: TomoIdvStartReq | null, ignoreDiscriminator: boolean = false): any {
+export function TencentStartReqToJSONTyped(value?: TencentStartReq | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
 
     return {
         
+        'best_frame_base64': value['best_frame_base64'],
         'callback_url': value['callback_url'],
+        'card_image_base64': value['card_image_base64'],
+        'kyc_policy_id': value['kyc_policy_id'],
         'user_id': value['user_id'],
     };
 }
