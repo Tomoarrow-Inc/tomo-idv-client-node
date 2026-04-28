@@ -1,30 +1,32 @@
 
-# StartIdvReq
+# LaunchKind
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`callback_url` | string
-`country` | [Country](Country.md)
-`email` | string
-`kyc_policy_id` | string
-`user_id` | string
+`config` | object
+`data` | string
+`fallback_url` | string
+`session_token` | string
+`type` | string
+`url` | string
 
 ## Example
 
 ```typescript
-import type { StartIdvReq } from ''
+import type { LaunchKind } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "callback_url": null,
-  "country": null,
-  "email": null,
-  "kyc_policy_id": null,
-  "user_id": null,
-} satisfies StartIdvReq
+  "config": null,
+  "data": null,
+  "fallback_url": null,
+  "session_token": null,
+  "type": null,
+  "url": null,
+} satisfies LaunchKind
 
 console.log(example)
 
@@ -33,7 +35,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as StartIdvReq
+const exampleParsed = JSON.parse(exampleJSON) as LaunchKind
 console.log(exampleParsed)
 ```
 

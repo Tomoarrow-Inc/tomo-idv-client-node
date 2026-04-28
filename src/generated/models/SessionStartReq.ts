@@ -24,37 +24,37 @@ import {
 /**
  * 
  * @export
- * @interface StartIdvReq
+ * @interface SessionStartReq
  */
-export interface StartIdvReq {
+export interface SessionStartReq {
     /**
      * 
      * @type {string}
-     * @memberof StartIdvReq
+     * @memberof SessionStartReq
      */
     callback_url?: string;
     /**
      * 
      * @type {Country}
-     * @memberof StartIdvReq
+     * @memberof SessionStartReq
      */
     country?: Country;
     /**
      * 
      * @type {string}
-     * @memberof StartIdvReq
+     * @memberof SessionStartReq
      */
     email?: string;
     /**
      * 
      * @type {string}
-     * @memberof StartIdvReq
+     * @memberof SessionStartReq
      */
-    kyc_policy_id?: string;
+    policy_id?: string;
     /**
      * 
      * @type {string}
-     * @memberof StartIdvReq
+     * @memberof SessionStartReq
      */
     user_id: string;
 }
@@ -62,18 +62,18 @@ export interface StartIdvReq {
 
 
 /**
- * Check if a given object implements the StartIdvReq interface.
+ * Check if a given object implements the SessionStartReq interface.
  */
-export function instanceOfStartIdvReq(value: object): value is StartIdvReq {
+export function instanceOfSessionStartReq(value: object): value is SessionStartReq {
     if (!('user_id' in value) || value['user_id'] === undefined) return false;
     return true;
 }
 
-export function StartIdvReqFromJSON(json: any): StartIdvReq {
-    return StartIdvReqFromJSONTyped(json, false);
+export function SessionStartReqFromJSON(json: any): SessionStartReq {
+    return SessionStartReqFromJSONTyped(json, false);
 }
 
-export function StartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: boolean): StartIdvReq {
+export function SessionStartReqFromJSONTyped(json: any, ignoreDiscriminator: boolean): SessionStartReq {
     if (json == null) {
         return json;
     }
@@ -82,16 +82,16 @@ export function StartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: boolean
         'callback_url': json['callback_url'] == null ? undefined : json['callback_url'],
         'country': json['country'] == null ? undefined : CountryFromJSON(json['country']),
         'email': json['email'] == null ? undefined : json['email'],
-        'kyc_policy_id': json['kyc_policy_id'] == null ? undefined : json['kyc_policy_id'],
+        'policy_id': json['policy_id'] == null ? undefined : json['policy_id'],
         'user_id': json['user_id'],
     };
 }
 
-export function StartIdvReqToJSON(json: any): StartIdvReq {
-    return StartIdvReqToJSONTyped(json, false);
+export function SessionStartReqToJSON(json: any): SessionStartReq {
+    return SessionStartReqToJSONTyped(json, false);
 }
 
-export function StartIdvReqToJSONTyped(value?: StartIdvReq | null, ignoreDiscriminator: boolean = false): any {
+export function SessionStartReqToJSONTyped(value?: SessionStartReq | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
@@ -101,7 +101,7 @@ export function StartIdvReqToJSONTyped(value?: StartIdvReq | null, ignoreDiscrim
         'callback_url': value['callback_url'],
         'country': CountryToJSON(value['country']),
         'email': value['email'],
-        'kyc_policy_id': value['kyc_policy_id'],
+        'policy_id': value['policy_id'],
         'user_id': value['user_id'],
     };
 }

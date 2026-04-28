@@ -13,85 +13,69 @@
  */
 
 import { mapValues } from '../runtime.js';
-import type { Country } from './Country.js';
-import {
-    CountryFromJSON,
-    CountryFromJSONTyped,
-    CountryToJSON,
-    CountryToJSONTyped,
-} from './Country.js';
-
 /**
  * 
  * @export
- * @interface StartIdvReq
+ * @interface PlaidStartIdvReq
  */
-export interface StartIdvReq {
+export interface PlaidStartIdvReq {
     /**
      * 
      * @type {string}
-     * @memberof StartIdvReq
+     * @memberof PlaidStartIdvReq
      */
-    callback_url?: string;
-    /**
-     * 
-     * @type {Country}
-     * @memberof StartIdvReq
-     */
-    country?: Country;
+    callback_url: string;
     /**
      * 
      * @type {string}
-     * @memberof StartIdvReq
+     * @memberof PlaidStartIdvReq
      */
     email?: string;
     /**
      * 
      * @type {string}
-     * @memberof StartIdvReq
+     * @memberof PlaidStartIdvReq
      */
     kyc_policy_id?: string;
     /**
      * 
      * @type {string}
-     * @memberof StartIdvReq
+     * @memberof PlaidStartIdvReq
      */
     user_id: string;
 }
 
-
-
 /**
- * Check if a given object implements the StartIdvReq interface.
+ * Check if a given object implements the PlaidStartIdvReq interface.
  */
-export function instanceOfStartIdvReq(value: object): value is StartIdvReq {
+export function instanceOfPlaidStartIdvReq(value: object): value is PlaidStartIdvReq {
+    if (!('callback_url' in value) || value['callback_url'] === undefined) return false;
     if (!('user_id' in value) || value['user_id'] === undefined) return false;
     return true;
 }
 
-export function StartIdvReqFromJSON(json: any): StartIdvReq {
-    return StartIdvReqFromJSONTyped(json, false);
+export function PlaidStartIdvReqFromJSON(json: any): PlaidStartIdvReq {
+    return PlaidStartIdvReqFromJSONTyped(json, false);
 }
 
-export function StartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: boolean): StartIdvReq {
+export function PlaidStartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: boolean): PlaidStartIdvReq {
     if (json == null) {
         return json;
     }
     return {
         
-        'callback_url': json['callback_url'] == null ? undefined : json['callback_url'],
-        'country': json['country'] == null ? undefined : CountryFromJSON(json['country']),
+        'callback_url': json['callback_url'],
         'email': json['email'] == null ? undefined : json['email'],
         'kyc_policy_id': json['kyc_policy_id'] == null ? undefined : json['kyc_policy_id'],
         'user_id': json['user_id'],
     };
 }
 
-export function StartIdvReqToJSON(json: any): StartIdvReq {
-    return StartIdvReqToJSONTyped(json, false);
+export function PlaidStartIdvReqToJSON(json: any): PlaidStartIdvReq {
+    return PlaidStartIdvReqToJSONTyped(json, false);
 }
 
-export function StartIdvReqToJSONTyped(value?: StartIdvReq | null, ignoreDiscriminator: boolean = false): any {
+export function PlaidStartIdvReqToJSONTyped(value?: PlaidStartIdvReq | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
@@ -99,7 +83,6 @@ export function StartIdvReqToJSONTyped(value?: StartIdvReq | null, ignoreDiscrim
     return {
         
         'callback_url': value['callback_url'],
-        'country': CountryToJSON(value['country']),
         'email': value['email'],
         'kyc_policy_id': value['kyc_policy_id'],
         'user_id': value['user_id'],

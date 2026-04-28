@@ -1,5 +1,5 @@
 
-# StartIdvReq
+# PlaidStartIdvReq
 
 
 ## Properties
@@ -7,7 +7,6 @@
 Name | Type
 ------------ | -------------
 `callback_url` | string
-`country` | [Country](Country.md)
 `email` | string
 `kyc_policy_id` | string
 `user_id` | string
@@ -15,16 +14,15 @@ Name | Type
 ## Example
 
 ```typescript
-import type { StartIdvReq } from ''
+import type { PlaidStartIdvReq } from ''
 
 // TODO: Update the object below with actual values
 const example = {
   "callback_url": null,
-  "country": null,
   "email": null,
   "kyc_policy_id": null,
   "user_id": null,
-} satisfies StartIdvReq
+} satisfies PlaidStartIdvReq
 
 console.log(example)
 
@@ -33,7 +31,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as StartIdvReq
+const exampleParsed = JSON.parse(exampleJSON) as PlaidStartIdvReq
 console.log(exampleParsed)
 ```
 

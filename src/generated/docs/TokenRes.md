@@ -1,30 +1,28 @@
 
-# StartIdvReq
+# TokenRes
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`callback_url` | string
-`country` | [Country](Country.md)
-`email` | string
-`kyc_policy_id` | string
-`user_id` | string
+`access_token` | string
+`expires_in` | number
+`scope` | string
+`token_type` | string
 
 ## Example
 
 ```typescript
-import type { StartIdvReq } from ''
+import type { TokenRes } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "callback_url": null,
-  "country": null,
-  "email": null,
-  "kyc_policy_id": null,
-  "user_id": null,
-} satisfies StartIdvReq
+  "access_token": null,
+  "expires_in": null,
+  "scope": null,
+  "token_type": null,
+} satisfies TokenRes
 
 console.log(example)
 
@@ -33,7 +31,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as StartIdvReq
+const exampleParsed = JSON.parse(exampleJSON) as TokenRes
 console.log(exampleParsed)
 ```
 
