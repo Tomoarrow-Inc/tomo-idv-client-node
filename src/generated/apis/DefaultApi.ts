@@ -89,10 +89,6 @@ export interface V1IdvCaStartPostRequest {
     PlaidStartIdvReq?: PlaidStartIdvReq;
 }
 
-export interface V1IdvCnCookieStartPostRequest {
-    TencentStartReq?: TencentStartReq;
-}
-
 export interface V1IdvCnKycGetPostRequest {
     Authorization?: string;
     TencentGetKycReq?: TencentGetKycReq;
@@ -290,44 +286,6 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Creates request options for v1IdvCnCookieStartPost without sending the request
-     */
-    async v1IdvCnCookieStartPostRequestOpts(requestParameters: V1IdvCnCookieStartPostRequest): Promise<runtime.RequestOpts> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
-
-
-        let urlPath = `/v1/idv/cn/cookie/start`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: TencentStartReqToJSON(requestParameters['TencentStartReq']),
-        };
-    }
-
-    /**
-     */
-    async v1IdvCnCookieStartPostRaw(requestParameters: V1IdvCnCookieStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TencentStartIdvRes>> {
-        const requestOptions = await this.v1IdvCnCookieStartPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => TencentStartIdvResFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async v1IdvCnCookieStartPost(requestParameters: V1IdvCnCookieStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TencentStartIdvRes> {
-        const response = await this.v1IdvCnCookieStartPostRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
      * Creates request options for v1IdvCnHealthGet without sending the request
      */
     async v1IdvCnHealthGetRequestOpts(): Promise<runtime.RequestOpts> {
@@ -405,45 +363,6 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async v1IdvCnKycGetPost(requestParameters: V1IdvCnKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TencentGetUnionResultRes> {
         const response = await this.v1IdvCnKycGetPostRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for v1IdvCnResultWebPost without sending the request
-     */
-    async v1IdvCnResultWebPostRequestOpts(): Promise<runtime.RequestOpts> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-
-        let urlPath = `/v1/idv/cn/result/web`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     */
-    async v1IdvCnResultWebPostRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<any>> {
-        const requestOptions = await this.v1IdvCnResultWebPostRequestOpts();
-        const response = await this.request(requestOptions, initOverrides);
-
-        if (this.isJsonMime(response.headers.get('content-type'))) {
-            return new runtime.JSONApiResponse<any>(response);
-        } else {
-            return new runtime.TextApiResponse(response) as any;
-        }
-    }
-
-    /**
-     */
-    async v1IdvCnResultWebPost(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<any> {
-        const response = await this.v1IdvCnResultWebPostRaw(initOverrides);
         return await response.value();
     }
 

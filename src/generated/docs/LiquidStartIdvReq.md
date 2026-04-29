@@ -7,6 +7,7 @@
 Name | Type
 ------------ | -------------
 `callback_url` | string
+`kyc_policy_id` | string
 `user_id` | string
 
 ## Example
@@ -17,6 +18,7 @@ import type { LiquidStartIdvReq } from ''
 // TODO: Update the object below with actual values
 const example = {
   "callback_url": null,
+  "kyc_policy_id": null,
   "user_id": null,
 } satisfies LiquidStartIdvReq
 
