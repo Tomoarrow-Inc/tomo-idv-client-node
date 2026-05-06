@@ -13,13 +13,13 @@
  */
 
 import { mapValues } from '../runtime.js';
-import type { Country } from './Country.js';
+import type { KycPolicy } from './KycPolicy.js';
 import {
-    CountryFromJSON,
-    CountryFromJSONTyped,
-    CountryToJSON,
-    CountryToJSONTyped,
-} from './Country.js';
+    KycPolicyFromJSON,
+    KycPolicyFromJSONTyped,
+    KycPolicyToJSON,
+    KycPolicyToJSONTyped,
+} from './KycPolicy.js';
 
 /**
  * 
@@ -35,10 +35,10 @@ export interface StartIdvReq {
     callback_url?: string;
     /**
      * 
-     * @type {Country}
+     * @type {string}
      * @memberof StartIdvReq
      */
-    country?: Country;
+    country?: string;
     /**
      * 
      * @type {string}
@@ -47,13 +47,17 @@ export interface StartIdvReq {
     email?: string;
     /**
      * 
+     * @type {KycPolicy}
+     * @memberof StartIdvReq
+     */
+    kyc_policy?: KycPolicy;
+    /**
+     * 
      * @type {string}
      * @memberof StartIdvReq
      */
     user_id: string;
 }
-
-
 
 /**
  * Check if a given object implements the StartIdvReq interface.
@@ -74,8 +78,9 @@ export function StartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: boolean
     return {
         
         'callback_url': json['callback_url'] == null ? undefined : json['callback_url'],
-        'country': json['country'] == null ? undefined : CountryFromJSON(json['country']),
+        'country': json['country'] == null ? undefined : json['country'],
         'email': json['email'] == null ? undefined : json['email'],
+        'kyc_policy': json['kyc_policy'] == null ? undefined : KycPolicyFromJSON(json['kyc_policy']),
         'user_id': json['user_id'],
     };
 }
@@ -92,8 +97,9 @@ export function StartIdvReqToJSONTyped(value?: StartIdvReq | null, ignoreDiscrim
     return {
         
         'callback_url': value['callback_url'],
-        'country': CountryToJSON(value['country']),
+        'country': value['country'],
         'email': value['email'],
+        'kyc_policy': KycPolicyToJSON(value['kyc_policy']),
         'user_id': value['user_id'],
     };
 }

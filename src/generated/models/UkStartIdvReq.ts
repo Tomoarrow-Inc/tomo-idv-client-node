@@ -16,52 +16,59 @@ import { mapValues } from '../runtime.js';
 /**
  * 
  * @export
- * @interface LiquidStartIdvReq
+ * @interface UkStartIdvReq
  */
-export interface LiquidStartIdvReq {
+export interface UkStartIdvReq {
     /**
      * 
      * @type {string}
-     * @memberof LiquidStartIdvReq
+     * @memberof UkStartIdvReq
      */
     callback_url: string;
     /**
      * 
      * @type {string}
-     * @memberof LiquidStartIdvReq
+     * @memberof UkStartIdvReq
+     */
+    email?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UkStartIdvReq
      */
     user_id: string;
 }
 
 /**
- * Check if a given object implements the LiquidStartIdvReq interface.
+ * Check if a given object implements the UkStartIdvReq interface.
  */
-export function instanceOfLiquidStartIdvReq(value: object): value is LiquidStartIdvReq {
+export function instanceOfUkStartIdvReq(value: object): value is UkStartIdvReq {
     if (!('callback_url' in value) || value['callback_url'] === undefined) return false;
     if (!('user_id' in value) || value['user_id'] === undefined) return false;
     return true;
 }
 
-export function LiquidStartIdvReqFromJSON(json: any): LiquidStartIdvReq {
-    return LiquidStartIdvReqFromJSONTyped(json, false);
+export function UkStartIdvReqFromJSON(json: any): UkStartIdvReq {
+    return UkStartIdvReqFromJSONTyped(json, false);
 }
 
-export function LiquidStartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: boolean): LiquidStartIdvReq {
+export function UkStartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: boolean): UkStartIdvReq {
     if (json == null) {
         return json;
     }
     return {
         
         'callback_url': json['callback_url'],
+        'email': json['email'] == null ? undefined : json['email'],
         'user_id': json['user_id'],
     };
 }
 
-export function LiquidStartIdvReqToJSON(json: any): LiquidStartIdvReq {
-    return LiquidStartIdvReqToJSONTyped(json, false);
+export function UkStartIdvReqToJSON(json: any): UkStartIdvReq {
+    return UkStartIdvReqToJSONTyped(json, false);
 }
 
-export function LiquidStartIdvReqToJSONTyped(value?: LiquidStartIdvReq | null, ignoreDiscriminator: boolean = false): any {
+export function UkStartIdvReqToJSONTyped(value?: UkStartIdvReq | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
@@ -69,6 +76,7 @@ export function LiquidStartIdvReqToJSONTyped(value?: LiquidStartIdvReq | null, i
     return {
         
         'callback_url': value['callback_url'],
+        'email': value['email'],
         'user_id': value['user_id'],
     };
 }

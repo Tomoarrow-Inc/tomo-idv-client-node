@@ -1,22 +1,28 @@
 
-# LiquidIntegratedAppRes
+# CnStartIdvReq
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`start_idv_uri` | string
+`best_frame_base64` | string
+`callback_url` | string
+`card_image_base64` | string
+`user_id` | string
 
 ## Example
 
 ```typescript
-import type { LiquidIntegratedAppRes } from ''
+import type { CnStartIdvReq } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "start_idv_uri": null,
-} satisfies LiquidIntegratedAppRes
+  "best_frame_base64": null,
+  "callback_url": null,
+  "card_image_base64": null,
+  "user_id": null,
+} satisfies CnStartIdvReq
 
 console.log(example)
 
@@ -25,7 +31,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as LiquidIntegratedAppRes
+const exampleParsed = JSON.parse(exampleJSON) as CnStartIdvReq
 console.log(exampleParsed)
 ```
 

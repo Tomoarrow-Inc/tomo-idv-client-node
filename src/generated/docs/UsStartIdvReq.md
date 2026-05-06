@@ -1,5 +1,5 @@
 
-# LiquidStartIdvReq
+# UsStartIdvReq
 
 
 ## Properties
@@ -7,18 +7,20 @@
 Name | Type
 ------------ | -------------
 `callback_url` | string
+`email` | string
 `user_id` | string
 
 ## Example
 
 ```typescript
-import type { LiquidStartIdvReq } from ''
+import type { UsStartIdvReq } from ''
 
 // TODO: Update the object below with actual values
 const example = {
   "callback_url": null,
+  "email": null,
   "user_id": null,
-} satisfies LiquidStartIdvReq
+} satisfies UsStartIdvReq
 
 console.log(example)
 
@@ -27,7 +29,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as LiquidStartIdvReq
+const exampleParsed = JSON.parse(exampleJSON) as UsStartIdvReq
 console.log(exampleParsed)
 ```
 

@@ -1,30 +1,26 @@
 
-# LiquidGetUnionResultRes
+# UkStartIdvReq
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`address` | string
-`date_of_birth` | string
-`name` | string
-`postal_code` | string
-`sex` | string
+`callback_url` | string
+`email` | string
+`user_id` | string
 
 ## Example
 
 ```typescript
-import type { LiquidGetUnionResultRes } from ''
+import type { UkStartIdvReq } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "address": null,
-  "date_of_birth": null,
-  "name": null,
-  "postal_code": null,
-  "sex": null,
-} satisfies LiquidGetUnionResultRes
+  "callback_url": null,
+  "email": null,
+  "user_id": null,
+} satisfies UkStartIdvReq
 
 console.log(example)
 
@@ -33,7 +29,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as LiquidGetUnionResultRes
+const exampleParsed = JSON.parse(exampleJSON) as UkStartIdvReq
 console.log(exampleParsed)
 ```
 

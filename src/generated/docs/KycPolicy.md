@@ -1,26 +1,26 @@
 
-# PlaidStartIdvReq
+# KycPolicy
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`callback_url` | string
-`email` | string
-`user_id` | string
+`method` | string
+`owner_assurance` | object
+`subject` | object
 
 ## Example
 
 ```typescript
-import type { PlaidStartIdvReq } from ''
+import type { KycPolicy } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "callback_url": null,
-  "email": null,
-  "user_id": null,
-} satisfies PlaidStartIdvReq
+  "method": null,
+  "owner_assurance": null,
+  "subject": null,
+} satisfies KycPolicy
 
 console.log(example)
 
@@ -29,7 +29,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as PlaidStartIdvReq
+const exampleParsed = JSON.parse(exampleJSON) as KycPolicy
 console.log(exampleParsed)
 ```
 

@@ -1,22 +1,26 @@
 
-# TencentStartIdvRes
+# CaStartIdvReq
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`start_idv_uri` | string
+`callback_url` | string
+`email` | string
+`user_id` | string
 
 ## Example
 
 ```typescript
-import type { TencentStartIdvRes } from ''
+import type { CaStartIdvReq } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "start_idv_uri": null,
-} satisfies TencentStartIdvRes
+  "callback_url": null,
+  "email": null,
+  "user_id": null,
+} satisfies CaStartIdvReq
 
 console.log(example)
 
@@ -25,7 +29,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as TencentStartIdvRes
+const exampleParsed = JSON.parse(exampleJSON) as CaStartIdvReq
 console.log(exampleParsed)
 ```
 

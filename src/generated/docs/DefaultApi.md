@@ -5,21 +5,18 @@ All URIs are relative to *http://localhost*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**v1IdvCaHealthGet**](DefaultApi.md#v1idvcahealthget) | **GET** /v1/idv/ca/health |  |
-| [**v1IdvCaKycGetPost**](DefaultApi.md#v1idvcakycgetpost) | **POST** /v1/idv/ca/kyc/get |  |
 | [**v1IdvCaStartPost**](DefaultApi.md#v1idvcastartpost) | **POST** /v1/idv/ca/start |  |
 | [**v1IdvCnHealthGet**](DefaultApi.md#v1idvcnhealthget) | **GET** /v1/idv/cn/health |  |
-| [**v1IdvCnKycGetPost**](DefaultApi.md#v1idvcnkycgetpost) | **POST** /v1/idv/cn/kyc/get |  |
 | [**v1IdvCnStartPost**](DefaultApi.md#v1idvcnstartpost) | **POST** /v1/idv/cn/start |  |
+| [**v1IdvHealthGet**](DefaultApi.md#v1idvhealthget) | **GET** /v1/idv/health |  |
 | [**v1IdvJpHealthGet**](DefaultApi.md#v1idvjphealthget) | **GET** /v1/idv/jp/health |  |
-| [**v1IdvJpKycGetPost**](DefaultApi.md#v1idvjpkycgetpost) | **POST** /v1/idv/jp/kyc/get |  |
 | [**v1IdvJpStartPost**](DefaultApi.md#v1idvjpstartpost) | **POST** /v1/idv/jp/start |  |
 | [**v1IdvKycGetPost**](DefaultApi.md#v1idvkycgetpost) | **POST** /v1/idv/kyc/get |  |
+| [**v1IdvResultPost**](DefaultApi.md#v1idvresultpost) | **POST** /v1/idv/result |  |
 | [**v1IdvStartPost**](DefaultApi.md#v1idvstartpost) | **POST** /v1/idv/start |  |
 | [**v1IdvUkHealthGet**](DefaultApi.md#v1idvukhealthget) | **GET** /v1/idv/uk/health |  |
-| [**v1IdvUkKycGetPost**](DefaultApi.md#v1idvukkycgetpost) | **POST** /v1/idv/uk/kyc/get |  |
 | [**v1IdvUkStartPost**](DefaultApi.md#v1idvukstartpost) | **POST** /v1/idv/uk/start |  |
 | [**v1IdvUsHealthGet**](DefaultApi.md#v1idvushealthget) | **GET** /v1/idv/us/health |  |
-| [**v1IdvUsKycGetPost**](DefaultApi.md#v1idvuskycgetpost) | **POST** /v1/idv/us/kyc/get |  |
 | [**v1IdvUsStartPost**](DefaultApi.md#v1idvusstartpost) | **POST** /v1/idv/us/start |  |
 | [**v1Oauth2TokenPost**](DefaultApi.md#v1oauth2tokenpost) | **POST** /v1/oauth2/token |  |
 
@@ -30,6 +27,8 @@ All URIs are relative to *http://localhost*
 > string v1IdvCaHealthGet()
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 
@@ -82,80 +81,13 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## v1IdvCaKycGetPost
-
-> { [key: string]: string; } v1IdvCaKycGetPost(Authorization, PlaidGetKycReq)
-
-
-
-### Example
-
-```ts
-import {
-  Configuration,
-  DefaultApi,
-} from '';
-import type { V1IdvCaKycGetPostRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
-
-  const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // PlaidGetKycReq (optional)
-    PlaidGetKycReq: ...,
-  } satisfies V1IdvCaKycGetPostRequest;
-
-  try {
-    const data = await api.v1IdvCaKycGetPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **PlaidGetKycReq** | [PlaidGetKycReq](PlaidGetKycReq.md) |  | [Optional] |
-
-### Return type
-
-**{ [key: string]: string; }**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json;charset=utf-8`
-- **Accept**: `application/json;charset=utf-8`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
 ## v1IdvCaStartPost
 
-> PlaidStartIdvRes v1IdvCaStartPost(Authorization, PlaidStartIdvReq)
+> StartIdvRes v1IdvCaStartPost(Authorization, CaStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;ca.
 
 ### Example
 
@@ -173,8 +105,8 @@ async function example() {
   const body = {
     // string (optional)
     Authorization: Authorization_example,
-    // PlaidStartIdvReq (optional)
-    PlaidStartIdvReq: ...,
+    // CaStartIdvReq (optional)
+    CaStartIdvReq: ...,
   } satisfies V1IdvCaStartPostRequest;
 
   try {
@@ -195,11 +127,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **PlaidStartIdvReq** | [PlaidStartIdvReq](PlaidStartIdvReq.md) |  | [Optional] |
+| **CaStartIdvReq** | [CaStartIdvReq](CaStartIdvReq.md) |  | [Optional] |
 
 ### Return type
 
-[**PlaidStartIdvRes**](PlaidStartIdvRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 ### Authorization
 
@@ -225,6 +157,8 @@ No authorization required
 > string v1IdvCnHealthGet()
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 
@@ -277,80 +211,13 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## v1IdvCnKycGetPost
-
-> TencentGetUnionResultRes v1IdvCnKycGetPost(Authorization, TencentGetKycReq)
-
-
-
-### Example
-
-```ts
-import {
-  Configuration,
-  DefaultApi,
-} from '';
-import type { V1IdvCnKycGetPostRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
-
-  const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // TencentGetKycReq (optional)
-    TencentGetKycReq: ...,
-  } satisfies V1IdvCnKycGetPostRequest;
-
-  try {
-    const data = await api.v1IdvCnKycGetPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **TencentGetKycReq** | [TencentGetKycReq](TencentGetKycReq.md) |  | [Optional] |
-
-### Return type
-
-[**TencentGetUnionResultRes**](TencentGetUnionResultRes.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json;charset=utf-8`
-- **Accept**: `application/json;charset=utf-8`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
 ## v1IdvCnStartPost
 
-> TencentStartIdvRes v1IdvCnStartPost(Authorization, TencentStartReq)
+> StartIdvRes v1IdvCnStartPost(Authorization, CnStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;cn.
 
 ### Example
 
@@ -368,8 +235,8 @@ async function example() {
   const body = {
     // string (optional)
     Authorization: Authorization_example,
-    // TencentStartReq (optional)
-    TencentStartReq: ...,
+    // CnStartIdvReq (optional)
+    CnStartIdvReq: ...,
   } satisfies V1IdvCnStartPostRequest;
 
   try {
@@ -390,11 +257,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **TencentStartReq** | [TencentStartReq](TencentStartReq.md) |  | [Optional] |
+| **CnStartIdvReq** | [CnStartIdvReq](CnStartIdvReq.md) |  | [Optional] |
 
 ### Return type
 
-[**TencentStartIdvRes**](TencentStartIdvRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 ### Authorization
 
@@ -415,11 +282,70 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
+## v1IdvHealthGet
+
+> string v1IdvHealthGet()
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  DefaultApi,
+} from '';
+import type { V1IdvHealthGetRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const api = new DefaultApi();
+
+  try {
+    const data = await api.v1IdvHealthGet();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json;charset=utf-8`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
 ## v1IdvJpHealthGet
 
 > string v1IdvJpHealthGet()
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 
@@ -472,80 +398,13 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## v1IdvJpKycGetPost
-
-> LiquidGetUnionResultRes v1IdvJpKycGetPost(Authorization, LiquidGetKycReq)
-
-
-
-### Example
-
-```ts
-import {
-  Configuration,
-  DefaultApi,
-} from '';
-import type { V1IdvJpKycGetPostRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
-
-  const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // LiquidGetKycReq (optional)
-    LiquidGetKycReq: ...,
-  } satisfies V1IdvJpKycGetPostRequest;
-
-  try {
-    const data = await api.v1IdvJpKycGetPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **LiquidGetKycReq** | [LiquidGetKycReq](LiquidGetKycReq.md) |  | [Optional] |
-
-### Return type
-
-[**LiquidGetUnionResultRes**](LiquidGetUnionResultRes.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json;charset=utf-8`
-- **Accept**: `application/json;charset=utf-8`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
 ## v1IdvJpStartPost
 
-> LiquidIntegratedAppRes v1IdvJpStartPost(Authorization, LiquidStartIdvReq)
+> StartIdvRes v1IdvJpStartPost(Authorization, JpStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;jp.
 
 ### Example
 
@@ -563,8 +422,8 @@ async function example() {
   const body = {
     // string (optional)
     Authorization: Authorization_example,
-    // LiquidStartIdvReq (optional)
-    LiquidStartIdvReq: ...,
+    // JpStartIdvReq (optional)
+    JpStartIdvReq: ...,
   } satisfies V1IdvJpStartPostRequest;
 
   try {
@@ -585,11 +444,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **LiquidStartIdvReq** | [LiquidStartIdvReq](LiquidStartIdvReq.md) |  | [Optional] |
+| **JpStartIdvReq** | [JpStartIdvReq](JpStartIdvReq.md) |  | [Optional] |
 
 ### Return type
 
-[**LiquidIntegratedAppRes**](LiquidIntegratedAppRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 ### Authorization
 
@@ -616,6 +475,8 @@ No authorization required
 
 
 
+[DEPRECATED] Use /v1/idv/result.
+
 ### Example
 
 ```ts
@@ -638,6 +499,75 @@ async function example() {
 
   try {
     const data = await api.v1IdvKycGetPost(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
+| **GetKycReq** | [GetKycReq](GetKycReq.md) |  | [Optional] |
+
+### Return type
+
+[**GetKycRes**](GetKycRes.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json;charset=utf-8`
+- **Accept**: `application/json;charset=utf-8`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## v1IdvResultPost
+
+> GetKycRes v1IdvResultPost(Authorization, GetKycReq)
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  DefaultApi,
+} from '';
+import type { V1IdvResultPostRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const api = new DefaultApi();
+
+  const body = {
+    // string (optional)
+    Authorization: Authorization_example,
+    // GetKycReq (optional)
+    GetKycReq: ...,
+  } satisfies V1IdvResultPostRequest;
+
+  try {
+    const data = await api.v1IdvResultPost(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -754,6 +684,8 @@ No authorization required
 
 
 
+[DEPRECATED] Use /v1/idv/health.
+
 ### Example
 
 ```ts
@@ -805,80 +737,13 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## v1IdvUkKycGetPost
-
-> { [key: string]: string; } v1IdvUkKycGetPost(Authorization, PlaidGetKycReq)
-
-
-
-### Example
-
-```ts
-import {
-  Configuration,
-  DefaultApi,
-} from '';
-import type { V1IdvUkKycGetPostRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
-
-  const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // PlaidGetKycReq (optional)
-    PlaidGetKycReq: ...,
-  } satisfies V1IdvUkKycGetPostRequest;
-
-  try {
-    const data = await api.v1IdvUkKycGetPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **PlaidGetKycReq** | [PlaidGetKycReq](PlaidGetKycReq.md) |  | [Optional] |
-
-### Return type
-
-**{ [key: string]: string; }**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json;charset=utf-8`
-- **Accept**: `application/json;charset=utf-8`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
 ## v1IdvUkStartPost
 
-> PlaidStartIdvRes v1IdvUkStartPost(Authorization, PlaidStartIdvReq)
+> StartIdvRes v1IdvUkStartPost(Authorization, UkStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;uk.
 
 ### Example
 
@@ -896,8 +761,8 @@ async function example() {
   const body = {
     // string (optional)
     Authorization: Authorization_example,
-    // PlaidStartIdvReq (optional)
-    PlaidStartIdvReq: ...,
+    // UkStartIdvReq (optional)
+    UkStartIdvReq: ...,
   } satisfies V1IdvUkStartPostRequest;
 
   try {
@@ -918,11 +783,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **PlaidStartIdvReq** | [PlaidStartIdvReq](PlaidStartIdvReq.md) |  | [Optional] |
+| **UkStartIdvReq** | [UkStartIdvReq](UkStartIdvReq.md) |  | [Optional] |
 
 ### Return type
 
-[**PlaidStartIdvRes**](PlaidStartIdvRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 ### Authorization
 
@@ -948,6 +813,8 @@ No authorization required
 > string v1IdvUsHealthGet()
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 
@@ -1000,80 +867,13 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## v1IdvUsKycGetPost
-
-> { [key: string]: string; } v1IdvUsKycGetPost(Authorization, PlaidGetKycReq)
-
-
-
-### Example
-
-```ts
-import {
-  Configuration,
-  DefaultApi,
-} from '';
-import type { V1IdvUsKycGetPostRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
-
-  const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // PlaidGetKycReq (optional)
-    PlaidGetKycReq: ...,
-  } satisfies V1IdvUsKycGetPostRequest;
-
-  try {
-    const data = await api.v1IdvUsKycGetPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **PlaidGetKycReq** | [PlaidGetKycReq](PlaidGetKycReq.md) |  | [Optional] |
-
-### Return type
-
-**{ [key: string]: string; }**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json;charset=utf-8`
-- **Accept**: `application/json;charset=utf-8`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
 ## v1IdvUsStartPost
 
-> PlaidStartIdvRes v1IdvUsStartPost(Authorization, PlaidStartIdvReq)
+> StartIdvRes v1IdvUsStartPost(Authorization, UsStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;us.
 
 ### Example
 
@@ -1091,8 +891,8 @@ async function example() {
   const body = {
     // string (optional)
     Authorization: Authorization_example,
-    // PlaidStartIdvReq (optional)
-    PlaidStartIdvReq: ...,
+    // UsStartIdvReq (optional)
+    UsStartIdvReq: ...,
   } satisfies V1IdvUsStartPostRequest;
 
   try {
@@ -1113,11 +913,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **PlaidStartIdvReq** | [PlaidStartIdvReq](PlaidStartIdvReq.md) |  | [Optional] |
+| **UsStartIdvReq** | [UsStartIdvReq](UsStartIdvReq.md) |  | [Optional] |
 
 ### Return type
 
-[**PlaidStartIdvRes**](PlaidStartIdvRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 ### Authorization
 

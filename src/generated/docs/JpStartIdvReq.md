@@ -1,24 +1,24 @@
 
-# TencentGetKycReq
+# JpStartIdvReq
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`fields` | [Array&lt;TencentIdvField&gt;](TencentIdvField.md)
+`callback_url` | string
 `user_id` | string
 
 ## Example
 
 ```typescript
-import type { TencentGetKycReq } from ''
+import type { JpStartIdvReq } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "fields": null,
+  "callback_url": null,
   "user_id": null,
-} satisfies TencentGetKycReq
+} satisfies JpStartIdvReq
 
 console.log(example)
 
@@ -27,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as TencentGetKycReq
+const exampleParsed = JSON.parse(exampleJSON) as JpStartIdvReq
 console.log(exampleParsed)
 ```
 
