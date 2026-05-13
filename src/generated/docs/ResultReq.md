@@ -6,8 +6,9 @@
 
 Name | Type
 ------------ | -------------
+`country` | [Country](Country.md)
 `policy` | [KycPolicy](KycPolicy.md)
-`ppid` | string
+`user_id` | string
 
 ## Example
 
@@ -16,8 +17,9 @@ import type { ResultReq } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "country": null,
   "policy": null,
-  "ppid": null,
+  "user_id": null,
 } satisfies ResultReq
 
 console.log(example)

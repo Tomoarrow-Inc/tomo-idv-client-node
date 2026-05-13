@@ -20,6 +20,13 @@ import {
     KycPolicyToJSON,
     KycPolicyToJSONTyped,
 } from './KycPolicy.js';
+import type { Country } from './Country.js';
+import {
+    CountryFromJSON,
+    CountryFromJSONTyped,
+    CountryToJSON,
+    CountryToJSONTyped,
+} from './Country.js';
 
 /**
  * 
@@ -27,6 +34,12 @@ import {
  * @interface ResultReq
  */
 export interface ResultReq {
+    /**
+     * 
+     * @type {Country}
+     * @memberof ResultReq
+     */
+    country: Country;
     /**
      * 
      * @type {KycPolicy}
@@ -38,14 +51,17 @@ export interface ResultReq {
      * @type {string}
      * @memberof ResultReq
      */
-    ppid: string;
+    user_id: string;
 }
+
+
 
 /**
  * Check if a given object implements the ResultReq interface.
  */
 export function instanceOfResultReq(value: object): value is ResultReq {
-    if (!('ppid' in value) || value['ppid'] === undefined) return false;
+    if (!('country' in value) || value['country'] === undefined) return false;
+    if (!('user_id' in value) || value['user_id'] === undefined) return false;
     return true;
 }
 
@@ -59,8 +75,9 @@ export function ResultReqFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     }
     return {
         
+        'country': CountryFromJSON(json['country']),
         'policy': json['policy'] == null ? undefined : KycPolicyFromJSON(json['policy']),
-        'ppid': json['ppid'],
+        'user_id': json['user_id'],
     };
 }
 
@@ -75,8 +92,9 @@ export function ResultReqToJSONTyped(value?: ResultReq | null, ignoreDiscriminat
 
     return {
         
+        'country': CountryToJSON(value['country']),
         'policy': KycPolicyToJSON(value['policy']),
-        'ppid': value['ppid'],
+        'user_id': value['user_id'],
     };
 }
 
