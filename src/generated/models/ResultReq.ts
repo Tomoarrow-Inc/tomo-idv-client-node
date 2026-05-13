@@ -39,7 +39,7 @@ export interface ResultReq {
      * @type {Country}
      * @memberof ResultReq
      */
-    country: Country;
+    country?: Country;
     /**
      * 
      * @type {KycPolicy}
@@ -60,7 +60,6 @@ export interface ResultReq {
  * Check if a given object implements the ResultReq interface.
  */
 export function instanceOfResultReq(value: object): value is ResultReq {
-    if (!('country' in value) || value['country'] === undefined) return false;
     if (!('user_id' in value) || value['user_id'] === undefined) return false;
     return true;
 }
@@ -75,7 +74,7 @@ export function ResultReqFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     }
     return {
         
-        'country': CountryFromJSON(json['country']),
+        'country': json['country'] == null ? undefined : CountryFromJSON(json['country']),
         'policy': json['policy'] == null ? undefined : KycPolicyFromJSON(json['policy']),
         'user_id': json['user_id'],
     };
