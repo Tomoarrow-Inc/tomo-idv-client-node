@@ -30,6 +30,12 @@ export interface JpStartIdvReq {
      * @type {string}
      * @memberof JpStartIdvReq
      */
+    kyc_policy_id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof JpStartIdvReq
+     */
     user_id: string;
 }
 
@@ -53,6 +59,7 @@ export function JpStartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: boole
     return {
         
         'callback_url': json['callback_url'],
+        'kyc_policy_id': json['kyc_policy_id'] == null ? undefined : json['kyc_policy_id'],
         'user_id': json['user_id'],
     };
 }
@@ -69,6 +76,7 @@ export function JpStartIdvReqToJSONTyped(value?: JpStartIdvReq | null, ignoreDis
     return {
         
         'callback_url': value['callback_url'],
+        'kyc_policy_id': value['kyc_policy_id'],
         'user_id': value['user_id'],
     };
 }

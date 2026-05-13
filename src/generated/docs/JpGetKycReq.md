@@ -1,30 +1,24 @@
 
-# StartIdvReq
+# JpGetKycReq
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`callback_url` | string
-`country` | [Country](Country.md)
-`email` | string
-`kyc_policy` | [KycPolicy](KycPolicy.md)
+`fields` | [Array&lt;JpIdvField&gt;](JpIdvField.md)
 `user_id` | string
 
 ## Example
 
 ```typescript
-import type { StartIdvReq } from ''
+import type { JpGetKycReq } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "callback_url": null,
-  "country": null,
-  "email": null,
-  "kyc_policy": null,
+  "fields": null,
   "user_id": null,
-} satisfies StartIdvReq
+} satisfies JpGetKycReq
 
 console.log(example)
 
@@ -33,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as StartIdvReq
+const exampleParsed = JSON.parse(exampleJSON) as JpGetKycReq
 console.log(exampleParsed)
 ```
 

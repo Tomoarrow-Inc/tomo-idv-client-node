@@ -42,6 +42,12 @@ export interface CnStartIdvReq {
      * @type {string}
      * @memberof CnStartIdvReq
      */
+    kyc_policy_id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CnStartIdvReq
+     */
     user_id: string;
 }
 
@@ -66,6 +72,7 @@ export function CnStartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: boole
         'best_frame_base64': json['best_frame_base64'] == null ? undefined : json['best_frame_base64'],
         'callback_url': json['callback_url'] == null ? undefined : json['callback_url'],
         'card_image_base64': json['card_image_base64'] == null ? undefined : json['card_image_base64'],
+        'kyc_policy_id': json['kyc_policy_id'] == null ? undefined : json['kyc_policy_id'],
         'user_id': json['user_id'],
     };
 }
@@ -84,6 +91,7 @@ export function CnStartIdvReqToJSONTyped(value?: CnStartIdvReq | null, ignoreDis
         'best_frame_base64': value['best_frame_base64'],
         'callback_url': value['callback_url'],
         'card_image_base64': value['card_image_base64'],
+        'kyc_policy_id': value['kyc_policy_id'],
         'user_id': value['user_id'],
     };
 }

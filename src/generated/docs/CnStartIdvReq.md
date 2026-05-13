@@ -9,6 +9,7 @@ Name | Type
 `best_frame_base64` | string
 `callback_url` | string
 `card_image_base64` | string
+`kyc_policy_id` | string
 `user_id` | string
 
 ## Example
@@ -21,6 +22,7 @@ const example = {
   "best_frame_base64": null,
   "callback_url": null,
   "card_image_base64": null,
+  "kyc_policy_id": null,
   "user_id": null,
 } satisfies CnStartIdvReq
 
