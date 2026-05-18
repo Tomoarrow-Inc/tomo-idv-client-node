@@ -766,8 +766,6 @@ No authorization required
 
 
 
-[DEPRECATED] Use /v1/idv/result.
-
 ### Example
 
 ```ts

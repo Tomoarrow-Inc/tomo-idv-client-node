@@ -675,7 +675,6 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      * Creates request options for v1IdvKycGetPost without sending the request
-     * @deprecated
      */
     async v1IdvKycGetPostRequestOpts(requestParameters: V1IdvKycGetPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -701,8 +700,6 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * [DEPRECATED] Use /v1/idv/result.
-     * @deprecated
      */
     async v1IdvKycGetPostRaw(requestParameters: V1IdvKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetKycRes>> {
         const requestOptions = await this.v1IdvKycGetPostRequestOpts(requestParameters);
@@ -712,8 +709,6 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * [DEPRECATED] Use /v1/idv/result.
-     * @deprecated
      */
     async v1IdvKycGetPost(requestParameters: V1IdvKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetKycRes> {
         const response = await this.v1IdvKycGetPostRaw(requestParameters, initOverrides);
