@@ -1,30 +1,30 @@
 
-# StartIdvReq
+# CnStartIdvReq
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
+`best_frame_base64` | string
 `callback_url` | string
-`country` | [Country](Country.md)
-`email` | string
-`kyc_policy` | [KycPolicy](KycPolicy.md)
+`card_image_base64` | string
+`kyc_policy_id` | string
 `user_id` | string
 
 ## Example
 
 ```typescript
-import type { StartIdvReq } from ''
+import type { CnStartIdvReq } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "best_frame_base64": null,
   "callback_url": null,
-  "country": null,
-  "email": null,
-  "kyc_policy": null,
+  "card_image_base64": null,
+  "kyc_policy_id": null,
   "user_id": null,
-} satisfies StartIdvReq
+} satisfies CnStartIdvReq
 
 console.log(example)
 
@@ -33,7 +33,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as StartIdvReq
+const exampleParsed = JSON.parse(exampleJSON) as CnStartIdvReq
 console.log(exampleParsed)
 ```
 

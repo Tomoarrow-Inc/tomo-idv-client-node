@@ -1,30 +1,28 @@
 
-# StartIdvReq
+# ResultRecord
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`callback_url` | string
-`country` | [Country](Country.md)
-`email` | string
-`kyc_policy` | [KycPolicy](KycPolicy.md)
-`user_id` | string
+`auth_id` | string
+`country` | string
+`policy_key` | string
+`result` | [GetKycRes](GetKycRes.md)
 
 ## Example
 
 ```typescript
-import type { StartIdvReq } from ''
+import type { ResultRecord } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "callback_url": null,
+  "auth_id": null,
   "country": null,
-  "email": null,
-  "kyc_policy": null,
-  "user_id": null,
-} satisfies StartIdvReq
+  "policy_key": null,
+  "result": null,
+} satisfies ResultRecord
 
 console.log(example)
 
@@ -33,7 +31,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as StartIdvReq
+const exampleParsed = JSON.parse(exampleJSON) as ResultRecord
 console.log(exampleParsed)
 ```
 

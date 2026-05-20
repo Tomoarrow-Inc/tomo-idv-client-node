@@ -15,91 +15,124 @@
 
 import * as runtime from '../runtime.js';
 import type {
+  CaStartIdvReq,
+  CnGetKycReq,
+  CnGetUnionResultRes,
+  CnStartIdvReq,
   GetKycReq,
   GetKycRes,
-  LiquidGetKycReq,
-  LiquidGetUnionResultRes,
-  LiquidIntegratedAppRes,
-  LiquidStartIdvReq,
-  PlaidGetKycReq,
-  PlaidStartIdvReq,
-  PlaidStartIdvRes,
+  JpGetKycReq,
+  JpGetUnionResultRes,
+  JpStartIdvReq,
+  ResultReq,
+  ResultRes,
+  SessionStartReq,
+  SessionStartRes,
   StartIdvReq,
   StartIdvRes,
-  TencentGetKycReq,
-  TencentGetUnionResultRes,
-  TencentStartIdvRes,
-  TencentStartReq,
   TokenRes,
+  TomoIdvIssueTokenReq,
+  TomoIdvIssueTokenRes,
+  UkStartIdvReq,
+  UsGetKycReq,
+  UsGetUnionResultRes,
+  UsStartIdvReq,
 } from '../models/index.js';
 import {
+    CaStartIdvReqFromJSON,
+    CaStartIdvReqToJSON,
+    CnGetKycReqFromJSON,
+    CnGetKycReqToJSON,
+    CnGetUnionResultResFromJSON,
+    CnGetUnionResultResToJSON,
+    CnStartIdvReqFromJSON,
+    CnStartIdvReqToJSON,
     GetKycReqFromJSON,
     GetKycReqToJSON,
     GetKycResFromJSON,
     GetKycResToJSON,
-    LiquidGetKycReqFromJSON,
-    LiquidGetKycReqToJSON,
-    LiquidGetUnionResultResFromJSON,
-    LiquidGetUnionResultResToJSON,
-    LiquidIntegratedAppResFromJSON,
-    LiquidIntegratedAppResToJSON,
-    LiquidStartIdvReqFromJSON,
-    LiquidStartIdvReqToJSON,
-    PlaidGetKycReqFromJSON,
-    PlaidGetKycReqToJSON,
-    PlaidStartIdvReqFromJSON,
-    PlaidStartIdvReqToJSON,
-    PlaidStartIdvResFromJSON,
-    PlaidStartIdvResToJSON,
+    JpGetKycReqFromJSON,
+    JpGetKycReqToJSON,
+    JpGetUnionResultResFromJSON,
+    JpGetUnionResultResToJSON,
+    JpStartIdvReqFromJSON,
+    JpStartIdvReqToJSON,
+    ResultReqFromJSON,
+    ResultReqToJSON,
+    ResultResFromJSON,
+    ResultResToJSON,
+    SessionStartReqFromJSON,
+    SessionStartReqToJSON,
+    SessionStartResFromJSON,
+    SessionStartResToJSON,
     StartIdvReqFromJSON,
     StartIdvReqToJSON,
     StartIdvResFromJSON,
     StartIdvResToJSON,
-    TencentGetKycReqFromJSON,
-    TencentGetKycReqToJSON,
-    TencentGetUnionResultResFromJSON,
-    TencentGetUnionResultResToJSON,
-    TencentStartIdvResFromJSON,
-    TencentStartIdvResToJSON,
-    TencentStartReqFromJSON,
-    TencentStartReqToJSON,
     TokenResFromJSON,
     TokenResToJSON,
+    TomoIdvIssueTokenReqFromJSON,
+    TomoIdvIssueTokenReqToJSON,
+    TomoIdvIssueTokenResFromJSON,
+    TomoIdvIssueTokenResToJSON,
+    UkStartIdvReqFromJSON,
+    UkStartIdvReqToJSON,
+    UsGetKycReqFromJSON,
+    UsGetKycReqToJSON,
+    UsGetUnionResultResFromJSON,
+    UsGetUnionResultResToJSON,
+    UsStartIdvReqFromJSON,
+    UsStartIdvReqToJSON,
 } from '../models/index.js';
 
 export interface V1IdvCaKycGetPostRequest {
     Authorization?: string;
-    PlaidGetKycReq?: PlaidGetKycReq;
+    UsGetKycReq?: UsGetKycReq;
 }
 
 export interface V1IdvCaStartPostRequest {
     Authorization?: string;
-    PlaidStartIdvReq?: PlaidStartIdvReq;
+    CaStartIdvReq?: CaStartIdvReq;
 }
 
 export interface V1IdvCnKycGetPostRequest {
     Authorization?: string;
-    TencentGetKycReq?: TencentGetKycReq;
+    CnGetKycReq?: CnGetKycReq;
 }
 
 export interface V1IdvCnStartPostRequest {
     Authorization?: string;
-    TencentStartReq?: TencentStartReq;
+    CnStartIdvReq?: CnStartIdvReq;
+}
+
+export interface V1IdvCnTokenPostRequest {
+    Authorization?: string;
+    TomoIdvIssueTokenReq?: TomoIdvIssueTokenReq;
 }
 
 export interface V1IdvJpKycGetPostRequest {
     Authorization?: string;
-    LiquidGetKycReq?: LiquidGetKycReq;
+    JpGetKycReq?: JpGetKycReq;
 }
 
 export interface V1IdvJpStartPostRequest {
     Authorization?: string;
-    LiquidStartIdvReq?: LiquidStartIdvReq;
+    JpStartIdvReq?: JpStartIdvReq;
 }
 
 export interface V1IdvKycGetPostRequest {
     Authorization?: string;
     GetKycReq?: GetKycReq;
+}
+
+export interface V1IdvResultPostRequest {
+    Authorization?: string;
+    ResultReq?: ResultReq;
+}
+
+export interface V1IdvSessionsStartPostRequest {
+    Authorization?: string;
+    SessionStartReq?: SessionStartReq;
 }
 
 export interface V1IdvStartPostRequest {
@@ -109,22 +142,22 @@ export interface V1IdvStartPostRequest {
 
 export interface V1IdvUkKycGetPostRequest {
     Authorization?: string;
-    PlaidGetKycReq?: PlaidGetKycReq;
+    UsGetKycReq?: UsGetKycReq;
 }
 
 export interface V1IdvUkStartPostRequest {
     Authorization?: string;
-    PlaidStartIdvReq?: PlaidStartIdvReq;
+    UkStartIdvReq?: UkStartIdvReq;
 }
 
 export interface V1IdvUsKycGetPostRequest {
     Authorization?: string;
-    PlaidGetKycReq?: PlaidGetKycReq;
+    UsGetKycReq?: UsGetKycReq;
 }
 
 export interface V1IdvUsStartPostRequest {
     Authorization?: string;
-    PlaidStartIdvReq?: PlaidStartIdvReq;
+    UsStartIdvReq?: UsStartIdvReq;
 }
 
 export interface V1Oauth2TokenPostRequest {
@@ -142,6 +175,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      * Creates request options for v1IdvCaHealthGet without sending the request
+     * @deprecated
      */
     async v1IdvCaHealthGetRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -160,6 +194,8 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/health.
+     * @deprecated
      */
     async v1IdvCaHealthGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
         const requestOptions = await this.v1IdvCaHealthGetRequestOpts();
@@ -173,6 +209,8 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/health.
+     * @deprecated
      */
     async v1IdvCaHealthGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
         const response = await this.v1IdvCaHealthGetRaw(initOverrides);
@@ -181,6 +219,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      * Creates request options for v1IdvCaKycGetPost without sending the request
+     * @deprecated
      */
     async v1IdvCaKycGetPostRequestOpts(requestParameters: V1IdvCaKycGetPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -201,28 +240,33 @@ export class DefaultApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PlaidGetKycReqToJSON(requestParameters['PlaidGetKycReq']),
+            body: UsGetKycReqToJSON(requestParameters['UsGetKycReq']),
         };
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/result with country=ca.
+     * @deprecated
      */
-    async v1IdvCaKycGetPostRaw(requestParameters: V1IdvCaKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<{ [key: string]: string; }>> {
+    async v1IdvCaKycGetPostRaw(requestParameters: V1IdvCaKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UsGetUnionResultRes>> {
         const requestOptions = await this.v1IdvCaKycGetPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse<any>(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UsGetUnionResultResFromJSON(jsonValue));
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/result with country=ca.
+     * @deprecated
      */
-    async v1IdvCaKycGetPost(requestParameters: V1IdvCaKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<{ [key: string]: string; }> {
+    async v1IdvCaKycGetPost(requestParameters: V1IdvCaKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UsGetUnionResultRes> {
         const response = await this.v1IdvCaKycGetPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Creates request options for v1IdvCaStartPost without sending the request
+     * @deprecated
      */
     async v1IdvCaStartPostRequestOpts(requestParameters: V1IdvCaStartPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -243,28 +287,33 @@ export class DefaultApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PlaidStartIdvReqToJSON(requestParameters['PlaidStartIdvReq']),
+            body: CaStartIdvReqToJSON(requestParameters['CaStartIdvReq']),
         };
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/start with country=ca.
+     * @deprecated
      */
-    async v1IdvCaStartPostRaw(requestParameters: V1IdvCaStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlaidStartIdvRes>> {
+    async v1IdvCaStartPostRaw(requestParameters: V1IdvCaStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StartIdvRes>> {
         const requestOptions = await this.v1IdvCaStartPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => PlaidStartIdvResFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => StartIdvResFromJSON(jsonValue));
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/start with country=ca.
+     * @deprecated
      */
-    async v1IdvCaStartPost(requestParameters: V1IdvCaStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PlaidStartIdvRes> {
+    async v1IdvCaStartPost(requestParameters: V1IdvCaStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StartIdvRes> {
         const response = await this.v1IdvCaStartPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Creates request options for v1IdvCnHealthGet without sending the request
+     * @deprecated
      */
     async v1IdvCnHealthGetRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -283,6 +332,8 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/health.
+     * @deprecated
      */
     async v1IdvCnHealthGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
         const requestOptions = await this.v1IdvCnHealthGetRequestOpts();
@@ -296,6 +347,8 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/health.
+     * @deprecated
      */
     async v1IdvCnHealthGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
         const response = await this.v1IdvCnHealthGetRaw(initOverrides);
@@ -304,6 +357,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      * Creates request options for v1IdvCnKycGetPost without sending the request
+     * @deprecated
      */
     async v1IdvCnKycGetPostRequestOpts(requestParameters: V1IdvCnKycGetPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -324,28 +378,33 @@ export class DefaultApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TencentGetKycReqToJSON(requestParameters['TencentGetKycReq']),
+            body: CnGetKycReqToJSON(requestParameters['CnGetKycReq']),
         };
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/result with country=cn.
+     * @deprecated
      */
-    async v1IdvCnKycGetPostRaw(requestParameters: V1IdvCnKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TencentGetUnionResultRes>> {
+    async v1IdvCnKycGetPostRaw(requestParameters: V1IdvCnKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CnGetUnionResultRes>> {
         const requestOptions = await this.v1IdvCnKycGetPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => TencentGetUnionResultResFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => CnGetUnionResultResFromJSON(jsonValue));
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/result with country=cn.
+     * @deprecated
      */
-    async v1IdvCnKycGetPost(requestParameters: V1IdvCnKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TencentGetUnionResultRes> {
+    async v1IdvCnKycGetPost(requestParameters: V1IdvCnKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CnGetUnionResultRes> {
         const response = await this.v1IdvCnKycGetPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Creates request options for v1IdvCnStartPost without sending the request
+     * @deprecated
      */
     async v1IdvCnStartPostRequestOpts(requestParameters: V1IdvCnStartPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -366,28 +425,119 @@ export class DefaultApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TencentStartReqToJSON(requestParameters['TencentStartReq']),
+            body: CnStartIdvReqToJSON(requestParameters['CnStartIdvReq']),
         };
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/start with country=cn.
+     * @deprecated
      */
-    async v1IdvCnStartPostRaw(requestParameters: V1IdvCnStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TencentStartIdvRes>> {
+    async v1IdvCnStartPostRaw(requestParameters: V1IdvCnStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StartIdvRes>> {
         const requestOptions = await this.v1IdvCnStartPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => TencentStartIdvResFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => StartIdvResFromJSON(jsonValue));
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/start with country=cn.
+     * @deprecated
      */
-    async v1IdvCnStartPost(requestParameters: V1IdvCnStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TencentStartIdvRes> {
+    async v1IdvCnStartPost(requestParameters: V1IdvCnStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StartIdvRes> {
         const response = await this.v1IdvCnStartPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
+     * Creates request options for v1IdvCnTokenPost without sending the request
+     * @deprecated
+     */
+    async v1IdvCnTokenPostRequestOpts(requestParameters: V1IdvCnTokenPostRequest): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
+
+        if (requestParameters['Authorization'] != null) {
+            headerParameters['Authorization'] = String(requestParameters['Authorization']);
+        }
+
+
+        let urlPath = `/v1/idv/cn/token`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: TomoIdvIssueTokenReqToJSON(requestParameters['TomoIdvIssueTokenReq']),
+        };
+    }
+
+    /**
+     * [DEPRECATED] Use the OAuth2 token endpoint.
+     * @deprecated
+     */
+    async v1IdvCnTokenPostRaw(requestParameters: V1IdvCnTokenPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TomoIdvIssueTokenRes>> {
+        const requestOptions = await this.v1IdvCnTokenPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => TomoIdvIssueTokenResFromJSON(jsonValue));
+    }
+
+    /**
+     * [DEPRECATED] Use the OAuth2 token endpoint.
+     * @deprecated
+     */
+    async v1IdvCnTokenPost(requestParameters: V1IdvCnTokenPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TomoIdvIssueTokenRes> {
+        const response = await this.v1IdvCnTokenPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for v1IdvHealthGet without sending the request
+     */
+    async v1IdvHealthGetRequestOpts(): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+
+        let urlPath = `/v1/idv/health`;
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     */
+    async v1IdvHealthGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+        const requestOptions = await this.v1IdvHealthGetRequestOpts();
+        const response = await this.request(requestOptions, initOverrides);
+
+        if (this.isJsonMime(response.headers.get('content-type'))) {
+            return new runtime.JSONApiResponse<string>(response);
+        } else {
+            return new runtime.TextApiResponse(response) as any;
+        }
+    }
+
+    /**
+     */
+    async v1IdvHealthGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
+        const response = await this.v1IdvHealthGetRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
      * Creates request options for v1IdvJpHealthGet without sending the request
+     * @deprecated
      */
     async v1IdvJpHealthGetRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -406,6 +556,8 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/health.
+     * @deprecated
      */
     async v1IdvJpHealthGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
         const requestOptions = await this.v1IdvJpHealthGetRequestOpts();
@@ -419,6 +571,8 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/health.
+     * @deprecated
      */
     async v1IdvJpHealthGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
         const response = await this.v1IdvJpHealthGetRaw(initOverrides);
@@ -427,6 +581,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      * Creates request options for v1IdvJpKycGetPost without sending the request
+     * @deprecated
      */
     async v1IdvJpKycGetPostRequestOpts(requestParameters: V1IdvJpKycGetPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -447,28 +602,33 @@ export class DefaultApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LiquidGetKycReqToJSON(requestParameters['LiquidGetKycReq']),
+            body: JpGetKycReqToJSON(requestParameters['JpGetKycReq']),
         };
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/result with country=jp.
+     * @deprecated
      */
-    async v1IdvJpKycGetPostRaw(requestParameters: V1IdvJpKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LiquidGetUnionResultRes>> {
+    async v1IdvJpKycGetPostRaw(requestParameters: V1IdvJpKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<JpGetUnionResultRes>> {
         const requestOptions = await this.v1IdvJpKycGetPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => LiquidGetUnionResultResFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => JpGetUnionResultResFromJSON(jsonValue));
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/result with country=jp.
+     * @deprecated
      */
-    async v1IdvJpKycGetPost(requestParameters: V1IdvJpKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LiquidGetUnionResultRes> {
+    async v1IdvJpKycGetPost(requestParameters: V1IdvJpKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<JpGetUnionResultRes> {
         const response = await this.v1IdvJpKycGetPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Creates request options for v1IdvJpStartPost without sending the request
+     * @deprecated
      */
     async v1IdvJpStartPostRequestOpts(requestParameters: V1IdvJpStartPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -489,22 +649,26 @@ export class DefaultApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LiquidStartIdvReqToJSON(requestParameters['LiquidStartIdvReq']),
+            body: JpStartIdvReqToJSON(requestParameters['JpStartIdvReq']),
         };
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/start with country=jp.
+     * @deprecated
      */
-    async v1IdvJpStartPostRaw(requestParameters: V1IdvJpStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LiquidIntegratedAppRes>> {
+    async v1IdvJpStartPostRaw(requestParameters: V1IdvJpStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StartIdvRes>> {
         const requestOptions = await this.v1IdvJpStartPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => LiquidIntegratedAppResFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => StartIdvResFromJSON(jsonValue));
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/start with country=jp.
+     * @deprecated
      */
-    async v1IdvJpStartPost(requestParameters: V1IdvJpStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LiquidIntegratedAppRes> {
+    async v1IdvJpStartPost(requestParameters: V1IdvJpStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StartIdvRes> {
         const response = await this.v1IdvJpStartPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -552,6 +716,95 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * Creates request options for v1IdvResultPost without sending the request
+     */
+    async v1IdvResultPostRequestOpts(requestParameters: V1IdvResultPostRequest): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
+
+        if (requestParameters['Authorization'] != null) {
+            headerParameters['Authorization'] = String(requestParameters['Authorization']);
+        }
+
+
+        let urlPath = `/v1/idv/result`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ResultReqToJSON(requestParameters['ResultReq']),
+        };
+    }
+
+    /**
+     */
+    async v1IdvResultPostRaw(requestParameters: V1IdvResultPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ResultRes>> {
+        const requestOptions = await this.v1IdvResultPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ResultResFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async v1IdvResultPost(requestParameters: V1IdvResultPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ResultRes> {
+        const response = await this.v1IdvResultPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for v1IdvSessionsStartPost without sending the request
+     * @deprecated
+     */
+    async v1IdvSessionsStartPostRequestOpts(requestParameters: V1IdvSessionsStartPostRequest): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
+
+        if (requestParameters['Authorization'] != null) {
+            headerParameters['Authorization'] = String(requestParameters['Authorization']);
+        }
+
+
+        let urlPath = `/v1/idv/sessions/start`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SessionStartReqToJSON(requestParameters['SessionStartReq']),
+        };
+    }
+
+    /**
+     * [DEPRECATED] Use /v1/idv/start.
+     * @deprecated
+     */
+    async v1IdvSessionsStartPostRaw(requestParameters: V1IdvSessionsStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SessionStartRes>> {
+        const requestOptions = await this.v1IdvSessionsStartPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SessionStartResFromJSON(jsonValue));
+    }
+
+    /**
+     * [DEPRECATED] Use /v1/idv/start.
+     * @deprecated
+     */
+    async v1IdvSessionsStartPost(requestParameters: V1IdvSessionsStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SessionStartRes> {
+        const response = await this.v1IdvSessionsStartPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
      * Creates request options for v1IdvStartPost without sending the request
      */
     async v1IdvStartPostRequestOpts(requestParameters: V1IdvStartPostRequest): Promise<runtime.RequestOpts> {
@@ -595,6 +848,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      * Creates request options for v1IdvUkHealthGet without sending the request
+     * @deprecated
      */
     async v1IdvUkHealthGetRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -613,6 +867,8 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/health.
+     * @deprecated
      */
     async v1IdvUkHealthGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
         const requestOptions = await this.v1IdvUkHealthGetRequestOpts();
@@ -626,6 +882,8 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/health.
+     * @deprecated
      */
     async v1IdvUkHealthGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
         const response = await this.v1IdvUkHealthGetRaw(initOverrides);
@@ -634,6 +892,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      * Creates request options for v1IdvUkKycGetPost without sending the request
+     * @deprecated
      */
     async v1IdvUkKycGetPostRequestOpts(requestParameters: V1IdvUkKycGetPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -654,28 +913,33 @@ export class DefaultApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PlaidGetKycReqToJSON(requestParameters['PlaidGetKycReq']),
+            body: UsGetKycReqToJSON(requestParameters['UsGetKycReq']),
         };
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/result with country=uk.
+     * @deprecated
      */
-    async v1IdvUkKycGetPostRaw(requestParameters: V1IdvUkKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<{ [key: string]: string; }>> {
+    async v1IdvUkKycGetPostRaw(requestParameters: V1IdvUkKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UsGetUnionResultRes>> {
         const requestOptions = await this.v1IdvUkKycGetPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse<any>(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UsGetUnionResultResFromJSON(jsonValue));
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/result with country=uk.
+     * @deprecated
      */
-    async v1IdvUkKycGetPost(requestParameters: V1IdvUkKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<{ [key: string]: string; }> {
+    async v1IdvUkKycGetPost(requestParameters: V1IdvUkKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UsGetUnionResultRes> {
         const response = await this.v1IdvUkKycGetPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Creates request options for v1IdvUkStartPost without sending the request
+     * @deprecated
      */
     async v1IdvUkStartPostRequestOpts(requestParameters: V1IdvUkStartPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -696,28 +960,33 @@ export class DefaultApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PlaidStartIdvReqToJSON(requestParameters['PlaidStartIdvReq']),
+            body: UkStartIdvReqToJSON(requestParameters['UkStartIdvReq']),
         };
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/start with country=uk.
+     * @deprecated
      */
-    async v1IdvUkStartPostRaw(requestParameters: V1IdvUkStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlaidStartIdvRes>> {
+    async v1IdvUkStartPostRaw(requestParameters: V1IdvUkStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StartIdvRes>> {
         const requestOptions = await this.v1IdvUkStartPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => PlaidStartIdvResFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => StartIdvResFromJSON(jsonValue));
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/start with country=uk.
+     * @deprecated
      */
-    async v1IdvUkStartPost(requestParameters: V1IdvUkStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PlaidStartIdvRes> {
+    async v1IdvUkStartPost(requestParameters: V1IdvUkStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StartIdvRes> {
         const response = await this.v1IdvUkStartPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Creates request options for v1IdvUsHealthGet without sending the request
+     * @deprecated
      */
     async v1IdvUsHealthGetRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -736,6 +1005,8 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/health.
+     * @deprecated
      */
     async v1IdvUsHealthGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
         const requestOptions = await this.v1IdvUsHealthGetRequestOpts();
@@ -749,6 +1020,8 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/health.
+     * @deprecated
      */
     async v1IdvUsHealthGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
         const response = await this.v1IdvUsHealthGetRaw(initOverrides);
@@ -757,6 +1030,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      * Creates request options for v1IdvUsKycGetPost without sending the request
+     * @deprecated
      */
     async v1IdvUsKycGetPostRequestOpts(requestParameters: V1IdvUsKycGetPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -777,28 +1051,33 @@ export class DefaultApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PlaidGetKycReqToJSON(requestParameters['PlaidGetKycReq']),
+            body: UsGetKycReqToJSON(requestParameters['UsGetKycReq']),
         };
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/result with country=us.
+     * @deprecated
      */
-    async v1IdvUsKycGetPostRaw(requestParameters: V1IdvUsKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<{ [key: string]: string; }>> {
+    async v1IdvUsKycGetPostRaw(requestParameters: V1IdvUsKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UsGetUnionResultRes>> {
         const requestOptions = await this.v1IdvUsKycGetPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse<any>(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UsGetUnionResultResFromJSON(jsonValue));
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/result with country=us.
+     * @deprecated
      */
-    async v1IdvUsKycGetPost(requestParameters: V1IdvUsKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<{ [key: string]: string; }> {
+    async v1IdvUsKycGetPost(requestParameters: V1IdvUsKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UsGetUnionResultRes> {
         const response = await this.v1IdvUsKycGetPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
      * Creates request options for v1IdvUsStartPost without sending the request
+     * @deprecated
      */
     async v1IdvUsStartPostRequestOpts(requestParameters: V1IdvUsStartPostRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
@@ -819,22 +1098,26 @@ export class DefaultApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PlaidStartIdvReqToJSON(requestParameters['PlaidStartIdvReq']),
+            body: UsStartIdvReqToJSON(requestParameters['UsStartIdvReq']),
         };
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/start with country=us.
+     * @deprecated
      */
-    async v1IdvUsStartPostRaw(requestParameters: V1IdvUsStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlaidStartIdvRes>> {
+    async v1IdvUsStartPostRaw(requestParameters: V1IdvUsStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StartIdvRes>> {
         const requestOptions = await this.v1IdvUsStartPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => PlaidStartIdvResFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => StartIdvResFromJSON(jsonValue));
     }
 
     /**
+     * [DEPRECATED] Use /v1/idv/start with country=us.
+     * @deprecated
      */
-    async v1IdvUsStartPost(requestParameters: V1IdvUsStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PlaidStartIdvRes> {
+    async v1IdvUsStartPost(requestParameters: V1IdvUsStartPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StartIdvRes> {
         const response = await this.v1IdvUsStartPostRaw(requestParameters, initOverrides);
         return await response.value();
     }

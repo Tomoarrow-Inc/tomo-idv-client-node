@@ -1,5 +1,5 @@
 
-# StartIdvReq
+# SessionStartReq
 
 
 ## Properties
@@ -15,7 +15,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { StartIdvReq } from ''
+import type { SessionStartReq } from ''
 
 // TODO: Update the object below with actual values
 const example = {
@@ -24,7 +24,7 @@ const example = {
   "email": null,
   "kyc_policy": null,
   "user_id": null,
-} satisfies StartIdvReq
+} satisfies SessionStartReq
 
 console.log(example)
 
@@ -33,7 +33,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as StartIdvReq
+const exampleParsed = JSON.parse(exampleJSON) as SessionStartReq
 console.log(exampleParsed)
 ```
 

@@ -1,30 +1,20 @@
 
-# StartIdvReq
+# CnIdvField
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`callback_url` | string
-`country` | [Country](Country.md)
-`email` | string
-`kyc_policy` | [KycPolicy](KycPolicy.md)
-`user_id` | string
 
 ## Example
 
 ```typescript
-import type { StartIdvReq } from ''
+import type { CnIdvField } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "callback_url": null,
-  "country": null,
-  "email": null,
-  "kyc_policy": null,
-  "user_id": null,
-} satisfies StartIdvReq
+} satisfies CnIdvField
 
 console.log(example)
 
@@ -33,7 +23,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as StartIdvReq
+const exampleParsed = JSON.parse(exampleJSON) as CnIdvField
 console.log(exampleParsed)
 ```
 
