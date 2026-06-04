@@ -8,6 +8,7 @@ Name | Type
 ------------ | -------------
 `method` | string
 `owner_assurance` | object
+`preset` | string
 `subject` | object
 
 ## Example
@@ -19,6 +20,7 @@ import type { KycPolicy } from ''
 const example = {
   "method": null,
   "owner_assurance": null,
+  "preset": null,
   "subject": null,
 } satisfies KycPolicy
 

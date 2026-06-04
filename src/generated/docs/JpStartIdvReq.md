@@ -8,7 +8,9 @@ Name | Type
 ------------ | -------------
 `callback_url` | string
 `kyc_policy_id` | string
+`redirect_url` | string
 `user_id` | string
+`webhook_url` | string
 
 ## Example
 
@@ -19,7 +21,9 @@ import type { JpStartIdvReq } from ''
 const example = {
   "callback_url": null,
   "kyc_policy_id": null,
+  "redirect_url": null,
   "user_id": null,
+  "webhook_url": null,
 } satisfies JpStartIdvReq
 
 console.log(example)

@@ -90,7 +90,7 @@ No authorization required
 
 ## v1IdvCaKycGetPost
 
-> UsGetUnionResultRes v1IdvCaKycGetPost(Authorization, UsGetKycReq)
+> UsGetUnionResultRes v1IdvCaKycGetPost(UsGetKycReq)
 
 
 
@@ -107,11 +107,13 @@ import type { V1IdvCaKycGetPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
     // UsGetKycReq (optional)
     UsGetKycReq: ...,
   } satisfies V1IdvCaKycGetPostRequest;
@@ -133,7 +135,6 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **UsGetKycReq** | [UsGetKycReq](UsGetKycReq.md) |  | [Optional] |
 
 ### Return type
@@ -142,7 +143,7 @@ example().catch(console.error);
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -161,7 +162,7 @@ No authorization required
 
 ## v1IdvCaStartPost
 
-> StartIdvRes v1IdvCaStartPost(Authorization, CaStartIdvReq)
+> StartIdvRes v1IdvCaStartPost(CaStartIdvReq)
 
 
 
@@ -178,11 +179,13 @@ import type { V1IdvCaStartPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
     // CaStartIdvReq (optional)
     CaStartIdvReq: ...,
   } satisfies V1IdvCaStartPostRequest;
@@ -204,7 +207,6 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **CaStartIdvReq** | [CaStartIdvReq](CaStartIdvReq.md) |  | [Optional] |
 
 ### Return type
@@ -213,7 +215,7 @@ example().catch(console.error);
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -291,7 +293,7 @@ No authorization required
 
 ## v1IdvCnKycGetPost
 
-> CnGetUnionResultRes v1IdvCnKycGetPost(Authorization, CnGetKycReq)
+> CnGetUnionResultRes v1IdvCnKycGetPost(CnGetKycReq)
 
 
 
@@ -308,11 +310,13 @@ import type { V1IdvCnKycGetPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
     // CnGetKycReq (optional)
     CnGetKycReq: ...,
   } satisfies V1IdvCnKycGetPostRequest;
@@ -334,7 +338,6 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **CnGetKycReq** | [CnGetKycReq](CnGetKycReq.md) |  | [Optional] |
 
 ### Return type
@@ -343,7 +346,7 @@ example().catch(console.error);
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -362,7 +365,7 @@ No authorization required
 
 ## v1IdvCnStartPost
 
-> StartIdvRes v1IdvCnStartPost(Authorization, CnStartIdvReq)
+> StartIdvRes v1IdvCnStartPost(CnStartIdvReq)
 
 
 
@@ -379,11 +382,13 @@ import type { V1IdvCnStartPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
     // CnStartIdvReq (optional)
     CnStartIdvReq: ...,
   } satisfies V1IdvCnStartPostRequest;
@@ -405,7 +410,6 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **CnStartIdvReq** | [CnStartIdvReq](CnStartIdvReq.md) |  | [Optional] |
 
 ### Return type
@@ -414,7 +418,7 @@ example().catch(console.error);
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -433,7 +437,7 @@ No authorization required
 
 ## v1IdvCnTokenPost
 
-> TomoIdvIssueTokenRes v1IdvCnTokenPost(Authorization, TomoIdvIssueTokenReq)
+> TomoIdvIssueTokenRes v1IdvCnTokenPost(TomoIdvIssueTokenReq)
 
 
 
@@ -450,11 +454,13 @@ import type { V1IdvCnTokenPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
     // TomoIdvIssueTokenReq (optional)
     TomoIdvIssueTokenReq: ...,
   } satisfies V1IdvCnTokenPostRequest;
@@ -476,7 +482,6 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **TomoIdvIssueTokenReq** | [TomoIdvIssueTokenReq](TomoIdvIssueTokenReq.md) |  | [Optional] |
 
 ### Return type
@@ -485,7 +490,7 @@ example().catch(console.error);
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -620,7 +625,7 @@ No authorization required
 
 ## v1IdvJpKycGetPost
 
-> JpGetUnionResultRes v1IdvJpKycGetPost(Authorization, JpGetKycReq)
+> JpGetUnionResultRes v1IdvJpKycGetPost(JpGetKycReq)
 
 
 
@@ -637,11 +642,13 @@ import type { V1IdvJpKycGetPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
     // JpGetKycReq (optional)
     JpGetKycReq: ...,
   } satisfies V1IdvJpKycGetPostRequest;
@@ -663,7 +670,6 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **JpGetKycReq** | [JpGetKycReq](JpGetKycReq.md) |  | [Optional] |
 
 ### Return type
@@ -672,7 +678,7 @@ example().catch(console.error);
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -691,7 +697,7 @@ No authorization required
 
 ## v1IdvJpStartPost
 
-> StartIdvRes v1IdvJpStartPost(Authorization, JpStartIdvReq)
+> StartIdvRes v1IdvJpStartPost(JpStartIdvReq)
 
 
 
@@ -708,11 +714,13 @@ import type { V1IdvJpStartPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
     // JpStartIdvReq (optional)
     JpStartIdvReq: ...,
   } satisfies V1IdvJpStartPostRequest;
@@ -734,7 +742,6 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **JpStartIdvReq** | [JpStartIdvReq](JpStartIdvReq.md) |  | [Optional] |
 
 ### Return type
@@ -743,7 +750,7 @@ example().catch(console.error);
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -762,7 +769,7 @@ No authorization required
 
 ## v1IdvKycGetPost
 
-> GetKycRes v1IdvKycGetPost(Authorization, GetKycReq)
+> GetKycRes v1IdvKycGetPost(GetKycReq)
 
 
 
@@ -777,11 +784,13 @@ import type { V1IdvKycGetPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
     // GetKycReq (optional)
     GetKycReq: ...,
   } satisfies V1IdvKycGetPostRequest;
@@ -803,7 +812,6 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **GetKycReq** | [GetKycReq](GetKycReq.md) |  | [Optional] |
 
 ### Return type
@@ -812,7 +820,7 @@ example().catch(console.error);
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -831,7 +839,7 @@ No authorization required
 
 ## v1IdvResultPost
 
-> ResultRes v1IdvResultPost(Authorization, ResultReq)
+> ResultRes v1IdvResultPost(ResultReq)
 
 
 
@@ -846,11 +854,13 @@ import type { V1IdvResultPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
     // ResultReq (optional)
     ResultReq: ...,
   } satisfies V1IdvResultPostRequest;
@@ -872,7 +882,6 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **ResultReq** | [ResultReq](ResultReq.md) |  | [Optional] |
 
 ### Return type
@@ -881,7 +890,7 @@ example().catch(console.error);
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -900,7 +909,7 @@ No authorization required
 
 ## v1IdvSessionsStartPost
 
-> SessionStartRes v1IdvSessionsStartPost(Authorization, SessionStartReq)
+> SessionStartRes v1IdvSessionsStartPost(SessionStartReq)
 
 
 
@@ -917,11 +926,13 @@ import type { V1IdvSessionsStartPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
     // SessionStartReq (optional)
     SessionStartReq: ...,
   } satisfies V1IdvSessionsStartPostRequest;
@@ -943,7 +954,6 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **SessionStartReq** | [SessionStartReq](SessionStartReq.md) |  | [Optional] |
 
 ### Return type
@@ -952,7 +962,7 @@ example().catch(console.error);
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -971,7 +981,7 @@ No authorization required
 
 ## v1IdvStartPost
 
-> StartIdvRes v1IdvStartPost(Authorization, StartIdvReq)
+> StartIdvRes v1IdvStartPost(StartIdvReq)
 
 
 
@@ -986,11 +996,13 @@ import type { V1IdvStartPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
     // StartIdvReq (optional)
     StartIdvReq: ...,
   } satisfies V1IdvStartPostRequest;
@@ -1012,7 +1024,6 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **StartIdvReq** | [StartIdvReq](StartIdvReq.md) |  | [Optional] |
 
 ### Return type
@@ -1021,7 +1032,7 @@ example().catch(console.error);
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1099,7 +1110,7 @@ No authorization required
 
 ## v1IdvUkKycGetPost
 
-> UsGetUnionResultRes v1IdvUkKycGetPost(Authorization, UsGetKycReq)
+> UsGetUnionResultRes v1IdvUkKycGetPost(UsGetKycReq)
 
 
 
@@ -1116,11 +1127,13 @@ import type { V1IdvUkKycGetPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
     // UsGetKycReq (optional)
     UsGetKycReq: ...,
   } satisfies V1IdvUkKycGetPostRequest;
@@ -1142,7 +1155,6 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **UsGetKycReq** | [UsGetKycReq](UsGetKycReq.md) |  | [Optional] |
 
 ### Return type
@@ -1151,7 +1163,7 @@ example().catch(console.error);
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1170,7 +1182,7 @@ No authorization required
 
 ## v1IdvUkStartPost
 
-> StartIdvRes v1IdvUkStartPost(Authorization, UkStartIdvReq)
+> StartIdvRes v1IdvUkStartPost(UkStartIdvReq)
 
 
 
@@ -1187,11 +1199,13 @@ import type { V1IdvUkStartPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
     // UkStartIdvReq (optional)
     UkStartIdvReq: ...,
   } satisfies V1IdvUkStartPostRequest;
@@ -1213,7 +1227,6 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **UkStartIdvReq** | [UkStartIdvReq](UkStartIdvReq.md) |  | [Optional] |
 
 ### Return type
@@ -1222,7 +1235,7 @@ example().catch(console.error);
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1300,7 +1313,7 @@ No authorization required
 
 ## v1IdvUsKycGetPost
 
-> UsGetUnionResultRes v1IdvUsKycGetPost(Authorization, UsGetKycReq)
+> UsGetUnionResultRes v1IdvUsKycGetPost(UsGetKycReq)
 
 
 
@@ -1317,11 +1330,13 @@ import type { V1IdvUsKycGetPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
     // UsGetKycReq (optional)
     UsGetKycReq: ...,
   } satisfies V1IdvUsKycGetPostRequest;
@@ -1343,7 +1358,6 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **UsGetKycReq** | [UsGetKycReq](UsGetKycReq.md) |  | [Optional] |
 
 ### Return type
@@ -1352,7 +1366,7 @@ example().catch(console.error);
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1371,7 +1385,7 @@ No authorization required
 
 ## v1IdvUsStartPost
 
-> StartIdvRes v1IdvUsStartPost(Authorization, UsStartIdvReq)
+> StartIdvRes v1IdvUsStartPost(UsStartIdvReq)
 
 
 
@@ -1388,11 +1402,13 @@ import type { V1IdvUsStartPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
     // UsStartIdvReq (optional)
     UsStartIdvReq: ...,
   } satisfies V1IdvUsStartPostRequest;
@@ -1414,7 +1430,6 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **UsStartIdvReq** | [UsStartIdvReq](UsStartIdvReq.md) |  | [Optional] |
 
 ### Return type
@@ -1423,7 +1438,7 @@ example().catch(console.error);
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

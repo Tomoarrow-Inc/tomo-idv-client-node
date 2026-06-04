@@ -10,7 +10,9 @@ Name | Type
 `callback_url` | string
 `card_image_base64` | string
 `kyc_policy_id` | string
+`redirect_url` | string
 `user_id` | string
+`webhook_url` | string
 
 ## Example
 
@@ -23,7 +25,9 @@ const example = {
   "callback_url": null,
   "card_image_base64": null,
   "kyc_policy_id": null,
+  "redirect_url": null,
   "user_id": null,
+  "webhook_url": null,
 } satisfies CnStartIdvReq
 
 console.log(example)
