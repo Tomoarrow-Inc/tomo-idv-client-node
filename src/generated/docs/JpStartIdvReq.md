@@ -7,7 +7,6 @@
 Name | Type
 ------------ | -------------
 `callback_url` | string
-`kyc_policy_id` | string
 `redirect_url` | string
 `user_id` | string
 `webhook_url` | string
@@ -20,7 +19,6 @@ import type { JpStartIdvReq } from ''
 // TODO: Update the object below with actual values
 const example = {
   "callback_url": null,
-  "kyc_policy_id": null,
   "redirect_url": null,
   "user_id": null,
   "webhook_url": null,

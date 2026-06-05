@@ -6,10 +6,7 @@
 
 Name | Type
 ------------ | -------------
-`best_frame_base64` | string
 `callback_url` | string
-`card_image_base64` | string
-`kyc_policy_id` | string
 `redirect_url` | string
 `user_id` | string
 `webhook_url` | string
@@ -21,10 +18,7 @@ import type { CnStartIdvReq } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "best_frame_base64": null,
   "callback_url": null,
-  "card_image_base64": null,
-  "kyc_policy_id": null,
   "redirect_url": null,
   "user_id": null,
   "webhook_url": null,

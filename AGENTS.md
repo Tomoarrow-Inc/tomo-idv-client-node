@@ -61,6 +61,14 @@ Rules:
 - If generator output does not compile, identify whether the fix belongs in idv-server contract definitions, root `ci/` generator configuration, or this SDK's non-generated wrapper code. Report the boundary clearly.
 - Manual edits are allowed only in hand-written helper/export code and generator support files that belong to this repository.
 
+## Naming Stability
+
+Treat names that may be observed outside this package as high-risk compatibility surfaces, not cosmetic cleanup targets. This includes variable names used in public examples, request/response fields, OpenAPI properties, generated type names, enum values, endpoint paths and operation names, SDK public API names, DB table/column names, OAuth/JWT claims, env/config names, and other contract-derived names.
+
+Names that cross module or service boundaries must not be changed unilaterally. Required renames need an approved cross-module contract, migration, codegen, and compatibility plan before implementation. Prefer additive aliases, compatibility shims, and deprecation paths over replacement whenever external callers, generated clients, persisted data, or package consumers may depend on the existing name.
+
+For this npm SDK, be especially conservative with npm exports, generated client names, OAuth/JWT claim names, package entrypoints, and public helper APIs such as the client assertion helpers.
+
 ## Compatibility and Versioning Duties
 
 - Preserve npm package name `tomo-idv-client-node`.

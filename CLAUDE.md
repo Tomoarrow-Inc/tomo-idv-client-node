@@ -2,6 +2,14 @@
 
 npm SDK for OAuth2 client-assertion (ES256/P-256). Provides Node.js clients for idv-server API authentication.
 
+## 이름 안정성 원칙
+
+외부에서 관측될 수 있는 이름 변경은 단순 정리가 아니라 고위험 호환성 변경으로 취급한다. public 예제의 변수명, request/response field, OpenAPI property, generated type name, enum value, endpoint path/name, SDK public API name, DB table/column name, OAuth/JWT claim, env/config name, 기타 contract-derived name은 보수적으로 유지한다.
+
+모듈 또는 서비스 경계를 넘는 이름은 단독으로 변경하지 않는다. 필요한 rename은 승인된 cross-module contract, migration, codegen, compatibility plan이 있을 때만 수행한다. 외부 호출자, generated client, 저장 데이터, package consumer가 기존 이름에 의존할 수 있으면 replacement보다 additive alias, compatibility shim, deprecation path를 우선한다.
+
+이 npm SDK에서는 특히 npm exports, generated client names, OAuth/JWT claim names, package entrypoints, public helper APIs(client assertion helper 등)를 안정적인 public surface로 취급한다.
+
 ## Agent 워크트리 원칙
 
 이 서브모듈에서 작업하는 agent는 반드시 워크트리(격리된 작업 공간)에서 실행된다.
