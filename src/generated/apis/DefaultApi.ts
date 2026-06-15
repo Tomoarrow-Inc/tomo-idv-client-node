@@ -24,6 +24,10 @@ import type {
   JpGetKycReq,
   JpGetUnionResultRes,
   JpStartIdvReq,
+  ResultBulkDeleteReq,
+  ResultBulkDeleteRes,
+  ResultDeleteReq,
+  ResultDeleteRes,
   ResultReq,
   ResultRes,
   SessionStartReq,
@@ -57,6 +61,14 @@ import {
     JpGetUnionResultResToJSON,
     JpStartIdvReqFromJSON,
     JpStartIdvReqToJSON,
+    ResultBulkDeleteReqFromJSON,
+    ResultBulkDeleteReqToJSON,
+    ResultBulkDeleteResFromJSON,
+    ResultBulkDeleteResToJSON,
+    ResultDeleteReqFromJSON,
+    ResultDeleteReqToJSON,
+    ResultDeleteResFromJSON,
+    ResultDeleteResToJSON,
     ResultReqFromJSON,
     ResultReqToJSON,
     ResultResFromJSON,
@@ -115,6 +127,14 @@ export interface V1IdvJpStartPostRequest {
 
 export interface V1IdvKycGetPostRequest {
     GetKycReq?: GetKycReq;
+}
+
+export interface V1IdvResultBulkDeletePostRequest {
+    ResultBulkDeleteReq?: ResultBulkDeleteReq;
+}
+
+export interface V1IdvResultDeletePostRequest {
+    ResultDeleteReq?: ResultDeleteReq;
 }
 
 export interface V1IdvResultPostRequest {
@@ -729,6 +749,98 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async v1IdvKycGetPost(requestParameters: V1IdvKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetKycRes> {
         const response = await this.v1IdvKycGetPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for v1IdvResultBulkDeletePost without sending the request
+     */
+    async v1IdvResultBulkDeletePostRequestOpts(requestParameters: V1IdvResultBulkDeletePostRequest): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearerAuth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/v1/idv/result/bulk-delete`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ResultBulkDeleteReqToJSON(requestParameters['ResultBulkDeleteReq']),
+        };
+    }
+
+    /**
+     */
+    async v1IdvResultBulkDeletePostRaw(requestParameters: V1IdvResultBulkDeletePostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ResultBulkDeleteRes>> {
+        const requestOptions = await this.v1IdvResultBulkDeletePostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ResultBulkDeleteResFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async v1IdvResultBulkDeletePost(requestParameters: V1IdvResultBulkDeletePostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ResultBulkDeleteRes> {
+        const response = await this.v1IdvResultBulkDeletePostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for v1IdvResultDeletePost without sending the request
+     */
+    async v1IdvResultDeletePostRequestOpts(requestParameters: V1IdvResultDeletePostRequest): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearerAuth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/v1/idv/result/delete`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ResultDeleteReqToJSON(requestParameters['ResultDeleteReq']),
+        };
+    }
+
+    /**
+     */
+    async v1IdvResultDeletePostRaw(requestParameters: V1IdvResultDeletePostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ResultDeleteRes>> {
+        const requestOptions = await this.v1IdvResultDeletePostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ResultDeleteResFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async v1IdvResultDeletePost(requestParameters: V1IdvResultDeletePostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ResultDeleteRes> {
+        const response = await this.v1IdvResultDeletePostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
