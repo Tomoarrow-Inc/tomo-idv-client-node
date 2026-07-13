@@ -63,7 +63,13 @@ export interface StartIdvReq {
      * @type {string}
      * @memberof StartIdvReq
      */
-    redirect_url?: string;
+    redirect_url_fail?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof StartIdvReq
+     */
+    redirect_url_success?: string;
     /**
      * 
      * @type {string}
@@ -101,7 +107,8 @@ export function StartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: boolean
         'country': json['country'] == null ? undefined : CountryFromJSON(json['country']),
         'email': json['email'] == null ? undefined : json['email'],
         'kyc_policy': json['kyc_policy'] == null ? undefined : KycPolicyFromJSON(json['kyc_policy']),
-        'redirect_url': json['redirect_url'] == null ? undefined : json['redirect_url'],
+        'redirect_url_fail': json['redirect_url_fail'] == null ? undefined : json['redirect_url_fail'],
+        'redirect_url_success': json['redirect_url_success'] == null ? undefined : json['redirect_url_success'],
         'user_id': json['user_id'] == null ? undefined : json['user_id'],
         'webhook_url': json['webhook_url'] == null ? undefined : json['webhook_url'],
     };
@@ -122,7 +129,8 @@ export function StartIdvReqToJSONTyped(value?: StartIdvReq | null, ignoreDiscrim
         'country': CountryToJSON(value['country']),
         'email': value['email'],
         'kyc_policy': KycPolicyToJSON(value['kyc_policy']),
-        'redirect_url': value['redirect_url'],
+        'redirect_url_fail': value['redirect_url_fail'],
+        'redirect_url_success': value['redirect_url_success'],
         'user_id': value['user_id'],
         'webhook_url': value['webhook_url'],
     };

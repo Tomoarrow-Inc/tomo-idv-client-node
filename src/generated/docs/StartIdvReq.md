@@ -10,7 +10,8 @@ Name | Type
 `country` | [Country](Country.md)
 `email` | string
 `kyc_policy` | [KycPolicy](KycPolicy.md)
-`redirect_url` | string
+`redirect_url_fail` | string
+`redirect_url_success` | string
 `user_id` | string
 `webhook_url` | string
 
@@ -25,7 +26,8 @@ const example = {
   "country": null,
   "email": null,
   "kyc_policy": null,
-  "redirect_url": null,
+  "redirect_url_fail": null,
+  "redirect_url_success": null,
   "user_id": null,
   "webhook_url": null,
 } satisfies StartIdvReq
