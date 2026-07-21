@@ -18,6 +18,9 @@ docs/JpIdvField.md
 docs/JpStartIdvReq.md
 docs/KycPolicy.md
 docs/LaunchKind.md
+docs/ResetReq.md
+docs/ResetRes.md
+docs/ResetStatus.md
 docs/ResultBulkDeleteReq.md
 docs/ResultBulkDeleteRes.md
 docs/ResultDeleteReq.md
@@ -56,6 +59,9 @@ models/JpIdvField.ts
 models/JpStartIdvReq.ts
 models/KycPolicy.ts
 models/LaunchKind.ts
+models/ResetReq.ts
+models/ResetRes.ts
+models/ResetStatus.ts
 models/ResultBulkDeleteReq.ts
 models/ResultBulkDeleteRes.ts
 models/ResultDeleteReq.ts

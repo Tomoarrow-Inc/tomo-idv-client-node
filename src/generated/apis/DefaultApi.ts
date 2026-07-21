@@ -24,6 +24,8 @@ import type {
   JpGetKycReq,
   JpGetUnionResultRes,
   JpStartIdvReq,
+  ResetReq,
+  ResetRes,
   ResultBulkDeleteReq,
   ResultBulkDeleteRes,
   ResultDeleteReq,
@@ -61,6 +63,10 @@ import {
     JpGetUnionResultResToJSON,
     JpStartIdvReqFromJSON,
     JpStartIdvReqToJSON,
+    ResetReqFromJSON,
+    ResetReqToJSON,
+    ResetResFromJSON,
+    ResetResToJSON,
     ResultBulkDeleteReqFromJSON,
     ResultBulkDeleteReqToJSON,
     ResultBulkDeleteResFromJSON,
@@ -127,6 +133,10 @@ export interface V1IdvJpStartPostRequest {
 
 export interface V1IdvKycGetPostRequest {
     GetKycReq?: GetKycReq;
+}
+
+export interface V1IdvResetPostRequest {
+    ResetReq?: ResetReq;
 }
 
 export interface V1IdvResultBulkDeletePostRequest {
@@ -749,6 +759,52 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async v1IdvKycGetPost(requestParameters: V1IdvKycGetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetKycRes> {
         const response = await this.v1IdvKycGetPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for v1IdvResetPost without sending the request
+     */
+    async v1IdvResetPostRequestOpts(requestParameters: V1IdvResetPostRequest): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearerAuth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/v1/idv/reset`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ResetReqToJSON(requestParameters['ResetReq']),
+        };
+    }
+
+    /**
+     */
+    async v1IdvResetPostRaw(requestParameters: V1IdvResetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ResetRes>> {
+        const requestOptions = await this.v1IdvResetPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ResetResFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async v1IdvResetPost(requestParameters: V1IdvResetPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ResetRes> {
+        const response = await this.v1IdvResetPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

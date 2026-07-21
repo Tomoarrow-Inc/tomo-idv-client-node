@@ -16,6 +16,7 @@ All URIs are relative to *http://localhost*
 | [**v1IdvJpKycGetPost**](DefaultApi.md#v1idvjpkycgetpost) | **POST** /v1/idv/jp/kyc/get |  |
 | [**v1IdvJpStartPost**](DefaultApi.md#v1idvjpstartpost) | **POST** /v1/idv/jp/start |  |
 | [**v1IdvKycGetPost**](DefaultApi.md#v1idvkycgetpost) | **POST** /v1/idv/kyc/get |  |
+| [**v1IdvResetPost**](DefaultApi.md#v1idvresetpost) | **POST** /v1/idv/reset |  |
 | [**v1IdvResultBulkDeletePost**](DefaultApi.md#v1idvresultbulkdeletepost) | **POST** /v1/idv/result/bulk-delete |  |
 | [**v1IdvResultDeletePost**](DefaultApi.md#v1idvresultdeletepost) | **POST** /v1/idv/result/delete |  |
 | [**v1IdvResultPost**](DefaultApi.md#v1idvresultpost) | **POST** /v1/idv/result |  |
@@ -819,6 +820,76 @@ example().catch(console.error);
 ### Return type
 
 [**GetKycRes**](GetKycRes.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json;charset=utf-8`
+- **Accept**: `application/json;charset=utf-8`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## v1IdvResetPost
+
+> ResetRes v1IdvResetPost(ResetReq)
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  DefaultApi,
+} from '';
+import type { V1IdvResetPostRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
+
+  const body = {
+    // ResetReq (optional)
+    ResetReq: ...,
+  } satisfies V1IdvResetPostRequest;
+
+  try {
+    const data = await api.v1IdvResetPost(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **ResetReq** | [ResetReq](ResetReq.md) |  | [Optional] |
+
+### Return type
+
+[**ResetRes**](ResetRes.md)
 
 ### Authorization
 
