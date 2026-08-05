@@ -6,8 +6,8 @@
 
 Name | Type
 ------------ | -------------
-`result` | [ResultRecord](ResultRecord.md)
 `results` | [Array&lt;ResultRecord&gt;](ResultRecord.md)
+`user_id` | string
 
 ## Example
 
@@ -16,8 +16,8 @@ import type { ResultRes } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "result": null,
   "results": null,
+  "user_id": null,
 } satisfies ResultRes
 
 console.log(example)

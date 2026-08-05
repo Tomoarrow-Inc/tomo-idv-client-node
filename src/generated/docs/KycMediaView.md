@@ -1,26 +1,24 @@
 
-# ResultRecord
+# KycMediaView
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`country` | string
-`kyc` | [StandardKycResultView](StandardKycResultView.md)
-`policy_key` | string
+`kind` | [KycMediaKind](KycMediaKind.md)
+`url` | string
 
 ## Example
 
 ```typescript
-import type { ResultRecord } from ''
+import type { KycMediaView } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "country": null,
-  "kyc": null,
-  "policy_key": null,
-} satisfies ResultRecord
+  "kind": null,
+  "url": null,
+} satisfies KycMediaView
 
 console.log(example)
 
@@ -29,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as ResultRecord
+const exampleParsed = JSON.parse(exampleJSON) as KycMediaView
 console.log(exampleParsed)
 ```
 

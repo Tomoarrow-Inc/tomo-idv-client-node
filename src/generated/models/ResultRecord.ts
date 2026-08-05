@@ -13,13 +13,13 @@
  */
 
 import { mapValues } from '../runtime.js';
-import type { GetKycRes } from './GetKycRes.js';
+import type { StandardKycResultView } from './StandardKycResultView.js';
 import {
-    GetKycResFromJSON,
-    GetKycResFromJSONTyped,
-    GetKycResToJSON,
-    GetKycResToJSONTyped,
-} from './GetKycRes.js';
+    StandardKycResultViewFromJSON,
+    StandardKycResultViewFromJSONTyped,
+    StandardKycResultViewToJSON,
+    StandardKycResultViewToJSONTyped,
+} from './StandardKycResultView.js';
 
 /**
  * 
@@ -32,35 +32,28 @@ export interface ResultRecord {
      * @type {string}
      * @memberof ResultRecord
      */
-    auth_id: string;
+    country: string;
     /**
      * 
-     * @type {string}
+     * @type {StandardKycResultView}
      * @memberof ResultRecord
      */
-    country: string;
+    kyc: StandardKycResultView;
     /**
      * 
      * @type {string}
      * @memberof ResultRecord
      */
     policy_key: string;
-    /**
-     * 
-     * @type {GetKycRes}
-     * @memberof ResultRecord
-     */
-    result: GetKycRes;
 }
 
 /**
  * Check if a given object implements the ResultRecord interface.
  */
 export function instanceOfResultRecord(value: object): value is ResultRecord {
-    if (!('auth_id' in value) || value['auth_id'] === undefined) return false;
     if (!('country' in value) || value['country'] === undefined) return false;
+    if (!('kyc' in value) || value['kyc'] === undefined) return false;
     if (!('policy_key' in value) || value['policy_key'] === undefined) return false;
-    if (!('result' in value) || value['result'] === undefined) return false;
     return true;
 }
 
@@ -74,10 +67,9 @@ export function ResultRecordFromJSONTyped(json: any, ignoreDiscriminator: boolea
     }
     return {
         
-        'auth_id': json['auth_id'],
         'country': json['country'],
+        'kyc': StandardKycResultViewFromJSON(json['kyc']),
         'policy_key': json['policy_key'],
-        'result': GetKycResFromJSON(json['result']),
     };
 }
 
@@ -92,10 +84,9 @@ export function ResultRecordToJSONTyped(value?: ResultRecord | null, ignoreDiscr
 
     return {
         
-        'auth_id': value['auth_id'],
         'country': value['country'],
+        'kyc': StandardKycResultViewToJSON(value['kyc']),
         'policy_key': value['policy_key'],
-        'result': GetKycResToJSON(value['result']),
     };
 }
 

@@ -1,26 +1,28 @@
 
-# ResultRecord
+# KycDataComparisonView
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`country` | string
-`kyc` | [StandardKycResultView](StandardKycResultView.md)
-`policy_key` | string
+`date_of_birth` | [KycMatchOutcome](KycMatchOutcome.md)
+`expiration_date` | [KycMatchOutcome](KycMatchOutcome.md)
+`issuing_country` | [KycMatchOutcome](KycMatchOutcome.md)
+`name` | [KycMatchOutcome](KycMatchOutcome.md)
 
 ## Example
 
 ```typescript
-import type { ResultRecord } from ''
+import type { KycDataComparisonView } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "country": null,
-  "kyc": null,
-  "policy_key": null,
-} satisfies ResultRecord
+  "date_of_birth": null,
+  "expiration_date": null,
+  "issuing_country": null,
+  "name": null,
+} satisfies KycDataComparisonView
 
 console.log(example)
 
@@ -29,7 +31,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as ResultRecord
+const exampleParsed = JSON.parse(exampleJSON) as KycDataComparisonView
 console.log(exampleParsed)
 ```
 

@@ -1,26 +1,30 @@
 
-# ResultRecord
+# KycResidencePermitView
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`country` | string
-`kyc` | [StandardKycResultView](StandardKycResultView.md)
-`policy_key` | string
+`card_type` | string
+`comprehensive_permission` | string
+`individual_permission` | string
+`info_type` | string
+`update_status` | boolean
 
 ## Example
 
 ```typescript
-import type { ResultRecord } from ''
+import type { KycResidencePermitView } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "country": null,
-  "kyc": null,
-  "policy_key": null,
-} satisfies ResultRecord
+  "card_type": null,
+  "comprehensive_permission": null,
+  "individual_permission": null,
+  "info_type": null,
+  "update_status": null,
+} satisfies KycResidencePermitView
 
 console.log(example)
 
@@ -29,7 +33,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as ResultRecord
+const exampleParsed = JSON.parse(exampleJSON) as KycResidencePermitView
 console.log(exampleParsed)
 ```
 

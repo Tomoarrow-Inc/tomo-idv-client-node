@@ -29,22 +29,24 @@ import {
 export interface ResultRes {
     /**
      * 
-     * @type {ResultRecord}
-     * @memberof ResultRes
-     */
-    result?: ResultRecord;
-    /**
-     * 
      * @type {Array<ResultRecord>}
      * @memberof ResultRes
      */
-    results?: Array<ResultRecord>;
+    results: Array<ResultRecord>;
+    /**
+     * 
+     * @type {string}
+     * @memberof ResultRes
+     */
+    user_id: string;
 }
 
 /**
  * Check if a given object implements the ResultRes interface.
  */
 export function instanceOfResultRes(value: object): value is ResultRes {
+    if (!('results' in value) || value['results'] === undefined) return false;
+    if (!('user_id' in value) || value['user_id'] === undefined) return false;
     return true;
 }
 
@@ -58,8 +60,8 @@ export function ResultResFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     }
     return {
         
-        'result': json['result'] == null ? undefined : ResultRecordFromJSON(json['result']),
-        'results': json['results'] == null ? undefined : ((json['results'] as Array<any>).map(ResultRecordFromJSON)),
+        'results': ((json['results'] as Array<any>).map(ResultRecordFromJSON)),
+        'user_id': json['user_id'],
     };
 }
 
@@ -74,8 +76,8 @@ export function ResultResToJSONTyped(value?: ResultRes | null, ignoreDiscriminat
 
     return {
         
-        'result': ResultRecordToJSON(value['result']),
-        'results': value['results'] == null ? undefined : ((value['results'] as Array<any>).map(ResultRecordToJSON)),
+        'results': ((value['results'] as Array<any>).map(ResultRecordToJSON)),
+        'user_id': value['user_id'],
     };
 }
 

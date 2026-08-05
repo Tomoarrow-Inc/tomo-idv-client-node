@@ -1,26 +1,20 @@
 
-# ResultRecord
+# KycCheckOutcome
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`country` | string
-`kyc` | [StandardKycResultView](StandardKycResultView.md)
-`policy_key` | string
 
 ## Example
 
 ```typescript
-import type { ResultRecord } from ''
+import type { KycCheckOutcome } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "country": null,
-  "kyc": null,
-  "policy_key": null,
-} satisfies ResultRecord
+} satisfies KycCheckOutcome
 
 console.log(example)
 
@@ -29,7 +23,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as ResultRecord
+const exampleParsed = JSON.parse(exampleJSON) as KycCheckOutcome
 console.log(exampleParsed)
 ```
 

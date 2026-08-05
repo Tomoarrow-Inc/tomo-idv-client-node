@@ -1,26 +1,34 @@
 
-# ResultRecord
+# KycAddressView
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
+`city` | string
 `country` | string
-`kyc` | [StandardKycResultView](StandardKycResultView.md)
-`policy_key` | string
+`full` | string
+`postal_code` | string
+`region` | string
+`street` | string
+`street2` | string
 
 ## Example
 
 ```typescript
-import type { ResultRecord } from ''
+import type { KycAddressView } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "city": null,
   "country": null,
-  "kyc": null,
-  "policy_key": null,
-} satisfies ResultRecord
+  "full": null,
+  "postal_code": null,
+  "region": null,
+  "street": null,
+  "street2": null,
+} satisfies KycAddressView
 
 console.log(example)
 
@@ -29,7 +37,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as ResultRecord
+const exampleParsed = JSON.parse(exampleJSON) as KycAddressView
 console.log(exampleParsed)
 ```
 
