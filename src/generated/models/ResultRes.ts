@@ -12,43 +12,27 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime.js';
-import type { ResultRecord } from './ResultRecord.js';
+import type { ResultResOneOf } from './ResultResOneOf.js';
 import {
-    ResultRecordFromJSON,
-    ResultRecordFromJSONTyped,
-    ResultRecordToJSON,
-    ResultRecordToJSONTyped,
-} from './ResultRecord.js';
+    instanceOfResultResOneOf,
+    ResultResOneOfFromJSON,
+    ResultResOneOfFromJSONTyped,
+    ResultResOneOfToJSON,
+} from './ResultResOneOf.js';
+import type { ResultResOneOf1 } from './ResultResOneOf1.js';
+import {
+    instanceOfResultResOneOf1,
+    ResultResOneOf1FromJSON,
+    ResultResOneOf1FromJSONTyped,
+    ResultResOneOf1ToJSON,
+} from './ResultResOneOf1.js';
 
 /**
+ * @type ResultRes
  * 
  * @export
- * @interface ResultRes
  */
-export interface ResultRes {
-    /**
-     * 
-     * @type {Array<ResultRecord>}
-     * @memberof ResultRes
-     */
-    results: Array<ResultRecord>;
-    /**
-     * 
-     * @type {string}
-     * @memberof ResultRes
-     */
-    user_id: string;
-}
-
-/**
- * Check if a given object implements the ResultRes interface.
- */
-export function instanceOfResultRes(value: object): value is ResultRes {
-    if (!('results' in value) || value['results'] === undefined) return false;
-    if (!('user_id' in value) || value['user_id'] === undefined) return false;
-    return true;
-}
+export type ResultRes = ResultResOneOf | ResultResOneOf1;
 
 export function ResultResFromJSON(json: any): ResultRes {
     return ResultResFromJSONTyped(json, false);
@@ -58,14 +42,19 @@ export function ResultResFromJSONTyped(json: any, ignoreDiscriminator: boolean):
     if (json == null) {
         return json;
     }
-    return {
-        
-        'results': ((json['results'] as Array<any>).map(ResultRecordFromJSON)),
-        'user_id': json['user_id'],
-    };
+    if (typeof json !== 'object') {
+        return json;
+    }
+    if (instanceOfResultResOneOf(json)) {
+        return ResultResOneOfFromJSONTyped(json, true);
+    }
+    if (instanceOfResultResOneOf1(json)) {
+        return ResultResOneOf1FromJSONTyped(json, true);
+    }
+    return {} as any;
 }
 
-export function ResultResToJSON(json: any): ResultRes {
+export function ResultResToJSON(json: any): any {
     return ResultResToJSONTyped(json, false);
 }
 
@@ -73,11 +62,15 @@ export function ResultResToJSONTyped(value?: ResultRes | null, ignoreDiscriminat
     if (value == null) {
         return value;
     }
-
-    return {
-        
-        'results': ((value['results'] as Array<any>).map(ResultRecordToJSON)),
-        'user_id': value['user_id'],
-    };
+    if (typeof value !== 'object') {
+        return value;
+    }
+    if (instanceOfResultResOneOf(value)) {
+        return ResultResOneOfToJSON(value as ResultResOneOf);
+    }
+    if (instanceOfResultResOneOf1(value)) {
+        return ResultResOneOf1ToJSON(value as ResultResOneOf1);
+    }
+    return {};
 }
 

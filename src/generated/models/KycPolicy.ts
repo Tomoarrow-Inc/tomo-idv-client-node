@@ -26,7 +26,7 @@ export interface KycPolicy {
      */
     method?: string;
     /**
-     * 
+     * Owner assurance. kind is no_owner_assurance / owner_verf / owner_check; type names the verification method (for KR eid certificate policies the certificate authority: toss / kakao / naver / pass). For a KR eid certificate policy, omitting type delegates the certificate authority to the user: /v1/idv/start offers the authorities active in the current environment and the user picks one; /v1/idv/result matches every KR eid certificate policy.
      * @type {object}
      * @memberof KycPolicy
      */

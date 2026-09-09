@@ -28,10 +28,10 @@ import type {
   ResetRes,
   ResultBulkDeleteReq,
   ResultBulkDeleteRes,
+  ResultContractResponse,
   ResultDeleteReq,
   ResultDeleteRes,
   ResultReq,
-  ResultRes,
   SessionStartReq,
   SessionStartRes,
   StartIdvReq,
@@ -71,14 +71,14 @@ import {
     ResultBulkDeleteReqToJSON,
     ResultBulkDeleteResFromJSON,
     ResultBulkDeleteResToJSON,
+    ResultContractResponseFromJSON,
+    ResultContractResponseToJSON,
     ResultDeleteReqFromJSON,
     ResultDeleteReqToJSON,
     ResultDeleteResFromJSON,
     ResultDeleteResToJSON,
     ResultReqFromJSON,
     ResultReqToJSON,
-    ResultResFromJSON,
-    ResultResToJSON,
     SessionStartReqFromJSON,
     SessionStartReqToJSON,
     SessionStartResFromJSON,
@@ -148,6 +148,7 @@ export interface V1IdvResultDeletePostRequest {
 }
 
 export interface V1IdvResultPostRequest {
+    Tomo_API_Version?: string;
     ResultReq?: ResultReq;
 }
 
@@ -910,6 +911,10 @@ export class DefaultApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json;charset=utf-8';
 
+        if (requestParameters['Tomo_API_Version'] != null) {
+            headerParameters['Tomo-API-Version'] = String(requestParameters['Tomo_API_Version']);
+        }
+
         if (this.configuration && this.configuration.accessToken) {
             const token = this.configuration.accessToken;
             const tokenString = await token("bearerAuth", []);
@@ -932,16 +937,16 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      */
-    async v1IdvResultPostRaw(requestParameters: V1IdvResultPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ResultRes>> {
+    async v1IdvResultPostRaw(requestParameters: V1IdvResultPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ResultContractResponse>> {
         const requestOptions = await this.v1IdvResultPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => ResultResFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => ResultContractResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async v1IdvResultPost(requestParameters: V1IdvResultPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ResultRes> {
+    async v1IdvResultPost(requestParameters: V1IdvResultPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ResultContractResponse> {
         const response = await this.v1IdvResultPostRaw(requestParameters, initOverrides);
         return await response.value();
     }

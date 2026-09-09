@@ -1052,7 +1052,7 @@ example().catch(console.error);
 
 ## v1IdvResultPost
 
-> ResultRes v1IdvResultPost(ResultReq)
+> ResultContractResponse v1IdvResultPost(Tomo_API_Version, ResultReq)
 
 
 
@@ -1074,6 +1074,8 @@ async function example() {
   const api = new DefaultApi(config);
 
   const body = {
+    // string (optional)
+    Tomo_API_Version: Tomo_API_Version_example,
     // ResultReq (optional)
     ResultReq: ...,
   } satisfies V1IdvResultPostRequest;
@@ -1095,11 +1097,12 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **Tomo_API_Version** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **ResultReq** | [ResultReq](ResultReq.md) |  | [Optional] |
 
 ### Return type
 
-[**ResultRes**](ResultRes.md)
+[**ResultContractResponse**](ResultContractResponse.md)
 
 ### Authorization
 
@@ -1114,8 +1117,8 @@ example().catch(console.error);
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+| **200** |  |  * Tomo-API-Version -  <br>  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Tomo-API-Version&#x60; or &#x60;Authorization&#x60; |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

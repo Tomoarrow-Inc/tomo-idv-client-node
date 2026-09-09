@@ -1,26 +1,22 @@
 
-# ResultRes
+# ResultRes13OneOf
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`results` | [Array&lt;ResultRecord&gt;](ResultRecord.md)
-`user_id` | string
-`result` | [ResultRecord](ResultRecord.md)
+`results` | [Array&lt;ResultRecord13&gt;](ResultRecord13.md)
 
 ## Example
 
 ```typescript
-import type { ResultRes } from ''
+import type { ResultRes13OneOf } from ''
 
 // TODO: Update the object below with actual values
 const example = {
   "results": null,
-  "user_id": null,
-  "result": null,
-} satisfies ResultRes
+} satisfies ResultRes13OneOf
 
 console.log(example)
 
@@ -29,7 +25,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as ResultRes
+const exampleParsed = JSON.parse(exampleJSON) as ResultRes13OneOf
 console.log(exampleParsed)
 ```
 

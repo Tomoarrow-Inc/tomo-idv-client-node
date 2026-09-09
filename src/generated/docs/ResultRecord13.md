@@ -1,26 +1,28 @@
 
-# ResultRes
+# ResultRecord13
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`results` | [Array&lt;ResultRecord&gt;](ResultRecord.md)
-`user_id` | string
-`result` | [ResultRecord](ResultRecord.md)
+`auth_id` | string
+`country` | string
+`policy_key` | string
+`result` | [GetKycRes](GetKycRes.md)
 
 ## Example
 
 ```typescript
-import type { ResultRes } from ''
+import type { ResultRecord13 } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "results": null,
-  "user_id": null,
+  "auth_id": null,
+  "country": null,
+  "policy_key": null,
   "result": null,
-} satisfies ResultRes
+} satisfies ResultRecord13
 
 console.log(example)
 
@@ -29,7 +31,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as ResultRes
+const exampleParsed = JSON.parse(exampleJSON) as ResultRecord13
 console.log(exampleParsed)
 ```
 
