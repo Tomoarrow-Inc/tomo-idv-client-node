@@ -1,22 +1,24 @@
 
-# ResultRes13OneOf1
+# SdkVersionNegotiationError
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`result` | [ResultRecord13](ResultRecord13.md)
+`error` | string
+`error_description` | string
 
 ## Example
 
 ```typescript
-import type { ResultRes13OneOf1 } from ''
+import type { SdkVersionNegotiationError } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "result": null,
-} satisfies ResultRes13OneOf1
+  "error": null,
+  "error_description": null,
+} satisfies SdkVersionNegotiationError
 
 console.log(example)
 
@@ -25,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as ResultRes13OneOf1
+const exampleParsed = JSON.parse(exampleJSON) as SdkVersionNegotiationError
 console.log(exampleParsed)
 ```
 
