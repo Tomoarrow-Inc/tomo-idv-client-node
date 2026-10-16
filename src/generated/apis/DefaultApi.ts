@@ -44,6 +44,8 @@ import type {
   UsGetKycReq,
   UsGetUnionResultRes,
   UsStartIdvReq,
+  VerifySessionTokenRequest,
+  VerifySessionTokenResponse,
 } from '../models/index.js';
 import {
     CaStartIdvReqFromJSON,
@@ -104,6 +106,10 @@ import {
     UsGetUnionResultResToJSON,
     UsStartIdvReqFromJSON,
     UsStartIdvReqToJSON,
+    VerifySessionTokenRequestFromJSON,
+    VerifySessionTokenRequestToJSON,
+    VerifySessionTokenResponseFromJSON,
+    VerifySessionTokenResponseToJSON,
 } from '../models/index.js';
 
 export interface V1IdvCaHealthGetRequest {
@@ -227,6 +233,10 @@ export interface V1Oauth2TokenPostRequest {
     grant_type: string;
     resource?: string;
     scope?: string;
+}
+
+export interface V1VerifySessionTokenPostRequest {
+    VerifySessionTokenRequest?: VerifySessionTokenRequest;
 }
 
 /**
@@ -1744,6 +1754,44 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async v1Oauth2TokenPost(requestParameters: V1Oauth2TokenPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TokenRes> {
         const response = await this.v1Oauth2TokenPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for v1VerifySessionTokenPost without sending the request
+     */
+    async v1VerifySessionTokenPostRequestOpts(requestParameters: V1VerifySessionTokenPostRequest): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
+
+
+        let urlPath = `/v1/verify/session-token`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: VerifySessionTokenRequestToJSON(requestParameters['VerifySessionTokenRequest']),
+        };
+    }
+
+    /**
+     */
+    async v1VerifySessionTokenPostRaw(requestParameters: V1VerifySessionTokenPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<VerifySessionTokenResponse>> {
+        const requestOptions = await this.v1VerifySessionTokenPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => VerifySessionTokenResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async v1VerifySessionTokenPost(requestParameters: V1VerifySessionTokenPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VerifySessionTokenResponse> {
+        const response = await this.v1VerifySessionTokenPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

@@ -77,6 +77,8 @@ docs/UsGetResultRes.md
 docs/UsGetUnionResultRes.md
 docs/UsIdvField.md
 docs/UsStartIdvReq.md
+docs/VerifySessionTokenRequest.md
+docs/VerifySessionTokenResponse.md
 index.ts
 models/CaStartIdvReq.ts
 models/CnGetKycReq.ts
@@ -153,5 +155,7 @@ models/UsGetResultRes.ts
 models/UsGetUnionResultRes.ts
 models/UsIdvField.ts
 models/UsStartIdvReq.ts
+models/VerifySessionTokenRequest.ts
+models/VerifySessionTokenResponse.ts
 models/index.ts
 runtime.ts

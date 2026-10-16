@@ -29,6 +29,7 @@ All URIs are relative to *http://localhost*
 | [**v1IdvUsKycGetPost**](DefaultApi.md#v1idvuskycgetpost) | **POST** /v1/idv/us/kyc/get |  |
 | [**v1IdvUsStartPost**](DefaultApi.md#v1idvusstartpost) | **POST** /v1/idv/us/start |  |
 | [**v1Oauth2TokenPost**](DefaultApi.md#v1oauth2tokenpost) | **POST** /v1/oauth2/token |  |
+| [**v1VerifySessionTokenPost**](DefaultApi.md#v1verifysessiontokenpost) | **POST** /v1/verify/session-token |  |
 
 
 
@@ -1853,6 +1854,72 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
 | **400** | Invalid &#x60;body&#x60; Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## v1VerifySessionTokenPost
+
+> VerifySessionTokenResponse v1VerifySessionTokenPost(VerifySessionTokenRequest)
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  DefaultApi,
+} from '';
+import type { V1VerifySessionTokenPostRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const api = new DefaultApi();
+
+  const body = {
+    // VerifySessionTokenRequest (optional)
+    VerifySessionTokenRequest: ...,
+  } satisfies V1VerifySessionTokenPostRequest;
+
+  try {
+    const data = await api.v1VerifySessionTokenPost(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **VerifySessionTokenRequest** | [VerifySessionTokenRequest](VerifySessionTokenRequest.md) |  | [Optional] |
+
+### Return type
+
+[**VerifySessionTokenResponse**](VerifySessionTokenResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json;charset=utf-8`
+- **Accept**: `application/json;charset=utf-8`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Invalid &#x60;body&#x60; |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

@@ -75,3 +75,5 @@ export * from './UsGetResultRes.js';
 export * from './UsGetUnionResultRes.js';
 export * from './UsIdvField.js';
 export * from './UsStartIdvReq.js';
+export * from './VerifySessionTokenRequest.js';
+export * from './VerifySessionTokenResponse.js';
