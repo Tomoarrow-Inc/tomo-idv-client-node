@@ -1,11 +1,13 @@
 
 # StartIdvReq
 
+At start only, a document subject may omit id_type or send null, an empty string, or whitespace to request active document selection. allowed_document_id_types is accepted only with this unresolved document form. Concrete policies and other subject kinds keep their existing meaning.
 
 ## Properties
 
 Name | Type
 ------------ | -------------
+`allowed_document_id_types` | Array&lt;string&gt;
 `callback_url` | string
 `country` | [Country](Country.md)
 `email` | string
@@ -22,6 +24,7 @@ import type { StartIdvReq } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "allowed_document_id_types": null,
   "callback_url": null,
   "country": null,
   "email": null,

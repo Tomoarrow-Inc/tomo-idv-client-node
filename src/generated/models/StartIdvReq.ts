@@ -29,11 +29,17 @@ import {
 } from './Country.js';
 
 /**
- * 
+ * At start only, a document subject may omit id_type or send null, an empty string, or whitespace to request active document selection. allowed_document_id_types is accepted only with this unresolved document form. Concrete policies and other subject kinds keep their existing meaning.
  * @export
  * @interface StartIdvReq
  */
 export interface StartIdvReq {
+    /**
+     * 
+     * @type {Array<StartIdvReqAllowedDocumentIdTypesEnum>}
+     * @memberof StartIdvReq
+     */
+    allowed_document_id_types?: Array<StartIdvReqAllowedDocumentIdTypesEnum>;
     /**
      * 
      * @type {string}
@@ -85,6 +91,17 @@ export interface StartIdvReq {
 }
 
 
+/**
+ * @export
+ */
+export const StartIdvReqAllowedDocumentIdTypesEnum = {
+    IdCard: 'id_card',
+    DriverLicense: 'driver_license',
+    Passport: 'passport',
+    ResidencyPermitCard: 'residency_permit_card'
+} as const;
+export type StartIdvReqAllowedDocumentIdTypesEnum = typeof StartIdvReqAllowedDocumentIdTypesEnum[keyof typeof StartIdvReqAllowedDocumentIdTypesEnum];
+
 
 /**
  * Check if a given object implements the StartIdvReq interface.
@@ -103,6 +120,7 @@ export function StartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: boolean
     }
     return {
         
+        'allowed_document_id_types': json['allowed_document_id_types'] == null ? undefined : json['allowed_document_id_types'],
         'callback_url': json['callback_url'] == null ? undefined : json['callback_url'],
         'country': json['country'] == null ? undefined : CountryFromJSON(json['country']),
         'email': json['email'] == null ? undefined : json['email'],
@@ -125,6 +143,7 @@ export function StartIdvReqToJSONTyped(value?: StartIdvReq | null, ignoreDiscrim
 
     return {
         
+        'allowed_document_id_types': value['allowed_document_id_types'],
         'callback_url': value['callback_url'],
         'country': CountryToJSON(value['country']),
         'email': value['email'],
