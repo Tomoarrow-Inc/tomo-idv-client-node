@@ -13,13 +13,6 @@
  */
 
 import { mapValues } from '../runtime.js';
-import type { KycPolicy } from './KycPolicy.js';
-import {
-    KycPolicyFromJSON,
-    KycPolicyFromJSONTyped,
-    KycPolicyToJSON,
-    KycPolicyToJSONTyped,
-} from './KycPolicy.js';
 import type { Country } from './Country.js';
 import {
     CountryFromJSON,
@@ -27,19 +20,20 @@ import {
     CountryToJSON,
     CountryToJSONTyped,
 } from './Country.js';
+import type { StartIdvReqKycPolicy } from './StartIdvReqKycPolicy.js';
+import {
+    StartIdvReqKycPolicyFromJSON,
+    StartIdvReqKycPolicyFromJSONTyped,
+    StartIdvReqKycPolicyToJSON,
+    StartIdvReqKycPolicyToJSONTyped,
+} from './StartIdvReqKycPolicy.js';
 
 /**
- * At start only, a document subject may omit id_type or send null, an empty string, or whitespace to request active document selection. allowed_document_id_types is accepted only with this unresolved document form. Concrete policies and other subject kinds keep their existing meaning.
+ * At start only, document subject.id_type accepts a string for a concrete document or a nonempty string array to restrict active document selection. Omitted, null, empty, and whitespace strings keep unrestricted document selection. Array entries are trimmed, lowercased, and deduplicated. Other subject kinds keep their existing meaning; personal_info ignores id_type and eid requires the scalar certificate.
  * @export
  * @interface StartIdvReq
  */
 export interface StartIdvReq {
-    /**
-     * 
-     * @type {Array<StartIdvReqAllowedDocumentIdTypesEnum>}
-     * @memberof StartIdvReq
-     */
-    allowed_document_id_types?: Array<StartIdvReqAllowedDocumentIdTypesEnum>;
     /**
      * 
      * @type {string}
@@ -60,10 +54,10 @@ export interface StartIdvReq {
     email?: string;
     /**
      * 
-     * @type {KycPolicy}
+     * @type {StartIdvReqKycPolicy}
      * @memberof StartIdvReq
      */
-    kyc_policy?: KycPolicy;
+    kyc_policy?: StartIdvReqKycPolicy;
     /**
      * 
      * @type {string}
@@ -91,17 +85,6 @@ export interface StartIdvReq {
 }
 
 
-/**
- * @export
- */
-export const StartIdvReqAllowedDocumentIdTypesEnum = {
-    IdCard: 'id_card',
-    DriverLicense: 'driver_license',
-    Passport: 'passport',
-    ResidencyPermitCard: 'residency_permit_card'
-} as const;
-export type StartIdvReqAllowedDocumentIdTypesEnum = typeof StartIdvReqAllowedDocumentIdTypesEnum[keyof typeof StartIdvReqAllowedDocumentIdTypesEnum];
-
 
 /**
  * Check if a given object implements the StartIdvReq interface.
@@ -120,11 +103,10 @@ export function StartIdvReqFromJSONTyped(json: any, ignoreDiscriminator: boolean
     }
     return {
         
-        'allowed_document_id_types': json['allowed_document_id_types'] == null ? undefined : json['allowed_document_id_types'],
         'callback_url': json['callback_url'] == null ? undefined : json['callback_url'],
         'country': json['country'] == null ? undefined : CountryFromJSON(json['country']),
         'email': json['email'] == null ? undefined : json['email'],
-        'kyc_policy': json['kyc_policy'] == null ? undefined : KycPolicyFromJSON(json['kyc_policy']),
+        'kyc_policy': json['kyc_policy'] == null ? undefined : StartIdvReqKycPolicyFromJSON(json['kyc_policy']),
         'redirect_url_fail': json['redirect_url_fail'] == null ? undefined : json['redirect_url_fail'],
         'redirect_url_success': json['redirect_url_success'] == null ? undefined : json['redirect_url_success'],
         'user_id': json['user_id'] == null ? undefined : json['user_id'],
@@ -143,11 +125,10 @@ export function StartIdvReqToJSONTyped(value?: StartIdvReq | null, ignoreDiscrim
 
     return {
         
-        'allowed_document_id_types': value['allowed_document_id_types'],
         'callback_url': value['callback_url'],
         'country': CountryToJSON(value['country']),
         'email': value['email'],
-        'kyc_policy': KycPolicyToJSON(value['kyc_policy']),
+        'kyc_policy': StartIdvReqKycPolicyToJSON(value['kyc_policy']),
         'redirect_url_fail': value['redirect_url_fail'],
         'redirect_url_success': value['redirect_url_success'],
         'user_id': value['user_id'],

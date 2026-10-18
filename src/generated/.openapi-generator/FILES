@@ -67,6 +67,9 @@ docs/SessionStartReq.md
 docs/SessionStartRes.md
 docs/StandardKycResultView.md
 docs/StartIdvReq.md
+docs/StartIdvReqKycPolicy.md
+docs/StartIdvReqKycPolicySubject.md
+docs/StartIdvReqKycPolicySubjectIdType.md
 docs/StartIdvRes.md
 docs/TokenRes.md
 docs/TomoIdvIssueTokenReq.md
@@ -145,6 +148,9 @@ models/SessionStartReq.ts
 models/SessionStartRes.ts
 models/StandardKycResultView.ts
 models/StartIdvReq.ts
+models/StartIdvReqKycPolicy.ts
+models/StartIdvReqKycPolicySubject.ts
+models/StartIdvReqKycPolicySubjectIdType.ts
 models/StartIdvRes.ts
 models/TokenRes.ts
 models/TomoIdvIssueTokenReq.ts

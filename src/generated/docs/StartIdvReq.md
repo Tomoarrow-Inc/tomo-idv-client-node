@@ -1,17 +1,16 @@
 
 # StartIdvReq
 
-At start only, a document subject may omit id_type or send null, an empty string, or whitespace to request active document selection. allowed_document_id_types is accepted only with this unresolved document form. Concrete policies and other subject kinds keep their existing meaning.
+At start only, document subject.id_type accepts a string for a concrete document or a nonempty string array to restrict active document selection. Omitted, null, empty, and whitespace strings keep unrestricted document selection. Array entries are trimmed, lowercased, and deduplicated. Other subject kinds keep their existing meaning; personal_info ignores id_type and eid requires the scalar certificate.
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`allowed_document_id_types` | Array&lt;string&gt;
 `callback_url` | string
 `country` | [Country](Country.md)
 `email` | string
-`kyc_policy` | [KycPolicy](KycPolicy.md)
+`kyc_policy` | [StartIdvReqKycPolicy](StartIdvReqKycPolicy.md)
 `redirect_url_fail` | string
 `redirect_url_success` | string
 `user_id` | string
@@ -24,7 +23,6 @@ import type { StartIdvReq } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "allowed_document_id_types": null,
   "callback_url": null,
   "country": null,
   "email": null,
