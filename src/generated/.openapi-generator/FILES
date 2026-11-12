@@ -1,6 +1,10 @@
 .openapi-generator-ignore
 apis/DefaultApi.ts
 apis/index.ts
+docs/AggregateClientCounts.md
+docs/AggregateCounts.md
+docs/AggregatePeriod.md
+docs/AggregateReport.md
 docs/CaStartIdvReq.md
 docs/CnGetKycReq.md
 docs/CnGetKycRes.md
@@ -83,6 +87,10 @@ docs/UsStartIdvReq.md
 docs/VerifySessionTokenRequest.md
 docs/VerifySessionTokenResponse.md
 index.ts
+models/AggregateClientCounts.ts
+models/AggregateCounts.ts
+models/AggregatePeriod.ts
+models/AggregateReport.ts
 models/CaStartIdvReq.ts
 models/CnGetKycReq.ts
 models/CnGetKycRes.ts

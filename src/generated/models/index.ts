@@ -1,5 +1,9 @@
 /* tslint:disable */
 /* eslint-disable */
+export * from './AggregateClientCounts.js';
+export * from './AggregateCounts.js';
+export * from './AggregatePeriod.js';
+export * from './AggregateReport.js';
 export * from './CaStartIdvReq.js';
 export * from './CnGetKycReq.js';
 export * from './CnGetKycRes.js';

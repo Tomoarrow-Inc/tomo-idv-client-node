@@ -16,6 +16,7 @@ All URIs are relative to *http://localhost*
 | [**v1IdvJpKycGetPost**](DefaultApi.md#v1idvjpkycgetpost) | **POST** /v1/idv/jp/kyc/get |  |
 | [**v1IdvJpStartPost**](DefaultApi.md#v1idvjpstartpost) | **POST** /v1/idv/jp/start |  |
 | [**v1IdvKycGetPost**](DefaultApi.md#v1idvkycgetpost) | **POST** /v1/idv/kyc/get |  |
+| [**v1IdvReportsAggregatesGet**](DefaultApi.md#v1idvreportsaggregatesget) | **GET** /v1/idv/reports/aggregates/ |  |
 | [**v1IdvResetPost**](DefaultApi.md#v1idvresetpost) | **POST** /v1/idv/reset |  |
 | [**v1IdvResultBulkDeletePost**](DefaultApi.md#v1idvresultbulkdeletepost) | **POST** /v1/idv/result/bulk-delete |  |
 | [**v1IdvResultDeletePost**](DefaultApi.md#v1idvresultdeletepost) | **POST** /v1/idv/result/delete |  |
@@ -897,6 +898,99 @@ example().catch(console.error);
 |-------------|-------------|------------------|
 | **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
 | **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## v1IdvReportsAggregatesGet
+
+> AggregateReport v1IdvReportsAggregatesGet(Tomo_Filter_Client_Ids, scope, period, from, to, limit, cursor)
+
+
+
+Requires aggregates.read. Counts retained attempts by creation time and current status. Defaults to the current month in Asia/Seoul. Organization queries additionally require a current console approval.
+
+### Example
+
+```ts
+import {
+  Configuration,
+  DefaultApi,
+} from '';
+import type { V1IdvReportsAggregatesGetRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
+
+  const body = {
+    // Array<string> (optional)
+    Tomo_Filter_Client_Ids: ...,
+    // 'client' | 'organization' (optional)
+    scope: scope_example,
+    // 'current_month' | 'last_3_months' | 'last_6_months' | 'last_12_months' | 'all_time' (optional)
+    period: period_example,
+    // Date (optional)
+    from: 2013-10-20T19:20:30+01:00,
+    // Date (optional)
+    to: 2013-10-20T19:20:30+01:00,
+    // number (optional)
+    limit: 56,
+    // string (optional)
+    cursor: cursor_example,
+  } satisfies V1IdvReportsAggregatesGetRequest;
+
+  try {
+    const data = await api.v1IdvReportsAggregatesGet(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **Tomo_Filter_Client_Ids** | `Array<string>` |  | [Optional] |
+| **scope** | `client`, `organization` |  | [Optional] [Defaults to `undefined`] [Enum: client, organization] |
+| **period** | `current_month`, `last_3_months`, `last_6_months`, `last_12_months`, `all_time` |  | [Optional] [Defaults to `undefined`] [Enum: current_month, last_3_months, last_6_months, last_12_months, all_time] |
+| **from** | `Date` |  | [Optional] [Defaults to `undefined`] |
+| **to** | `Date` |  | [Optional] [Defaults to `undefined`] |
+| **limit** | `number` |  | [Optional] [Defaults to `50`] |
+| **cursor** | `string` |  | [Optional] [Defaults to `undefined`] |
+
+### Return type
+
+[**AggregateReport**](AggregateReport.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json;charset=utf-8`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  * Cache-Control -  <br>  |
+| **400** | Invalid &#x60;cursor&#x60; or &#x60;limit&#x60; or &#x60;to&#x60; or &#x60;from&#x60; or &#x60;period&#x60; or &#x60;scope&#x60; or &#x60;Tomo-Filter-Client-Ids&#x60; or &#x60;Authorization&#x60; |  -  |
+| **401** | Authentication required |  -  |
+| **403** | Access denied |  -  |
+| **503** | Report data unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

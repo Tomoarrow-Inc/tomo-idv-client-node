@@ -15,6 +15,7 @@
 
 import * as runtime from '../runtime.js';
 import type {
+  AggregateReport,
   CaStartIdvReq,
   CnGetKycReq,
   CnGetUnionResultRes,
@@ -48,6 +49,8 @@ import type {
   VerifySessionTokenResponse,
 } from '../models/index.js';
 import {
+    AggregateReportFromJSON,
+    AggregateReportToJSON,
     CaStartIdvReqFromJSON,
     CaStartIdvReqToJSON,
     CnGetKycReqFromJSON,
@@ -166,6 +169,16 @@ export interface V1IdvJpStartPostRequest {
 export interface V1IdvKycGetPostRequest {
     Tomo_API_Version: V1IdvKycGetPostTomoAPIVersionEnum;
     GetKycReq?: GetKycReq;
+}
+
+export interface V1IdvReportsAggregatesGetRequest {
+    Tomo_Filter_Client_Ids?: Array<string>;
+    scope?: V1IdvReportsAggregatesGetScopeEnum;
+    period?: V1IdvReportsAggregatesGetPeriodEnum;
+    from?: Date;
+    to?: Date;
+    limit?: number;
+    cursor?: string;
 }
 
 export interface V1IdvResetPostRequest {
@@ -947,6 +960,79 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async v1IdvKycGetPost(requestParameters: V1IdvKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetKycRes> {
         const response = await this.v1IdvKycGetPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for v1IdvReportsAggregatesGet without sending the request
+     */
+    async v1IdvReportsAggregatesGetRequestOpts(requestParameters: V1IdvReportsAggregatesGetRequest): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        if (requestParameters['scope'] != null) {
+            queryParameters['scope'] = requestParameters['scope'];
+        }
+
+        if (requestParameters['period'] != null) {
+            queryParameters['period'] = requestParameters['period'];
+        }
+
+        if (requestParameters['from'] != null) {
+            queryParameters['from'] = (requestParameters['from'] as any).toISOString();
+        }
+
+        if (requestParameters['to'] != null) {
+            queryParameters['to'] = (requestParameters['to'] as any).toISOString();
+        }
+
+        if (requestParameters['limit'] != null) {
+            queryParameters['limit'] = requestParameters['limit'];
+        }
+
+        if (requestParameters['cursor'] != null) {
+            queryParameters['cursor'] = requestParameters['cursor'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['Tomo_Filter_Client_Ids'] != null) {
+            headerParameters['Tomo-Filter-Client-Ids'] = requestParameters['Tomo_Filter_Client_Ids']!.join(runtime.COLLECTION_FORMATS["csv"]);
+        }
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearerAuth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/v1/idv/reports/aggregates/`;
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * Requires aggregates.read. Counts retained attempts by creation time and current status. Defaults to the current month in Asia/Seoul. Organization queries additionally require a current console approval.
+     */
+    async v1IdvReportsAggregatesGetRaw(requestParameters: V1IdvReportsAggregatesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AggregateReport>> {
+        const requestOptions = await this.v1IdvReportsAggregatesGetRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => AggregateReportFromJSON(jsonValue));
+    }
+
+    /**
+     * Requires aggregates.read. Counts retained attempts by creation time and current status. Defaults to the current month in Asia/Seoul. Organization queries additionally require a current console approval.
+     */
+    async v1IdvReportsAggregatesGet(requestParameters: V1IdvReportsAggregatesGetRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AggregateReport> {
+        const response = await this.v1IdvReportsAggregatesGetRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -1881,6 +1967,25 @@ export const V1IdvKycGetPostTomoAPIVersionEnum = {
     _14: '1.4'
 } as const;
 export type V1IdvKycGetPostTomoAPIVersionEnum = typeof V1IdvKycGetPostTomoAPIVersionEnum[keyof typeof V1IdvKycGetPostTomoAPIVersionEnum];
+/**
+ * @export
+ */
+export const V1IdvReportsAggregatesGetScopeEnum = {
+    Client: 'client',
+    Organization: 'organization'
+} as const;
+export type V1IdvReportsAggregatesGetScopeEnum = typeof V1IdvReportsAggregatesGetScopeEnum[keyof typeof V1IdvReportsAggregatesGetScopeEnum];
+/**
+ * @export
+ */
+export const V1IdvReportsAggregatesGetPeriodEnum = {
+    CurrentMonth: 'current_month',
+    Last3Months: 'last_3_months',
+    Last6Months: 'last_6_months',
+    Last12Months: 'last_12_months',
+    AllTime: 'all_time'
+} as const;
+export type V1IdvReportsAggregatesGetPeriodEnum = typeof V1IdvReportsAggregatesGetPeriodEnum[keyof typeof V1IdvReportsAggregatesGetPeriodEnum];
 /**
  * @export
  */
