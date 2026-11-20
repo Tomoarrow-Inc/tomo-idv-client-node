@@ -5,21 +5,20 @@ All URIs are relative to *http://localhost*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**v1IdvCaHealthGet**](DefaultApi.md#v1idvcahealthget) | **GET** /v1/idv/ca/health |  |
-| [**v1IdvCaKycGetPost**](DefaultApi.md#v1idvcakycgetpost) | **POST** /v1/idv/ca/kyc/get |  |
-| [**v1IdvCaStartPost**](DefaultApi.md#v1idvcastartpost) | **POST** /v1/idv/ca/start |  |
 | [**v1IdvCnHealthGet**](DefaultApi.md#v1idvcnhealthget) | **GET** /v1/idv/cn/health |  |
 | [**v1IdvCnKycGetPost**](DefaultApi.md#v1idvcnkycgetpost) | **POST** /v1/idv/cn/kyc/get |  |
-| [**v1IdvCnStartPost**](DefaultApi.md#v1idvcnstartpost) | **POST** /v1/idv/cn/start |  |
-| [**v1IdvCnTokenPost**](DefaultApi.md#v1idvcntokenpost) | **POST** /v1/idv/cn/token |  |
+| [**v1IdvHealthGet**](DefaultApi.md#v1idvhealthget) | **GET** /v1/idv/health |  |
 | [**v1IdvJpHealthGet**](DefaultApi.md#v1idvjphealthget) | **GET** /v1/idv/jp/health |  |
 | [**v1IdvJpKycGetPost**](DefaultApi.md#v1idvjpkycgetpost) | **POST** /v1/idv/jp/kyc/get |  |
 | [**v1IdvJpStartPost**](DefaultApi.md#v1idvjpstartpost) | **POST** /v1/idv/jp/start |  |
-| [**v1IdvKycGetPost**](DefaultApi.md#v1idvkycgetpost) | **POST** /v1/idv/kyc/get |  |
-| [**v1IdvSessionsStartPost**](DefaultApi.md#v1idvsessionsstartpost) | **POST** /v1/idv/sessions/start |  |
+| [**v1IdvReportsAggregatesGet**](DefaultApi.md#v1idvreportsaggregatesget) | **GET** /v1/idv/reports/aggregates/ |  |
+| [**v1IdvResetPost**](DefaultApi.md#v1idvresetpost) | **POST** /v1/idv/reset |  |
+| [**v1IdvResultBulkDeletePost**](DefaultApi.md#v1idvresultbulkdeletepost) | **POST** /v1/idv/result/bulk-delete |  |
+| [**v1IdvResultDeletePost**](DefaultApi.md#v1idvresultdeletepost) | **POST** /v1/idv/result/delete |  |
+| [**v1IdvResultPost**](DefaultApi.md#v1idvresultpost) | **POST** /v1/idv/result |  |
+| [**v1IdvSessionTokensIntrospectionPost**](DefaultApi.md#v1idvsessiontokensintrospectionpost) | **POST** /v1/idv/session-tokens/introspection |  |
 | [**v1IdvStartPost**](DefaultApi.md#v1idvstartpost) | **POST** /v1/idv/start |  |
 | [**v1IdvUkHealthGet**](DefaultApi.md#v1idvukhealthget) | **GET** /v1/idv/uk/health |  |
-| [**v1IdvUkKycGetPost**](DefaultApi.md#v1idvukkycgetpost) | **POST** /v1/idv/uk/kyc/get |  |
-| [**v1IdvUkStartPost**](DefaultApi.md#v1idvukstartpost) | **POST** /v1/idv/uk/start |  |
 | [**v1IdvUsHealthGet**](DefaultApi.md#v1idvushealthget) | **GET** /v1/idv/us/health |  |
 | [**v1IdvUsKycGetPost**](DefaultApi.md#v1idvuskycgetpost) | **POST** /v1/idv/us/kyc/get |  |
 | [**v1IdvUsStartPost**](DefaultApi.md#v1idvusstartpost) | **POST** /v1/idv/us/start |  |
@@ -29,9 +28,11 @@ All URIs are relative to *http://localhost*
 
 ## v1IdvCaHealthGet
 
-> string v1IdvCaHealthGet()
+> string v1IdvCaHealthGet(Tomo_API_Version)
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 
@@ -46,8 +47,13 @@ async function example() {
   console.log("🚀 Testing  SDK...");
   const api = new DefaultApi();
 
+  const body = {
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
+  } satisfies V1IdvCaHealthGetRequest;
+
   try {
-    const data = await api.v1IdvCaHealthGet();
+    const data = await api.v1IdvCaHealthGet(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -60,7 +66,10 @@ example().catch(console.error);
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
 
 ### Return type
 
@@ -79,154 +88,19 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## v1IdvCaKycGetPost
-
-> { [key: string]: string; } v1IdvCaKycGetPost(Authorization, PlaidGetKycReq)
-
-
-
-### Example
-
-```ts
-import {
-  Configuration,
-  DefaultApi,
-} from '';
-import type { V1IdvCaKycGetPostRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
-
-  const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // PlaidGetKycReq (optional)
-    PlaidGetKycReq: ...,
-  } satisfies V1IdvCaKycGetPostRequest;
-
-  try {
-    const data = await api.v1IdvCaKycGetPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **PlaidGetKycReq** | [PlaidGetKycReq](PlaidGetKycReq.md) |  | [Optional] |
-
-### Return type
-
-**{ [key: string]: string; }**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json;charset=utf-8`
-- **Accept**: `application/json;charset=utf-8`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## v1IdvCaStartPost
-
-> PlaidStartIdvRes v1IdvCaStartPost(Authorization, PlaidStartIdvReq)
-
-
-
-### Example
-
-```ts
-import {
-  Configuration,
-  DefaultApi,
-} from '';
-import type { V1IdvCaStartPostRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
-
-  const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // PlaidStartIdvReq (optional)
-    PlaidStartIdvReq: ...,
-  } satisfies V1IdvCaStartPostRequest;
-
-  try {
-    const data = await api.v1IdvCaStartPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **PlaidStartIdvReq** | [PlaidStartIdvReq](PlaidStartIdvReq.md) |  | [Optional] |
-
-### Return type
-
-[**PlaidStartIdvRes**](PlaidStartIdvRes.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json;charset=utf-8`
-- **Accept**: `application/json;charset=utf-8`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## v1IdvCnHealthGet
 
-> string v1IdvCnHealthGet()
+> string v1IdvCnHealthGet(Tomo_API_Version)
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 
@@ -241,8 +115,13 @@ async function example() {
   console.log("🚀 Testing  SDK...");
   const api = new DefaultApi();
 
+  const body = {
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
+  } satisfies V1IdvCnHealthGetRequest;
+
   try {
-    const data = await api.v1IdvCnHealthGet();
+    const data = await api.v1IdvCnHealthGet(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -255,7 +134,10 @@ example().catch(console.error);
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
 
 ### Return type
 
@@ -274,16 +156,19 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## v1IdvCnKycGetPost
 
-> TencentGetUnionResultRes v1IdvCnKycGetPost(Authorization, TencentGetKycReq)
+> CnGetUnionResultRes v1IdvCnKycGetPost(Tomo_API_Version, CnGetKycReq)
 
 
+
+[DEPRECATED] Use /v1/idv/result with country&#x3D;cn.
 
 ### Example
 
@@ -296,13 +181,17 @@ import type { V1IdvCnKycGetPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // TencentGetKycReq (optional)
-    TencentGetKycReq: ...,
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
+    // CnGetKycReq (optional)
+    CnGetKycReq: ...,
   } satisfies V1IdvCnKycGetPostRequest;
 
   try {
@@ -322,16 +211,16 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **TencentGetKycReq** | [TencentGetKycReq](TencentGetKycReq.md) |  | [Optional] |
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
+| **CnGetKycReq** | [CnGetKycReq](CnGetKycReq.md) |  | [Optional] |
 
 ### Return type
 
-[**TencentGetUnionResultRes**](TencentGetUnionResultRes.md)
+[**CnGetUnionResultRes**](CnGetUnionResultRes.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -342,15 +231,15 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## v1IdvCnStartPost
+## v1IdvHealthGet
 
-> TencentStartIdvRes v1IdvCnStartPost(Authorization, TencentStartReq)
+> string v1IdvHealthGet(Tomo_API_Version)
 
 
 
@@ -361,21 +250,19 @@ import {
   Configuration,
   DefaultApi,
 } from '';
-import type { V1IdvCnStartPostRequest } from '';
+import type { V1IdvHealthGetRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
   const api = new DefaultApi();
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // TencentStartReq (optional)
-    TencentStartReq: ...,
-  } satisfies V1IdvCnStartPostRequest;
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
+  } satisfies V1IdvHealthGetRequest;
 
   try {
-    const data = await api.v1IdvCnStartPost(body);
+    const data = await api.v1IdvHealthGet(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -391,135 +278,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **TencentStartReq** | [TencentStartReq](TencentStartReq.md) |  | [Optional] |
-
-### Return type
-
-[**TencentStartIdvRes**](TencentStartIdvRes.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json;charset=utf-8`
-- **Accept**: `application/json;charset=utf-8`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## v1IdvCnTokenPost
-
-> TomoIdvIssueTokenRes v1IdvCnTokenPost(Authorization, TomoIdvIssueTokenReq)
-
-
-
-### Example
-
-```ts
-import {
-  Configuration,
-  DefaultApi,
-} from '';
-import type { V1IdvCnTokenPostRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
-
-  const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // TomoIdvIssueTokenReq (optional)
-    TomoIdvIssueTokenReq: ...,
-  } satisfies V1IdvCnTokenPostRequest;
-
-  try {
-    const data = await api.v1IdvCnTokenPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **TomoIdvIssueTokenReq** | [TomoIdvIssueTokenReq](TomoIdvIssueTokenReq.md) |  | [Optional] |
-
-### Return type
-
-[**TomoIdvIssueTokenRes**](TomoIdvIssueTokenRes.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json;charset=utf-8`
-- **Accept**: `application/json;charset=utf-8`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## v1IdvJpHealthGet
-
-> string v1IdvJpHealthGet()
-
-
-
-### Example
-
-```ts
-import {
-  Configuration,
-  DefaultApi,
-} from '';
-import type { V1IdvJpHealthGetRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
-
-  try {
-    const data = await api.v1IdvJpHealthGet();
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
 
 ### Return type
 
@@ -538,16 +297,87 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## v1IdvJpHealthGet
+
+> string v1IdvJpHealthGet(Tomo_API_Version)
+
+
+
+[DEPRECATED] Use /v1/idv/health.
+
+### Example
+
+```ts
+import {
+  Configuration,
+  DefaultApi,
+} from '';
+import type { V1IdvJpHealthGetRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const api = new DefaultApi();
+
+  const body = {
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
+  } satisfies V1IdvJpHealthGetRequest;
+
+  try {
+    const data = await api.v1IdvJpHealthGet(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
+
+### Return type
+
+**string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json;charset=utf-8`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## v1IdvJpKycGetPost
 
-> LiquidGetUnionResultRes v1IdvJpKycGetPost(Authorization, LiquidGetKycReq)
+> JpGetUnionResultRes v1IdvJpKycGetPost(Tomo_API_Version, JpGetKycReq)
 
 
+
+[DEPRECATED] Use /v1/idv/result with country&#x3D;jp.
 
 ### Example
 
@@ -560,13 +390,17 @@ import type { V1IdvJpKycGetPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // LiquidGetKycReq (optional)
-    LiquidGetKycReq: ...,
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
+    // JpGetKycReq (optional)
+    JpGetKycReq: ...,
   } satisfies V1IdvJpKycGetPostRequest;
 
   try {
@@ -586,16 +420,16 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **LiquidGetKycReq** | [LiquidGetKycReq](LiquidGetKycReq.md) |  | [Optional] |
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
+| **JpGetKycReq** | [JpGetKycReq](JpGetKycReq.md) |  | [Optional] |
 
 ### Return type
 
-[**LiquidGetUnionResultRes**](LiquidGetUnionResultRes.md)
+[**JpGetUnionResultRes**](JpGetUnionResultRes.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -606,17 +440,19 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## v1IdvJpStartPost
 
-> LiquidIntegratedAppRes v1IdvJpStartPost(Authorization, LiquidStartIdvReq)
+> StartIdvRes v1IdvJpStartPost(Tomo_API_Version, JpStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;jp.
 
 ### Example
 
@@ -629,13 +465,17 @@ import type { V1IdvJpStartPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // LiquidStartIdvReq (optional)
-    LiquidStartIdvReq: ...,
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
+    // JpStartIdvReq (optional)
+    JpStartIdvReq: ...,
   } satisfies V1IdvJpStartPostRequest;
 
   try {
@@ -655,16 +495,16 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **LiquidStartIdvReq** | [LiquidStartIdvReq](LiquidStartIdvReq.md) |  | [Optional] |
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
+| **JpStartIdvReq** | [JpStartIdvReq](JpStartIdvReq.md) |  | [Optional] |
 
 ### Return type
 
-[**LiquidIntegratedAppRes**](LiquidIntegratedAppRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -675,17 +515,19 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## v1IdvKycGetPost
+## v1IdvReportsAggregatesGet
 
-> GetKycRes v1IdvKycGetPost(Authorization, GetKycReq)
+> AggregateReport v1IdvReportsAggregatesGet(Tomo_Filter_Client_Ids, scope, period, from, to, limit, cursor)
 
 
+
+Requires aggregates.read. Counts retained attempts by creation time and current status. Defaults to the current month in Asia/Seoul. Organization queries additionally require a current console approval.
 
 ### Example
 
@@ -694,21 +536,35 @@ import {
   Configuration,
   DefaultApi,
 } from '';
-import type { V1IdvKycGetPostRequest } from '';
+import type { V1IdvReportsAggregatesGetRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
+    // Array<string> (optional)
+    Tomo_Filter_Client_Ids: ...,
+    // 'client' | 'organization' (optional)
+    scope: scope_example,
+    // 'current_month' | 'last_3_months' | 'last_6_months' | 'last_12_months' | 'all_time' (optional)
+    period: period_example,
+    // Date (optional)
+    from: 2013-10-20T19:20:30+01:00,
+    // Date (optional)
+    to: 2013-10-20T19:20:30+01:00,
+    // number (optional)
+    limit: 56,
     // string (optional)
-    Authorization: Authorization_example,
-    // GetKycReq (optional)
-    GetKycReq: ...,
-  } satisfies V1IdvKycGetPostRequest;
+    cursor: cursor_example,
+  } satisfies V1IdvReportsAggregatesGetRequest;
 
   try {
-    const data = await api.v1IdvKycGetPost(body);
+    const data = await api.v1IdvReportsAggregatesGet(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -724,35 +580,43 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **GetKycReq** | [GetKycReq](GetKycReq.md) |  | [Optional] |
+| **Tomo_Filter_Client_Ids** | `Array<string>` |  | [Optional] |
+| **scope** | `client`, `organization` |  | [Optional] [Defaults to `undefined`] [Enum: client, organization] |
+| **period** | `current_month`, `last_3_months`, `last_6_months`, `last_12_months`, `all_time` |  | [Optional] [Defaults to `undefined`] [Enum: current_month, last_3_months, last_6_months, last_12_months, all_time] |
+| **from** | `Date` |  | [Optional] [Defaults to `undefined`] |
+| **to** | `Date` |  | [Optional] [Defaults to `undefined`] |
+| **limit** | `number` |  | [Optional] [Defaults to `50`] |
+| **cursor** | `string` |  | [Optional] [Defaults to `undefined`] |
 
 ### Return type
 
-[**GetKycRes**](GetKycRes.md)
+[**AggregateReport**](AggregateReport.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json;charset=utf-8`
+- **Content-Type**: Not defined
 - **Accept**: `application/json;charset=utf-8`
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+| **200** |  |  * Cache-Control -  <br>  |
+| **400** | Invalid &#x60;cursor&#x60; or &#x60;limit&#x60; or &#x60;to&#x60; or &#x60;from&#x60; or &#x60;period&#x60; or &#x60;scope&#x60; or &#x60;Tomo-Filter-Client-Ids&#x60; or &#x60;Authorization&#x60; |  -  |
+| **401** | Authentication required |  -  |
+| **403** | Access denied |  -  |
+| **503** | Report data unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## v1IdvSessionsStartPost
+## v1IdvResetPost
 
-> SessionStartRes v1IdvSessionsStartPost(Authorization, SessionStartReq)
+> ResetRes v1IdvResetPost(Tomo_API_Version, ResetReq)
 
 
 
@@ -763,21 +627,25 @@ import {
   Configuration,
   DefaultApi,
 } from '';
-import type { V1IdvSessionsStartPostRequest } from '';
+import type { V1IdvResetPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // SessionStartReq (optional)
-    SessionStartReq: ...,
-  } satisfies V1IdvSessionsStartPostRequest;
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
+    // ResetReq (optional)
+    ResetReq: ...,
+  } satisfies V1IdvResetPostRequest;
 
   try {
-    const data = await api.v1IdvSessionsStartPost(body);
+    const data = await api.v1IdvResetPost(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -793,12 +661,297 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **SessionStartReq** | [SessionStartReq](SessionStartReq.md) |  | [Optional] |
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
+| **ResetReq** | [ResetReq](ResetReq.md) |  | [Optional] |
 
 ### Return type
 
-[**SessionStartRes**](SessionStartRes.md)
+[**ResetRes**](ResetRes.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json;charset=utf-8`
+- **Accept**: `application/json;charset=utf-8`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## v1IdvResultBulkDeletePost
+
+> ResultBulkDeleteRes v1IdvResultBulkDeletePost(Tomo_API_Version, ResultBulkDeleteReq)
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  DefaultApi,
+} from '';
+import type { V1IdvResultBulkDeletePostRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
+
+  const body = {
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
+    // ResultBulkDeleteReq (optional)
+    ResultBulkDeleteReq: ...,
+  } satisfies V1IdvResultBulkDeletePostRequest;
+
+  try {
+    const data = await api.v1IdvResultBulkDeletePost(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
+| **ResultBulkDeleteReq** | [ResultBulkDeleteReq](ResultBulkDeleteReq.md) |  | [Optional] |
+
+### Return type
+
+[**ResultBulkDeleteRes**](ResultBulkDeleteRes.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json;charset=utf-8`
+- **Accept**: `application/json;charset=utf-8`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## v1IdvResultDeletePost
+
+> ResultDeleteRes v1IdvResultDeletePost(Tomo_API_Version, ResultDeleteReq)
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  DefaultApi,
+} from '';
+import type { V1IdvResultDeletePostRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
+
+  const body = {
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
+    // ResultDeleteReq (optional)
+    ResultDeleteReq: ...,
+  } satisfies V1IdvResultDeletePostRequest;
+
+  try {
+    const data = await api.v1IdvResultDeletePost(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
+| **ResultDeleteReq** | [ResultDeleteReq](ResultDeleteReq.md) |  | [Optional] |
+
+### Return type
+
+[**ResultDeleteRes**](ResultDeleteRes.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json;charset=utf-8`
+- **Accept**: `application/json;charset=utf-8`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## v1IdvResultPost
+
+> ResultRes v1IdvResultPost(Tomo_API_Version, ResultReq)
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  DefaultApi,
+} from '';
+import type { V1IdvResultPostRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
+
+  const body = {
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
+    // ResultReq (optional)
+    ResultReq: ...,
+  } satisfies V1IdvResultPostRequest;
+
+  try {
+    const data = await api.v1IdvResultPost(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
+| **ResultReq** | [ResultReq](ResultReq.md) |  | [Optional] |
+
+### Return type
+
+[**ResultRes**](ResultRes.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json;charset=utf-8`
+- **Accept**: `application/json;charset=utf-8`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## v1IdvSessionTokensIntrospectionPost
+
+> VerifySessionTokenResponse v1IdvSessionTokensIntrospectionPost(VerifySessionTokenRequest)
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  DefaultApi,
+} from '';
+import type { V1IdvSessionTokensIntrospectionPostRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const api = new DefaultApi();
+
+  const body = {
+    // VerifySessionTokenRequest (optional)
+    VerifySessionTokenRequest: ...,
+  } satisfies V1IdvSessionTokensIntrospectionPostRequest;
+
+  try {
+    const data = await api.v1IdvSessionTokensIntrospectionPost(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **VerifySessionTokenRequest** | [VerifySessionTokenRequest](VerifySessionTokenRequest.md) |  | [Optional] |
+
+### Return type
+
+[**VerifySessionTokenResponse**](VerifySessionTokenResponse.md)
 
 ### Authorization
 
@@ -814,14 +967,14 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+| **400** | Invalid &#x60;body&#x60; |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## v1IdvStartPost
 
-> StartIdvRes v1IdvStartPost(Authorization, StartIdvReq)
+> StartIdvRes v1IdvStartPost(Tomo_API_Version, StartIdvReq)
 
 
 
@@ -836,11 +989,15 @@ import type { V1IdvStartPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
     // StartIdvReq (optional)
     StartIdvReq: ...,
   } satisfies V1IdvStartPostRequest;
@@ -862,7 +1019,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
 | **StartIdvReq** | [StartIdvReq](StartIdvReq.md) |  | [Optional] |
 
 ### Return type
@@ -871,7 +1028,7 @@ example().catch(console.error);
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -882,17 +1039,19 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## v1IdvUkHealthGet
 
-> string v1IdvUkHealthGet()
+> string v1IdvUkHealthGet(Tomo_API_Version)
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 
@@ -907,8 +1066,13 @@ async function example() {
   console.log("🚀 Testing  SDK...");
   const api = new DefaultApi();
 
+  const body = {
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
+  } satisfies V1IdvUkHealthGetRequest;
+
   try {
-    const data = await api.v1IdvUkHealthGet();
+    const data = await api.v1IdvUkHealthGet(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -921,7 +1085,10 @@ example().catch(console.error);
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
 
 ### Return type
 
@@ -940,154 +1107,19 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## v1IdvUkKycGetPost
-
-> { [key: string]: string; } v1IdvUkKycGetPost(Authorization, PlaidGetKycReq)
-
-
-
-### Example
-
-```ts
-import {
-  Configuration,
-  DefaultApi,
-} from '';
-import type { V1IdvUkKycGetPostRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
-
-  const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // PlaidGetKycReq (optional)
-    PlaidGetKycReq: ...,
-  } satisfies V1IdvUkKycGetPostRequest;
-
-  try {
-    const data = await api.v1IdvUkKycGetPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **PlaidGetKycReq** | [PlaidGetKycReq](PlaidGetKycReq.md) |  | [Optional] |
-
-### Return type
-
-**{ [key: string]: string; }**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json;charset=utf-8`
-- **Accept**: `application/json;charset=utf-8`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## v1IdvUkStartPost
-
-> PlaidStartIdvRes v1IdvUkStartPost(Authorization, PlaidStartIdvReq)
-
-
-
-### Example
-
-```ts
-import {
-  Configuration,
-  DefaultApi,
-} from '';
-import type { V1IdvUkStartPostRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
-
-  const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // PlaidStartIdvReq (optional)
-    PlaidStartIdvReq: ...,
-  } satisfies V1IdvUkStartPostRequest;
-
-  try {
-    const data = await api.v1IdvUkStartPost(body);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **PlaidStartIdvReq** | [PlaidStartIdvReq](PlaidStartIdvReq.md) |  | [Optional] |
-
-### Return type
-
-[**PlaidStartIdvRes**](PlaidStartIdvRes.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json;charset=utf-8`
-- **Accept**: `application/json;charset=utf-8`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## v1IdvUsHealthGet
 
-> string v1IdvUsHealthGet()
+> string v1IdvUsHealthGet(Tomo_API_Version)
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 
@@ -1102,8 +1134,13 @@ async function example() {
   console.log("🚀 Testing  SDK...");
   const api = new DefaultApi();
 
+  const body = {
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
+  } satisfies V1IdvUsHealthGetRequest;
+
   try {
-    const data = await api.v1IdvUsHealthGet();
+    const data = await api.v1IdvUsHealthGet(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -1116,7 +1153,10 @@ example().catch(console.error);
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
 
 ### Return type
 
@@ -1135,16 +1175,19 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## v1IdvUsKycGetPost
 
-> { [key: string]: string; } v1IdvUsKycGetPost(Authorization, PlaidGetKycReq)
+> UsGetUnionResultRes v1IdvUsKycGetPost(Tomo_API_Version, UsGetKycReq)
 
 
+
+[DEPRECATED] Use /v1/idv/result with country&#x3D;us.
 
 ### Example
 
@@ -1157,13 +1200,17 @@ import type { V1IdvUsKycGetPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // PlaidGetKycReq (optional)
-    PlaidGetKycReq: ...,
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
+    // UsGetKycReq (optional)
+    UsGetKycReq: ...,
   } satisfies V1IdvUsKycGetPostRequest;
 
   try {
@@ -1183,16 +1230,16 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **PlaidGetKycReq** | [PlaidGetKycReq](PlaidGetKycReq.md) |  | [Optional] |
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
+| **UsGetKycReq** | [UsGetKycReq](UsGetKycReq.md) |  | [Optional] |
 
 ### Return type
 
-**{ [key: string]: string; }**
+[**UsGetUnionResultRes**](UsGetUnionResultRes.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1203,17 +1250,19 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## v1IdvUsStartPost
 
-> PlaidStartIdvRes v1IdvUsStartPost(Authorization, PlaidStartIdvReq)
+> StartIdvRes v1IdvUsStartPost(Tomo_API_Version, UsStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;us.
 
 ### Example
 
@@ -1226,13 +1275,17 @@ import type { V1IdvUsStartPostRequest } from '';
 
 async function example() {
   console.log("🚀 Testing  SDK...");
-  const api = new DefaultApi();
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearerAuth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefaultApi(config);
 
   const body = {
-    // string (optional)
-    Authorization: Authorization_example,
-    // PlaidStartIdvReq (optional)
-    PlaidStartIdvReq: ...,
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
+    // UsStartIdvReq (optional)
+    UsStartIdvReq: ...,
   } satisfies V1IdvUsStartPostRequest;
 
   try {
@@ -1252,16 +1305,16 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **Authorization** | `string` |  | [Optional] [Defaults to `undefined`] |
-| **PlaidStartIdvReq** | [PlaidStartIdvReq](PlaidStartIdvReq.md) |  | [Optional] |
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
+| **UsStartIdvReq** | [UsStartIdvReq](UsStartIdvReq.md) |  | [Optional] |
 
 ### Return type
 
-[**PlaidStartIdvRes**](PlaidStartIdvRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1272,15 +1325,15 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## v1Oauth2TokenPost
 
-> TokenRes v1Oauth2TokenPost(client_assertion, client_assertion_type, grant_type, resource, scope)
+> TokenRes v1Oauth2TokenPost(Tomo_API_Version, client_assertion, client_assertion_type, grant_type, resource, scope)
 
 
 
@@ -1298,6 +1351,8 @@ async function example() {
   const api = new DefaultApi();
 
   const body = {
+    // '1.4'
+    Tomo_API_Version: Tomo_API_Version_example,
     // string
     client_assertion: client_assertion_example,
     // string
@@ -1327,6 +1382,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
+| **Tomo_API_Version** | `1.4` |  | [Defaults to `undefined`] [Enum: 1.4] |
 | **client_assertion** | `string` |  | [Defaults to `undefined`] |
 | **client_assertion_type** | `string` |  | [Defaults to `undefined`] |
 | **grant_type** | `string` |  | [Defaults to `undefined`] |
@@ -1350,8 +1406,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** | Invalid &#x60;body&#x60; |  -  |
+| **200** |  |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
+| **400** | Invalid &#x60;body&#x60; Version negotiation failures return SdkVersionNegotiationError (error&#x3D;unsupported_api_version). Existing endpoint validation and OAuth error bodies are preserved. No contract is selected when negotiation fails; its response omits Tomo-API-Version. |  * Tomo-API-Version - Selected contract version. Absent when version negotiation fails. <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
