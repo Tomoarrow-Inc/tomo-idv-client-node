@@ -1,26 +1,28 @@
 
-# TomoIdvIssueTokenRes
+# StartIdvReqKycPolicy
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`expires_in` | number
-`key` | string
-`session_token` | string
+`method` | string
+`owner_assurance` | object
+`preset` | string
+`subject` | [StartIdvReqKycPolicySubject](StartIdvReqKycPolicySubject.md)
 
 ## Example
 
 ```typescript
-import type { TomoIdvIssueTokenRes } from ''
+import type { StartIdvReqKycPolicy } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "expires_in": null,
-  "key": null,
-  "session_token": null,
-} satisfies TomoIdvIssueTokenRes
+  "method": null,
+  "owner_assurance": null,
+  "preset": null,
+  "subject": null,
+} satisfies StartIdvReqKycPolicy
 
 console.log(example)
 
@@ -29,7 +31,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as TomoIdvIssueTokenRes
+const exampleParsed = JSON.parse(exampleJSON) as StartIdvReqKycPolicy
 console.log(exampleParsed)
 ```
 

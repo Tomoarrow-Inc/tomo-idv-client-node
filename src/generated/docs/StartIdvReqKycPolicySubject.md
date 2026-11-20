@@ -1,30 +1,26 @@
 
-# CaStartIdvReq
+# StartIdvReqKycPolicySubject
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`callback_url` | string
-`email` | string
-`redirect_url` | string
-`user_id` | string
-`webhook_url` | string
+`id_type` | [StartIdvReqKycPolicySubjectIdType](StartIdvReqKycPolicySubjectIdType.md)
+`kind` | string
+`preset` | string
 
 ## Example
 
 ```typescript
-import type { CaStartIdvReq } from ''
+import type { StartIdvReqKycPolicySubject } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "callback_url": null,
-  "email": null,
-  "redirect_url": null,
-  "user_id": null,
-  "webhook_url": null,
-} satisfies CaStartIdvReq
+  "id_type": null,
+  "kind": null,
+  "preset": null,
+} satisfies StartIdvReqKycPolicySubject
 
 console.log(example)
 
@@ -33,7 +29,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as CaStartIdvReq
+const exampleParsed = JSON.parse(exampleJSON) as StartIdvReqKycPolicySubject
 console.log(exampleParsed)
 ```
 

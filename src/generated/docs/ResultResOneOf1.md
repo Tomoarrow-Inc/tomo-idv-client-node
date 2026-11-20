@@ -1,34 +1,24 @@
 
-# SessionStartReq
+# ResultResOneOf1
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`callback_url` | string
-`country` | [Country](Country.md)
-`email` | string
-`kyc_policy` | [KycPolicy](KycPolicy.md)
-`redirect_url` | string
+`result` | [ResultRecord](ResultRecord.md)
 `user_id` | string
-`webhook_url` | string
 
 ## Example
 
 ```typescript
-import type { SessionStartReq } from ''
+import type { ResultResOneOf1 } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "callback_url": null,
-  "country": null,
-  "email": null,
-  "kyc_policy": null,
-  "redirect_url": null,
+  "result": null,
   "user_id": null,
-  "webhook_url": null,
-} satisfies SessionStartReq
+} satisfies ResultResOneOf1
 
 console.log(example)
 
@@ -37,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as SessionStartReq
+const exampleParsed = JSON.parse(exampleJSON) as ResultResOneOf1
 console.log(exampleParsed)
 ```
 

@@ -1,22 +1,24 @@
 
-# TomoIdvIssueTokenReq
+# ResultResOneOf
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
+`results` | [Array&lt;ResultRecord&gt;](ResultRecord.md)
 `user_id` | string
 
 ## Example
 
 ```typescript
-import type { TomoIdvIssueTokenReq } from ''
+import type { ResultResOneOf } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "results": null,
   "user_id": null,
-} satisfies TomoIdvIssueTokenReq
+} satisfies ResultResOneOf
 
 console.log(example)
 
@@ -25,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as TomoIdvIssueTokenReq
+const exampleParsed = JSON.parse(exampleJSON) as ResultResOneOf
 console.log(exampleParsed)
 ```
 

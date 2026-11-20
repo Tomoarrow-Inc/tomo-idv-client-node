@@ -1,24 +1,21 @@
 
-# SessionStartRes
+# StartIdvReqKycPolicySubjectIdType
 
+Document selection arrays support id_card, driver_license, passport, and residency_permit_card. Array entries are trimmed, lowercased, and deduplicated before server validation; unknown values are rejected.
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`launch` | [LaunchKind](LaunchKind.md)
-`session_id` | string
 
 ## Example
 
 ```typescript
-import type { SessionStartRes } from ''
+import type { StartIdvReqKycPolicySubjectIdType } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "launch": null,
-  "session_id": null,
-} satisfies SessionStartRes
+} satisfies StartIdvReqKycPolicySubjectIdType
 
 console.log(example)
 
@@ -27,7 +24,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as SessionStartRes
+const exampleParsed = JSON.parse(exampleJSON) as StartIdvReqKycPolicySubjectIdType
 console.log(exampleParsed)
 ```
 

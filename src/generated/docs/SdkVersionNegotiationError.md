@@ -1,28 +1,24 @@
 
-# CnStartIdvReq
+# SdkVersionNegotiationError
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`callback_url` | string
-`redirect_url` | string
-`user_id` | string
-`webhook_url` | string
+`error` | string
+`error_description` | string
 
 ## Example
 
 ```typescript
-import type { CnStartIdvReq } from ''
+import type { SdkVersionNegotiationError } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "callback_url": null,
-  "redirect_url": null,
-  "user_id": null,
-  "webhook_url": null,
-} satisfies CnStartIdvReq
+  "error": null,
+  "error_description": null,
+} satisfies SdkVersionNegotiationError
 
 console.log(example)
 
@@ -31,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as CnStartIdvReq
+const exampleParsed = JSON.parse(exampleJSON) as SdkVersionNegotiationError
 console.log(exampleParsed)
 ```
 

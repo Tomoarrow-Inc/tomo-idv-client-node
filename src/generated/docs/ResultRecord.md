@@ -6,9 +6,11 @@
 
 Name | Type
 ------------ | -------------
+`auth_id` | string
 `country` | string
 `kyc` | [StandardKycResultView](StandardKycResultView.md)
 `policy_key` | string
+`result` | [GetKycRes](GetKycRes.md)
 
 ## Example
 
@@ -17,9 +19,11 @@ import type { ResultRecord } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "auth_id": null,
   "country": null,
   "kyc": null,
   "policy_key": null,
+  "result": null,
 } satisfies ResultRecord
 
 console.log(example)

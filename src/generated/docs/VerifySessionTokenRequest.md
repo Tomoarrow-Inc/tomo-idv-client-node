@@ -1,24 +1,22 @@
 
-# GetKycReq
+# VerifySessionTokenRequest
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`country` | [Country](Country.md)
-`user_id` | string
+`session_token` | string
 
 ## Example
 
 ```typescript
-import type { GetKycReq } from ''
+import type { VerifySessionTokenRequest } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "country": null,
-  "user_id": null,
-} satisfies GetKycReq
+  "session_token": null,
+} satisfies VerifySessionTokenRequest
 
 console.log(example)
 
@@ -27,7 +25,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as GetKycReq
+const exampleParsed = JSON.parse(exampleJSON) as VerifySessionTokenRequest
 console.log(exampleParsed)
 ```
 

@@ -8,6 +8,7 @@ Name | Type
 ------------ | -------------
 `results` | [Array&lt;ResultRecord&gt;](ResultRecord.md)
 `user_id` | string
+`result` | [ResultRecord](ResultRecord.md)
 
 ## Example
 
@@ -18,6 +19,7 @@ import type { ResultRes } from ''
 const example = {
   "results": null,
   "user_id": null,
+  "result": null,
 } satisfies ResultRes
 
 console.log(example)

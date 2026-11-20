@@ -1,30 +1,22 @@
 
-# UkStartIdvReq
+# VerifySessionTokenResponse
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`callback_url` | string
-`email` | string
-`redirect_url` | string
-`user_id` | string
-`webhook_url` | string
+`verified` | boolean
 
 ## Example
 
 ```typescript
-import type { UkStartIdvReq } from ''
+import type { VerifySessionTokenResponse } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "callback_url": null,
-  "email": null,
-  "redirect_url": null,
-  "user_id": null,
-  "webhook_url": null,
-} satisfies UkStartIdvReq
+  "verified": null,
+} satisfies VerifySessionTokenResponse
 
 console.log(example)
 
@@ -33,7 +25,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as UkStartIdvReq
+const exampleParsed = JSON.parse(exampleJSON) as VerifySessionTokenResponse
 console.log(exampleParsed)
 ```
 
