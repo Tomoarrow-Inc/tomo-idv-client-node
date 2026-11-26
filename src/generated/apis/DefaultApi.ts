@@ -16,12 +16,8 @@
 import * as runtime from '../runtime.js';
 import type {
   AggregateReport,
-  CaStartIdvReq,
   CnGetKycReq,
   CnGetUnionResultRes,
-  CnStartIdvReq,
-  GetKycReq,
-  GetKycRes,
   JpGetKycReq,
   JpGetUnionResultRes,
   JpStartIdvReq,
@@ -34,14 +30,9 @@ import type {
   ResultReq,
   ResultRes,
   SdkVersionNegotiationError,
-  SessionStartReq,
-  SessionStartRes,
   StartIdvReq,
   StartIdvRes,
   TokenRes,
-  TomoIdvIssueTokenReq,
-  TomoIdvIssueTokenRes,
-  UkStartIdvReq,
   UsGetKycReq,
   UsGetUnionResultRes,
   UsStartIdvReq,
@@ -51,18 +42,10 @@ import type {
 import {
     AggregateReportFromJSON,
     AggregateReportToJSON,
-    CaStartIdvReqFromJSON,
-    CaStartIdvReqToJSON,
     CnGetKycReqFromJSON,
     CnGetKycReqToJSON,
     CnGetUnionResultResFromJSON,
     CnGetUnionResultResToJSON,
-    CnStartIdvReqFromJSON,
-    CnStartIdvReqToJSON,
-    GetKycReqFromJSON,
-    GetKycReqToJSON,
-    GetKycResFromJSON,
-    GetKycResToJSON,
     JpGetKycReqFromJSON,
     JpGetKycReqToJSON,
     JpGetUnionResultResFromJSON,
@@ -87,22 +70,12 @@ import {
     ResultResToJSON,
     SdkVersionNegotiationErrorFromJSON,
     SdkVersionNegotiationErrorToJSON,
-    SessionStartReqFromJSON,
-    SessionStartReqToJSON,
-    SessionStartResFromJSON,
-    SessionStartResToJSON,
     StartIdvReqFromJSON,
     StartIdvReqToJSON,
     StartIdvResFromJSON,
     StartIdvResToJSON,
     TokenResFromJSON,
     TokenResToJSON,
-    TomoIdvIssueTokenReqFromJSON,
-    TomoIdvIssueTokenReqToJSON,
-    TomoIdvIssueTokenResFromJSON,
-    TomoIdvIssueTokenResToJSON,
-    UkStartIdvReqFromJSON,
-    UkStartIdvReqToJSON,
     UsGetKycReqFromJSON,
     UsGetKycReqToJSON,
     UsGetUnionResultResFromJSON,
@@ -119,16 +92,6 @@ export interface V1IdvCaHealthGetRequest {
     Tomo_API_Version: V1IdvCaHealthGetTomoAPIVersionEnum;
 }
 
-export interface V1IdvCaKycGetPostRequest {
-    Tomo_API_Version: V1IdvCaKycGetPostTomoAPIVersionEnum;
-    UsGetKycReq?: UsGetKycReq;
-}
-
-export interface V1IdvCaStartPostRequest {
-    Tomo_API_Version: V1IdvCaStartPostTomoAPIVersionEnum;
-    CaStartIdvReq?: CaStartIdvReq;
-}
-
 export interface V1IdvCnHealthGetRequest {
     Tomo_API_Version: V1IdvCnHealthGetTomoAPIVersionEnum;
 }
@@ -136,16 +99,6 @@ export interface V1IdvCnHealthGetRequest {
 export interface V1IdvCnKycGetPostRequest {
     Tomo_API_Version: V1IdvCnKycGetPostTomoAPIVersionEnum;
     CnGetKycReq?: CnGetKycReq;
-}
-
-export interface V1IdvCnStartPostRequest {
-    Tomo_API_Version: V1IdvCnStartPostTomoAPIVersionEnum;
-    CnStartIdvReq?: CnStartIdvReq;
-}
-
-export interface V1IdvCnTokenPostRequest {
-    Tomo_API_Version: V1IdvCnTokenPostTomoAPIVersionEnum;
-    TomoIdvIssueTokenReq?: TomoIdvIssueTokenReq;
 }
 
 export interface V1IdvHealthGetRequest {
@@ -164,11 +117,6 @@ export interface V1IdvJpKycGetPostRequest {
 export interface V1IdvJpStartPostRequest {
     Tomo_API_Version: V1IdvJpStartPostTomoAPIVersionEnum;
     JpStartIdvReq?: JpStartIdvReq;
-}
-
-export interface V1IdvKycGetPostRequest {
-    Tomo_API_Version: V1IdvKycGetPostTomoAPIVersionEnum;
-    GetKycReq?: GetKycReq;
 }
 
 export interface V1IdvReportsAggregatesGetRequest {
@@ -205,11 +153,6 @@ export interface V1IdvSessionTokensIntrospectionPostRequest {
     VerifySessionTokenRequest?: VerifySessionTokenRequest;
 }
 
-export interface V1IdvSessionsStartPostRequest {
-    Tomo_API_Version: V1IdvSessionsStartPostTomoAPIVersionEnum;
-    SessionStartReq?: SessionStartReq;
-}
-
 export interface V1IdvStartPostRequest {
     Tomo_API_Version: V1IdvStartPostTomoAPIVersionEnum;
     StartIdvReq?: StartIdvReq;
@@ -217,16 +160,6 @@ export interface V1IdvStartPostRequest {
 
 export interface V1IdvUkHealthGetRequest {
     Tomo_API_Version: V1IdvUkHealthGetTomoAPIVersionEnum;
-}
-
-export interface V1IdvUkKycGetPostRequest {
-    Tomo_API_Version: V1IdvUkKycGetPostTomoAPIVersionEnum;
-    UsGetKycReq?: UsGetKycReq;
-}
-
-export interface V1IdvUkStartPostRequest {
-    Tomo_API_Version: V1IdvUkStartPostTomoAPIVersionEnum;
-    UkStartIdvReq?: UkStartIdvReq;
 }
 
 export interface V1IdvUsHealthGetRequest {
@@ -309,130 +242,6 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async v1IdvCaHealthGet(requestParameters: V1IdvCaHealthGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
         const response = await this.v1IdvCaHealthGetRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for v1IdvCaKycGetPost without sending the request
-     * @deprecated
-     */
-    async v1IdvCaKycGetPostRequestOpts(requestParameters: V1IdvCaKycGetPostRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['Tomo_API_Version'] == null) {
-            throw new runtime.RequiredError(
-                'Tomo_API_Version',
-                'Required parameter "Tomo_API_Version" was null or undefined when calling v1IdvCaKycGetPost().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
-
-        if (requestParameters['Tomo_API_Version'] != null) {
-            headerParameters['Tomo-API-Version'] = String(requestParameters['Tomo_API_Version']);
-        }
-
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearerAuth", []);
-
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-
-        let urlPath = `/v1/idv/ca/kyc/get`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: UsGetKycReqToJSON(requestParameters['UsGetKycReq']),
-        };
-    }
-
-    /**
-     * [DEPRECATED] Use /v1/idv/result with country=ca.
-     * @deprecated
-     */
-    async v1IdvCaKycGetPostRaw(requestParameters: V1IdvCaKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UsGetUnionResultRes>> {
-        const requestOptions = await this.v1IdvCaKycGetPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => UsGetUnionResultResFromJSON(jsonValue));
-    }
-
-    /**
-     * [DEPRECATED] Use /v1/idv/result with country=ca.
-     * @deprecated
-     */
-    async v1IdvCaKycGetPost(requestParameters: V1IdvCaKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UsGetUnionResultRes> {
-        const response = await this.v1IdvCaKycGetPostRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for v1IdvCaStartPost without sending the request
-     * @deprecated
-     */
-    async v1IdvCaStartPostRequestOpts(requestParameters: V1IdvCaStartPostRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['Tomo_API_Version'] == null) {
-            throw new runtime.RequiredError(
-                'Tomo_API_Version',
-                'Required parameter "Tomo_API_Version" was null or undefined when calling v1IdvCaStartPost().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
-
-        if (requestParameters['Tomo_API_Version'] != null) {
-            headerParameters['Tomo-API-Version'] = String(requestParameters['Tomo_API_Version']);
-        }
-
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearerAuth", []);
-
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-
-        let urlPath = `/v1/idv/ca/start`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CaStartIdvReqToJSON(requestParameters['CaStartIdvReq']),
-        };
-    }
-
-    /**
-     * [DEPRECATED] Use /v1/idv/start with country=ca.
-     * @deprecated
-     */
-    async v1IdvCaStartPostRaw(requestParameters: V1IdvCaStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StartIdvRes>> {
-        const requestOptions = await this.v1IdvCaStartPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => StartIdvResFromJSON(jsonValue));
-    }
-
-    /**
-     * [DEPRECATED] Use /v1/idv/start with country=ca.
-     * @deprecated
-     */
-    async v1IdvCaStartPost(requestParameters: V1IdvCaStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StartIdvRes> {
-        const response = await this.v1IdvCaStartPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -550,130 +359,6 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async v1IdvCnKycGetPost(requestParameters: V1IdvCnKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CnGetUnionResultRes> {
         const response = await this.v1IdvCnKycGetPostRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for v1IdvCnStartPost without sending the request
-     * @deprecated
-     */
-    async v1IdvCnStartPostRequestOpts(requestParameters: V1IdvCnStartPostRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['Tomo_API_Version'] == null) {
-            throw new runtime.RequiredError(
-                'Tomo_API_Version',
-                'Required parameter "Tomo_API_Version" was null or undefined when calling v1IdvCnStartPost().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
-
-        if (requestParameters['Tomo_API_Version'] != null) {
-            headerParameters['Tomo-API-Version'] = String(requestParameters['Tomo_API_Version']);
-        }
-
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearerAuth", []);
-
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-
-        let urlPath = `/v1/idv/cn/start`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: CnStartIdvReqToJSON(requestParameters['CnStartIdvReq']),
-        };
-    }
-
-    /**
-     * [DEPRECATED] Use /v1/idv/start with country=cn.
-     * @deprecated
-     */
-    async v1IdvCnStartPostRaw(requestParameters: V1IdvCnStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StartIdvRes>> {
-        const requestOptions = await this.v1IdvCnStartPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => StartIdvResFromJSON(jsonValue));
-    }
-
-    /**
-     * [DEPRECATED] Use /v1/idv/start with country=cn.
-     * @deprecated
-     */
-    async v1IdvCnStartPost(requestParameters: V1IdvCnStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StartIdvRes> {
-        const response = await this.v1IdvCnStartPostRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for v1IdvCnTokenPost without sending the request
-     * @deprecated
-     */
-    async v1IdvCnTokenPostRequestOpts(requestParameters: V1IdvCnTokenPostRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['Tomo_API_Version'] == null) {
-            throw new runtime.RequiredError(
-                'Tomo_API_Version',
-                'Required parameter "Tomo_API_Version" was null or undefined when calling v1IdvCnTokenPost().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
-
-        if (requestParameters['Tomo_API_Version'] != null) {
-            headerParameters['Tomo-API-Version'] = String(requestParameters['Tomo_API_Version']);
-        }
-
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearerAuth", []);
-
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-
-        let urlPath = `/v1/idv/cn/token`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: TomoIdvIssueTokenReqToJSON(requestParameters['TomoIdvIssueTokenReq']),
-        };
-    }
-
-    /**
-     * [DEPRECATED] Use the OAuth2 token endpoint.
-     * @deprecated
-     */
-    async v1IdvCnTokenPostRaw(requestParameters: V1IdvCnTokenPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TomoIdvIssueTokenRes>> {
-        const requestOptions = await this.v1IdvCnTokenPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => TomoIdvIssueTokenResFromJSON(jsonValue));
-    }
-
-    /**
-     * [DEPRECATED] Use the OAuth2 token endpoint.
-     * @deprecated
-     */
-    async v1IdvCnTokenPost(requestParameters: V1IdvCnTokenPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TomoIdvIssueTokenRes> {
-        const response = await this.v1IdvCnTokenPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -903,63 +588,6 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async v1IdvJpStartPost(requestParameters: V1IdvJpStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StartIdvRes> {
         const response = await this.v1IdvJpStartPostRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for v1IdvKycGetPost without sending the request
-     */
-    async v1IdvKycGetPostRequestOpts(requestParameters: V1IdvKycGetPostRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['Tomo_API_Version'] == null) {
-            throw new runtime.RequiredError(
-                'Tomo_API_Version',
-                'Required parameter "Tomo_API_Version" was null or undefined when calling v1IdvKycGetPost().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
-
-        if (requestParameters['Tomo_API_Version'] != null) {
-            headerParameters['Tomo-API-Version'] = String(requestParameters['Tomo_API_Version']);
-        }
-
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearerAuth", []);
-
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-
-        let urlPath = `/v1/idv/kyc/get`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: GetKycReqToJSON(requestParameters['GetKycReq']),
-        };
-    }
-
-    /**
-     */
-    async v1IdvKycGetPostRaw(requestParameters: V1IdvKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetKycRes>> {
-        const requestOptions = await this.v1IdvKycGetPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => GetKycResFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async v1IdvKycGetPost(requestParameters: V1IdvKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetKycRes> {
-        const response = await this.v1IdvKycGetPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -1303,68 +931,6 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Creates request options for v1IdvSessionsStartPost without sending the request
-     * @deprecated
-     */
-    async v1IdvSessionsStartPostRequestOpts(requestParameters: V1IdvSessionsStartPostRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['Tomo_API_Version'] == null) {
-            throw new runtime.RequiredError(
-                'Tomo_API_Version',
-                'Required parameter "Tomo_API_Version" was null or undefined when calling v1IdvSessionsStartPost().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
-
-        if (requestParameters['Tomo_API_Version'] != null) {
-            headerParameters['Tomo-API-Version'] = String(requestParameters['Tomo_API_Version']);
-        }
-
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearerAuth", []);
-
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-
-        let urlPath = `/v1/idv/sessions/start`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: SessionStartReqToJSON(requestParameters['SessionStartReq']),
-        };
-    }
-
-    /**
-     * [DEPRECATED] Use /v1/idv/start.
-     * @deprecated
-     */
-    async v1IdvSessionsStartPostRaw(requestParameters: V1IdvSessionsStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SessionStartRes>> {
-        const requestOptions = await this.v1IdvSessionsStartPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => SessionStartResFromJSON(jsonValue));
-    }
-
-    /**
-     * [DEPRECATED] Use /v1/idv/start.
-     * @deprecated
-     */
-    async v1IdvSessionsStartPost(requestParameters: V1IdvSessionsStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SessionStartRes> {
-        const response = await this.v1IdvSessionsStartPostRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
      * Creates request options for v1IdvStartPost without sending the request
      */
     async v1IdvStartPostRequestOpts(requestParameters: V1IdvStartPostRequest): Promise<runtime.RequestOpts> {
@@ -1473,130 +1039,6 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async v1IdvUkHealthGet(requestParameters: V1IdvUkHealthGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
         const response = await this.v1IdvUkHealthGetRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for v1IdvUkKycGetPost without sending the request
-     * @deprecated
-     */
-    async v1IdvUkKycGetPostRequestOpts(requestParameters: V1IdvUkKycGetPostRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['Tomo_API_Version'] == null) {
-            throw new runtime.RequiredError(
-                'Tomo_API_Version',
-                'Required parameter "Tomo_API_Version" was null or undefined when calling v1IdvUkKycGetPost().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
-
-        if (requestParameters['Tomo_API_Version'] != null) {
-            headerParameters['Tomo-API-Version'] = String(requestParameters['Tomo_API_Version']);
-        }
-
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearerAuth", []);
-
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-
-        let urlPath = `/v1/idv/uk/kyc/get`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: UsGetKycReqToJSON(requestParameters['UsGetKycReq']),
-        };
-    }
-
-    /**
-     * [DEPRECATED] Use /v1/idv/result with country=uk.
-     * @deprecated
-     */
-    async v1IdvUkKycGetPostRaw(requestParameters: V1IdvUkKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UsGetUnionResultRes>> {
-        const requestOptions = await this.v1IdvUkKycGetPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => UsGetUnionResultResFromJSON(jsonValue));
-    }
-
-    /**
-     * [DEPRECATED] Use /v1/idv/result with country=uk.
-     * @deprecated
-     */
-    async v1IdvUkKycGetPost(requestParameters: V1IdvUkKycGetPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UsGetUnionResultRes> {
-        const response = await this.v1IdvUkKycGetPostRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for v1IdvUkStartPost without sending the request
-     * @deprecated
-     */
-    async v1IdvUkStartPostRequestOpts(requestParameters: V1IdvUkStartPostRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['Tomo_API_Version'] == null) {
-            throw new runtime.RequiredError(
-                'Tomo_API_Version',
-                'Required parameter "Tomo_API_Version" was null or undefined when calling v1IdvUkStartPost().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json;charset=utf-8';
-
-        if (requestParameters['Tomo_API_Version'] != null) {
-            headerParameters['Tomo-API-Version'] = String(requestParameters['Tomo_API_Version']);
-        }
-
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearerAuth", []);
-
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-
-        let urlPath = `/v1/idv/uk/start`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: UkStartIdvReqToJSON(requestParameters['UkStartIdvReq']),
-        };
-    }
-
-    /**
-     * [DEPRECATED] Use /v1/idv/start with country=uk.
-     * @deprecated
-     */
-    async v1IdvUkStartPostRaw(requestParameters: V1IdvUkStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StartIdvRes>> {
-        const requestOptions = await this.v1IdvUkStartPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => StartIdvResFromJSON(jsonValue));
-    }
-
-    /**
-     * [DEPRECATED] Use /v1/idv/start with country=uk.
-     * @deprecated
-     */
-    async v1IdvUkStartPost(requestParameters: V1IdvUkStartPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StartIdvRes> {
-        const response = await this.v1IdvUkStartPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -1893,20 +1335,6 @@ export type V1IdvCaHealthGetTomoAPIVersionEnum = typeof V1IdvCaHealthGetTomoAPIV
 /**
  * @export
  */
-export const V1IdvCaKycGetPostTomoAPIVersionEnum = {
-    _14: '1.4'
-} as const;
-export type V1IdvCaKycGetPostTomoAPIVersionEnum = typeof V1IdvCaKycGetPostTomoAPIVersionEnum[keyof typeof V1IdvCaKycGetPostTomoAPIVersionEnum];
-/**
- * @export
- */
-export const V1IdvCaStartPostTomoAPIVersionEnum = {
-    _14: '1.4'
-} as const;
-export type V1IdvCaStartPostTomoAPIVersionEnum = typeof V1IdvCaStartPostTomoAPIVersionEnum[keyof typeof V1IdvCaStartPostTomoAPIVersionEnum];
-/**
- * @export
- */
 export const V1IdvCnHealthGetTomoAPIVersionEnum = {
     _14: '1.4'
 } as const;
@@ -1918,20 +1346,6 @@ export const V1IdvCnKycGetPostTomoAPIVersionEnum = {
     _14: '1.4'
 } as const;
 export type V1IdvCnKycGetPostTomoAPIVersionEnum = typeof V1IdvCnKycGetPostTomoAPIVersionEnum[keyof typeof V1IdvCnKycGetPostTomoAPIVersionEnum];
-/**
- * @export
- */
-export const V1IdvCnStartPostTomoAPIVersionEnum = {
-    _14: '1.4'
-} as const;
-export type V1IdvCnStartPostTomoAPIVersionEnum = typeof V1IdvCnStartPostTomoAPIVersionEnum[keyof typeof V1IdvCnStartPostTomoAPIVersionEnum];
-/**
- * @export
- */
-export const V1IdvCnTokenPostTomoAPIVersionEnum = {
-    _14: '1.4'
-} as const;
-export type V1IdvCnTokenPostTomoAPIVersionEnum = typeof V1IdvCnTokenPostTomoAPIVersionEnum[keyof typeof V1IdvCnTokenPostTomoAPIVersionEnum];
 /**
  * @export
  */
@@ -1960,13 +1374,6 @@ export const V1IdvJpStartPostTomoAPIVersionEnum = {
     _14: '1.4'
 } as const;
 export type V1IdvJpStartPostTomoAPIVersionEnum = typeof V1IdvJpStartPostTomoAPIVersionEnum[keyof typeof V1IdvJpStartPostTomoAPIVersionEnum];
-/**
- * @export
- */
-export const V1IdvKycGetPostTomoAPIVersionEnum = {
-    _14: '1.4'
-} as const;
-export type V1IdvKycGetPostTomoAPIVersionEnum = typeof V1IdvKycGetPostTomoAPIVersionEnum[keyof typeof V1IdvKycGetPostTomoAPIVersionEnum];
 /**
  * @export
  */
@@ -2017,13 +1424,6 @@ export type V1IdvResultPostTomoAPIVersionEnum = typeof V1IdvResultPostTomoAPIVer
 /**
  * @export
  */
-export const V1IdvSessionsStartPostTomoAPIVersionEnum = {
-    _14: '1.4'
-} as const;
-export type V1IdvSessionsStartPostTomoAPIVersionEnum = typeof V1IdvSessionsStartPostTomoAPIVersionEnum[keyof typeof V1IdvSessionsStartPostTomoAPIVersionEnum];
-/**
- * @export
- */
 export const V1IdvStartPostTomoAPIVersionEnum = {
     _14: '1.4'
 } as const;
@@ -2035,20 +1435,6 @@ export const V1IdvUkHealthGetTomoAPIVersionEnum = {
     _14: '1.4'
 } as const;
 export type V1IdvUkHealthGetTomoAPIVersionEnum = typeof V1IdvUkHealthGetTomoAPIVersionEnum[keyof typeof V1IdvUkHealthGetTomoAPIVersionEnum];
-/**
- * @export
- */
-export const V1IdvUkKycGetPostTomoAPIVersionEnum = {
-    _14: '1.4'
-} as const;
-export type V1IdvUkKycGetPostTomoAPIVersionEnum = typeof V1IdvUkKycGetPostTomoAPIVersionEnum[keyof typeof V1IdvUkKycGetPostTomoAPIVersionEnum];
-/**
- * @export
- */
-export const V1IdvUkStartPostTomoAPIVersionEnum = {
-    _14: '1.4'
-} as const;
-export type V1IdvUkStartPostTomoAPIVersionEnum = typeof V1IdvUkStartPostTomoAPIVersionEnum[keyof typeof V1IdvUkStartPostTomoAPIVersionEnum];
 /**
  * @export
  */

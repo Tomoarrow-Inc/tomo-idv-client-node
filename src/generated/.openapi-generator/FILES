@@ -5,15 +5,12 @@ docs/AggregateClientCounts.md
 docs/AggregateCounts.md
 docs/AggregatePeriod.md
 docs/AggregateReport.md
-docs/CaStartIdvReq.md
 docs/CnGetKycReq.md
 docs/CnGetKycRes.md
 docs/CnGetUnionResultRes.md
 docs/CnIdvField.md
-docs/CnStartIdvReq.md
 docs/Country.md
 docs/DefaultApi.md
-docs/GetKycReq.md
 docs/GetKycRes.md
 docs/JpGetKycReq.md
 docs/JpGetResultRes.md
@@ -52,7 +49,6 @@ docs/KycRiskCheckView.md
 docs/KycRiskSignalsView.md
 docs/KycStandardField.md
 docs/KycWatchlistCheckView.md
-docs/LaunchKind.md
 docs/ResetReq.md
 docs/ResetRes.md
 docs/ResetStatus.md
@@ -67,8 +63,6 @@ docs/ResultRes.md
 docs/ResultResOneOf.md
 docs/ResultResOneOf1.md
 docs/SdkVersionNegotiationError.md
-docs/SessionStartReq.md
-docs/SessionStartRes.md
 docs/StandardKycResultView.md
 docs/StartIdvReq.md
 docs/StartIdvReqKycPolicy.md
@@ -76,9 +70,6 @@ docs/StartIdvReqKycPolicySubject.md
 docs/StartIdvReqKycPolicySubjectIdType.md
 docs/StartIdvRes.md
 docs/TokenRes.md
-docs/TomoIdvIssueTokenReq.md
-docs/TomoIdvIssueTokenRes.md
-docs/UkStartIdvReq.md
 docs/UsGetKycReq.md
 docs/UsGetResultRes.md
 docs/UsGetUnionResultRes.md
@@ -91,14 +82,11 @@ models/AggregateClientCounts.ts
 models/AggregateCounts.ts
 models/AggregatePeriod.ts
 models/AggregateReport.ts
-models/CaStartIdvReq.ts
 models/CnGetKycReq.ts
 models/CnGetKycRes.ts
 models/CnGetUnionResultRes.ts
 models/CnIdvField.ts
-models/CnStartIdvReq.ts
 models/Country.ts
-models/GetKycReq.ts
 models/GetKycRes.ts
 models/JpGetKycReq.ts
 models/JpGetResultRes.ts
@@ -137,7 +125,6 @@ models/KycRiskCheckView.ts
 models/KycRiskSignalsView.ts
 models/KycStandardField.ts
 models/KycWatchlistCheckView.ts
-models/LaunchKind.ts
 models/ResetReq.ts
 models/ResetRes.ts
 models/ResetStatus.ts
@@ -152,8 +139,6 @@ models/ResultRes.ts
 models/ResultResOneOf.ts
 models/ResultResOneOf1.ts
 models/SdkVersionNegotiationError.ts
-models/SessionStartReq.ts
-models/SessionStartRes.ts
 models/StandardKycResultView.ts
 models/StartIdvReq.ts
 models/StartIdvReqKycPolicy.ts
@@ -161,9 +146,6 @@ models/StartIdvReqKycPolicySubject.ts
 models/StartIdvReqKycPolicySubjectIdType.ts
 models/StartIdvRes.ts
 models/TokenRes.ts
-models/TomoIdvIssueTokenReq.ts
-models/TomoIdvIssueTokenRes.ts
-models/UkStartIdvReq.ts
 models/UsGetKycReq.ts
 models/UsGetResultRes.ts
 models/UsGetUnionResultRes.ts
